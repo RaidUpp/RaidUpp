@@ -16,6 +16,8 @@
 		D62388B42A2F5C7700A20667 /* RaidUppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62388B32A2F5C7700A20667 /* RaidUppTests.swift */; };
 		D62388BE2A2F5C7700A20667 /* RaidUppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62388BD2A2F5C7700A20667 /* RaidUppUITests.swift */; };
 		D62388C02A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62388BF2A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift */; };
+		D62388CF2A2F5DBD00A20667 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D62388CE2A2F5DBD00A20667 /* .gitignore */; };
+		D62388D12A2F5DCA00A20667 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D62388D02A2F5DCA00A20667 /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D62388B92A2F5C7700A20667 /* RaidUppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaidUppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62388BD2A2F5C7700A20667 /* RaidUppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppUITests.swift; sourceTree = "<group>"; };
 		D62388BF2A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D62388CE2A2F5DBD00A20667 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D62388D02A2F5DCA00A20667 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		D62388902A2F5C7600A20667 = {
 			isa = PBXGroup;
 			children = (
+				D62388D02A2F5DCA00A20667 /* readme.md */,
+				D62388CE2A2F5DBD00A20667 /* .gitignore */,
 				D623889B2A2F5C7600A20667 /* RaidUpp */,
 				D62388B22A2F5C7700A20667 /* RaidUppTests */,
 				D62388BC2A2F5C7700A20667 /* RaidUppUITests */,
@@ -99,11 +105,11 @@
 		D623889B2A2F5C7600A20667 /* RaidUpp */ = {
 			isa = PBXGroup;
 			children = (
-				D623889C2A2F5C7600A20667 /* RaidUppApp.swift */,
-				D623889E2A2F5C7600A20667 /* ContentView.swift */,
-				D62388A02A2F5C7700A20667 /* Assets.xcassets */,
-				D62388A52A2F5C7700A20667 /* Persistence.swift */,
 				D62388AA2A2F5C7700A20667 /* Info.plist */,
+				D62388A02A2F5C7700A20667 /* Assets.xcassets */,
+				D623889C2A2F5C7600A20667 /* RaidUppApp.swift */,
+				D62388A52A2F5C7700A20667 /* Persistence.swift */,
+				D623889E2A2F5C7600A20667 /* ContentView.swift */,
 				D62388A72A2F5C7700A20667 /* RaidUpp.xcdatamodeld */,
 				D62388A22A2F5C7700A20667 /* Preview Content */,
 			);
@@ -145,6 +151,7 @@
 				D62388952A2F5C7600A20667 /* Sources */,
 				D62388962A2F5C7600A20667 /* Frameworks */,
 				D62388972A2F5C7600A20667 /* Resources */,
+				D62388CC2A2F5D3200A20667 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -240,6 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D62388A42A2F5C7700A20667 /* Preview Assets.xcassets in Resources */,
+				D62388CF2A2F5DBD00A20667 /* .gitignore in Resources */,
+				D62388D12A2F5DCA00A20667 /* readme.md in Resources */,
 				D62388A12A2F5C7700A20667 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +268,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D62388CC2A2F5D3200A20667 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D62388952A2F5C7600A20667 /* Sources */ = {
