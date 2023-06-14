@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		954F26CC2A39DBE6009FAD10 /* FontSizeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */; };
+		954F26CE2A39E0E0009FAD10 /* ClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26CD2A39E0E0009FAD10 /* ClassesView.swift */; };
+		954F26D62A39F2C3009FAD10 /* FormClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26D52A39F2C3009FAD10 /* FormClass.swift */; };
 		D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889C2A2F5C7600A20667 /* RaidUppApp.swift */; };
 		D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889E2A2F5C7600A20667 /* ContentView.swift */; };
 		D62388A12A2F5C7700A20667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62388A02A2F5C7700A20667 /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeEnum.swift; sourceTree = "<group>"; };
+		954F26CD2A39E0E0009FAD10 /* ClassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesView.swift; sourceTree = "<group>"; };
+		954F26D52A39F2C3009FAD10 /* FormClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormClass.swift; sourceTree = "<group>"; };
 		D62388992A2F5C7600A20667 /* RaidUpp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaidUpp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D623889C2A2F5C7600A20667 /* RaidUppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppApp.swift; sourceTree = "<group>"; };
 		D623889E2A2F5C7600A20667 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +86,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		954F26C42A39DA53009FAD10 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				954F26CA2A39DBBB009FAD10 /* Enums */,
+				954F26C92A39DBAF009FAD10 /* Components */,
+				954F26C82A39DB25009FAD10 /* Guilds */,
+				954F26C72A39DB0F009FAD10 /* Students */,
+				954F26C62A39DA70009FAD10 /* Class */,
+				954F26C52A39DA6A009FAD10 /* Classes */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		954F26C52A39DA6A009FAD10 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				954F26CD2A39E0E0009FAD10 /* ClassesView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		954F26C62A39DA70009FAD10 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		954F26C72A39DB0F009FAD10 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Students;
+			sourceTree = "<group>";
+		};
+		954F26C82A39DB25009FAD10 /* Guilds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Guilds;
+			sourceTree = "<group>";
+		};
+		954F26C92A39DBAF009FAD10 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				954F26D52A39F2C3009FAD10 /* FormClass.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		954F26CA2A39DBBB009FAD10 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		D62388902A2F5C7600A20667 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +169,7 @@
 		D623889B2A2F5C7600A20667 /* RaidUpp */ = {
 			isa = PBXGroup;
 			children = (
+				954F26C42A39DA53009FAD10 /* Presenter */,
 				D62388AA2A2F5C7700A20667 /* Info.plist */,
 				D62388A02A2F5C7700A20667 /* Assets.xcassets */,
 				D623889C2A2F5C7600A20667 /* RaidUppApp.swift */,
@@ -294,8 +359,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954F26CC2A39DBE6009FAD10 /* FontSizeEnum.swift in Sources */,
 				D62388A62A2F5C7700A20667 /* Persistence.swift in Sources */,
+				954F26D62A39F2C3009FAD10 /* FormClass.swift in Sources */,
 				D62388A92A2F5C7700A20667 /* RaidUpp.xcdatamodeld in Sources */,
+				954F26CE2A39E0E0009FAD10 /* ClassesView.swift in Sources */,
 				D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */,
 				D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */,
 			);
