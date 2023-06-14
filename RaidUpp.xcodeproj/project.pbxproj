@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35ED6C2F2A38B385005E5BDE /* RaidUppTvOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C2E2A38B385005E5BDE /* RaidUppTvOSApp.swift */; };
+		35ED6C312A38B385005E5BDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C302A38B385005E5BDE /* ContentView.swift */; };
+		35ED6C332A38B386005E5BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35ED6C322A38B386005E5BDE /* Assets.xcassets */; };
+		35ED6C362A38B386005E5BDE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35ED6C352A38B386005E5BDE /* Preview Assets.xcassets */; };
+		35ED6C3B2A39D908005E5BDE /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C192A38A77B005E5BDE /* MissionDetailsView.swift */; };
+		35ED6C3C2A39D95B005E5BDE /* MissionsBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C1B2A38A792005E5BDE /* MissionsBoardView.swift */; };
+		35ED6C3D2A39D95D005E5BDE /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C222A38AAEE005E5BDE /* Mission.swift */; };
+		35ED6C3E2A39D961005E5BDE /* ClassMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C1D2A38A7D7005E5BDE /* ClassMenuView.swift */; };
+		35ED6C3F2A39D964005E5BDE /* GuildMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C202A38A7FF005E5BDE /* GuildMenuView.swift */; };
+		35ED6C402A39D967005E5BDE /* MissionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C262A38B197005E5BDE /* MissionButton.swift */; };
 		D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889C2A2F5C7600A20667 /* RaidUppApp.swift */; };
 		D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889E2A2F5C7600A20667 /* ContentView.swift */; };
 		D62388A12A2F5C7700A20667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62388A02A2F5C7700A20667 /* Assets.xcassets */; };
@@ -38,6 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35ED6C192A38A77B005E5BDE /* MissionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
+		35ED6C1B2A38A792005E5BDE /* MissionsBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsBoardView.swift; sourceTree = "<group>"; };
+		35ED6C1D2A38A7D7005E5BDE /* ClassMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenuView.swift; sourceTree = "<group>"; };
+		35ED6C202A38A7FF005E5BDE /* GuildMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildMenuView.swift; sourceTree = "<group>"; };
+		35ED6C222A38AAEE005E5BDE /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		35ED6C262A38B197005E5BDE /* MissionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionButton.swift; sourceTree = "<group>"; };
+		35ED6C2C2A38B385005E5BDE /* RaidUppTvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaidUppTvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35ED6C2E2A38B385005E5BDE /* RaidUppTvOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppTvOSApp.swift; sourceTree = "<group>"; };
+		35ED6C302A38B385005E5BDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		35ED6C322A38B386005E5BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35ED6C352A38B386005E5BDE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D62388992A2F5C7600A20667 /* RaidUpp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaidUpp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D623889C2A2F5C7600A20667 /* RaidUppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppApp.swift; sourceTree = "<group>"; };
 		D623889E2A2F5C7600A20667 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +77,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		35ED6C292A38B385005E5BDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D62388962A2F5C7600A20667 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,14 +108,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35ED6C142A38A6F3005E5BDE /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				35ED6C182A38A736005E5BDE /* Views */,
+				35ED6C162A38A711005E5BDE /* Models */,
+				35ED6C172A38A723005E5BDE /* Resources */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		35ED6C152A38A705005E5BDE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				35ED6C262A38B197005E5BDE /* MissionButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		35ED6C162A38A711005E5BDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35ED6C222A38AAEE005E5BDE /* Mission.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35ED6C172A38A723005E5BDE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		35ED6C182A38A736005E5BDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35ED6C152A38A705005E5BDE /* Components */,
+				35ED6C3A2A39C822005E5BDE /* Mission */,
+				35ED6C1F2A38A7E9005E5BDE /* Menu */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35ED6C1F2A38A7E9005E5BDE /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				35ED6C1D2A38A7D7005E5BDE /* ClassMenuView.swift */,
+				35ED6C202A38A7FF005E5BDE /* GuildMenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */ = {
+			isa = PBXGroup;
+			children = (
+				35ED6C2E2A38B385005E5BDE /* RaidUppTvOSApp.swift */,
+				35ED6C302A38B385005E5BDE /* ContentView.swift */,
+				35ED6C322A38B386005E5BDE /* Assets.xcassets */,
+				35ED6C342A38B386005E5BDE /* Preview Content */,
+			);
+			path = RaidUppTvOS;
+			sourceTree = "<group>";
+		};
+		35ED6C342A38B386005E5BDE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				35ED6C352A38B386005E5BDE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		35ED6C3A2A39C822005E5BDE /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				35ED6C192A38A77B005E5BDE /* MissionDetailsView.swift */,
+				35ED6C1B2A38A792005E5BDE /* MissionsBoardView.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
 		D62388902A2F5C7600A20667 = {
 			isa = PBXGroup;
 			children = (
+				35ED6C142A38A6F3005E5BDE /* tvOS */,
 				D62388D02A2F5DCA00A20667 /* readme.md */,
 				D62388CE2A2F5DBD00A20667 /* .gitignore */,
 				D623889B2A2F5C7600A20667 /* RaidUpp */,
 				D62388B22A2F5C7700A20667 /* RaidUppTests */,
 				D62388BC2A2F5C7700A20667 /* RaidUppUITests */,
+				35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */,
 				D623889A2A2F5C7600A20667 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +208,7 @@
 				D62388992A2F5C7600A20667 /* RaidUpp.app */,
 				D62388AF2A2F5C7700A20667 /* RaidUppTests.xctest */,
 				D62388B92A2F5C7700A20667 /* RaidUppUITests.xctest */,
+				35ED6C2C2A38B385005E5BDE /* RaidUppTvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +255,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		35ED6C2B2A38B385005E5BDE /* RaidUppTvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35ED6C372A38B386005E5BDE /* Build configuration list for PBXNativeTarget "RaidUppTvOS" */;
+			buildPhases = (
+				35ED6C282A38B385005E5BDE /* Sources */,
+				35ED6C292A38B385005E5BDE /* Frameworks */,
+				35ED6C2A2A38B385005E5BDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaidUppTvOS;
+			productName = RaidUppTvOS;
+			productReference = 35ED6C2C2A38B385005E5BDE /* RaidUppTvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D62388982A2F5C7600A20667 /* RaidUpp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D62388C32A2F5C7700A20667 /* Build configuration list for PBXNativeTarget "RaidUpp" */;
@@ -208,6 +336,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					35ED6C2B2A38B385005E5BDE = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					D62388982A2F5C7600A20667 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -235,6 +366,7 @@
 			projectRoot = "";
 			targets = (
 				D62388982A2F5C7600A20667 /* RaidUpp */,
+				35ED6C2B2A38B385005E5BDE /* RaidUppTvOS */,
 				D62388AE2A2F5C7700A20667 /* RaidUppTests */,
 				D62388B82A2F5C7700A20667 /* RaidUppUITests */,
 			);
@@ -242,6 +374,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		35ED6C2A2A38B385005E5BDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35ED6C362A38B386005E5BDE /* Preview Assets.xcassets in Resources */,
+				35ED6C332A38B386005E5BDE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D62388972A2F5C7600A20667 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +431,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		35ED6C282A38B385005E5BDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35ED6C3E2A39D961005E5BDE /* ClassMenuView.swift in Sources */,
+				35ED6C312A38B385005E5BDE /* ContentView.swift in Sources */,
+				35ED6C3B2A39D908005E5BDE /* MissionDetailsView.swift in Sources */,
+				35ED6C3C2A39D95B005E5BDE /* MissionsBoardView.swift in Sources */,
+				35ED6C402A39D967005E5BDE /* MissionButton.swift in Sources */,
+				35ED6C3D2A39D95D005E5BDE /* Mission.swift in Sources */,
+				35ED6C3F2A39D964005E5BDE /* GuildMenuView.swift in Sources */,
+				35ED6C2F2A38B385005E5BDE /* RaidUppTvOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D62388952A2F5C7600A20667 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,6 +490,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		35ED6C382A38B386005E5BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RaidUppTvOS/Preview Content\"";
+				DEVELOPMENT_TEAM = D9VJ9R57LR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.daniele.RaidUppTvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
+			};
+			name = Debug;
+		};
+		35ED6C392A38B386005E5BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RaidUppTvOS/Preview Content\"";
+				DEVELOPMENT_TEAM = D9VJ9R57LR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.daniele.RaidUppTvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
+			};
+			name = Release;
+		};
 		D62388C12A2F5C7700A20667 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -471,6 +683,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Copland.RaidUpp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,6 +715,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Copland.RaidUpp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -585,6 +803,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		35ED6C372A38B386005E5BDE /* Build configuration list for PBXNativeTarget "RaidUppTvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35ED6C382A38B386005E5BDE /* Debug */,
+				35ED6C392A38B386005E5BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D62388942A2F5C7600A20667 /* Build configuration list for PBXProject "RaidUpp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
