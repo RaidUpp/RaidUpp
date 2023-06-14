@@ -12,4 +12,8 @@ enum FontSizeEnum: Int {
     case medium = 22
     case large = 28
     case xlarge = 34
+
+    public func rawValueCGFloat() -> CGFloat {
+        return CGFloat(self.rawValue)
+    }
 }
