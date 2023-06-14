@@ -265,6 +265,7 @@
 			children = (
 				D62388D02A2F5DCA00A20667 /* readme.md */,
 				D62388CE2A2F5DBD00A20667 /* .gitignore */,
+				D6924B182A39EAE5007CB0B0 /* Persistance */,
 				D623889B2A2F5C7600A20667 /* RaidUpp */,
 				D62388B22A2F5C7700A20667 /* RaidUppTests */,
 				D62388BC2A2F5C7700A20667 /* RaidUppUITests */,
@@ -323,6 +324,34 @@
 			path = RaidUppUITests;
 			sourceTree = "<group>";
 		};
+		D6924AEF2A39E705007CB0B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6924B042A39EABA007CB0B0 /* Student+CoreDataClass.swift */,
+				D6924B052A39EABA007CB0B0 /* Student+CoreDataProperties.swift */,
+				D6924B062A39EABA007CB0B0 /* Academy+CoreDataClass.swift */,
+				D6924B072A39EABA007CB0B0 /* Academy+CoreDataProperties.swift */,
+				D6924B082A39EABA007CB0B0 /* Guild+CoreDataClass.swift */,
+				D6924B092A39EABA007CB0B0 /* Guild+CoreDataProperties.swift */,
+				D6924B0A2A39EABA007CB0B0 /* Badge+CoreDataClass.swift */,
+				D6924B0B2A39EABA007CB0B0 /* Badge+CoreDataProperties.swift */,
+				D6924B0C2A39EABA007CB0B0 /* Mission+CoreDataClass.swift */,
+				D6924B0D2A39EABA007CB0B0 /* Mission+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6924B182A39EAE5007CB0B0 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				D6924AEF2A39E705007CB0B0 /* Model */,
+				D62388A72A2F5C7700A20667 /* RaidUpp.xcdatamodeld */,
+				D62388A52A2F5C7700A20667 /* Persistence.swift */,
+				D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
 		FE8A92342A39E38B00EB8A6C /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,34 +381,6 @@
 			children = (
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		D6924AEF2A39E705007CB0B0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D6924B042A39EABA007CB0B0 /* Student+CoreDataClass.swift */,
-				D6924B052A39EABA007CB0B0 /* Student+CoreDataProperties.swift */,
-				D6924B062A39EABA007CB0B0 /* Academy+CoreDataClass.swift */,
-				D6924B072A39EABA007CB0B0 /* Academy+CoreDataProperties.swift */,
-				D6924B082A39EABA007CB0B0 /* Guild+CoreDataClass.swift */,
-				D6924B092A39EABA007CB0B0 /* Guild+CoreDataProperties.swift */,
-				D6924B0A2A39EABA007CB0B0 /* Badge+CoreDataClass.swift */,
-				D6924B0B2A39EABA007CB0B0 /* Badge+CoreDataProperties.swift */,
-				D6924B0C2A39EABA007CB0B0 /* Mission+CoreDataClass.swift */,
-				D6924B0D2A39EABA007CB0B0 /* Mission+CoreDataProperties.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D6924B182A39EAE5007CB0B0 /* Persistance */ = {
-			isa = PBXGroup;
-			children = (
-				D6924AEF2A39E705007CB0B0 /* Model */,
-				D62388A72A2F5C7700A20667 /* RaidUpp.xcdatamodeld */,
-				D62388A52A2F5C7700A20667 /* Persistence.swift */,
-				D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */,
-			);
-			path = Persistance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
