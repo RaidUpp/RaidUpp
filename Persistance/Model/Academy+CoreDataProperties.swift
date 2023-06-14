@@ -9,19 +9,18 @@
 import Foundation
 import CoreData
 
-
 extension Academy {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Academy> {
         return NSFetchRequest<Academy>(entityName: "Academy")
     }
 
-    @NSManaged public var title: String?
     @NSManaged public var id: UUID?
+    @NSManaged public var title: String?
     @NSManaged public var years: String?
+    @NSManaged public var globalBadges: Badge?
     @NSManaged public var guilds: NSSet?
     @NSManaged public var students: NSSet?
-    @NSManaged public var globalBadges: Badge?
 
 }
 
@@ -59,6 +58,6 @@ extension Academy {
 
 }
 
-extension Academy : Identifiable {
+extension Academy: Identifiable {
 
 }
