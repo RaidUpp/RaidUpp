@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct ClassesView: View {
+    @State var searchText: String = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                Text("Moyses")
+            }
+            .navigationTitle("Classes")
+            .searchable(text: $searchText,
+                        placement: .navigationBarDrawer,
+                        prompt: "classes")
+            .toolbar {
+                Button {
+
+                }label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: CGFloat(FontSizeEnum.small.rawValue)))
+                }
+            }
+        }
     }
 }
 
