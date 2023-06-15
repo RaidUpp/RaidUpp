@@ -14,7 +14,6 @@ struct GlobalForms: View {
 
     var doneAction: () -> Void
 
-
     var body: some View {
         NavigationStack {
             List {
@@ -47,7 +46,7 @@ struct GlobalForms: View {
                     }
                 }
             }
-            .navigationTitle("\(title)")
+            .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible)
             .toolbar {
