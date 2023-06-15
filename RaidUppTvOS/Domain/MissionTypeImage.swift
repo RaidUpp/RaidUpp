@@ -5,4 +5,10 @@
 //  Created by Daniele Cavalcante on 14/06/23.
 //
 
-import Foundation
+import SwiftUI
+
+struct MissionTypeImage {
+    static let gold = Image("gold")
+    static let silver = Image("silver")
+    static let bronze = Image("bronze")
+}

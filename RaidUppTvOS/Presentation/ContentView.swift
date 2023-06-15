@@ -10,12 +10,31 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            ScrollView {
+                HStack {
+                    MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                    MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                    MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                }
+            }
+            ScrollView {
+                HStack {
+                    MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
+                    MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
+                    MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
+                }
+            }
+            ScrollView {
+                HStack {
+                    MissionCard(image: MissionTypeImage.gold, title: "Mission title", description: "Mission description")
+                    MissionCard(image: MissionTypeImage.gold, title: "Mission title", description: "Mission description")
+                    MissionCard(image: MissionTypeImage.gold, title: "Mission title", description: "Mission description")
+                }
+            }
         }
-        .padding()
+        .background {
+            Image("background")
+        }
     }
 }
 
