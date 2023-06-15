@@ -10,27 +10,112 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            ScrollView {
-                HStack {
-                    MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                    MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                    MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+            BoardHeader(title: "Design", firstSubheadline: "Lorem ipsum dorem", secondSubheadline: "13 missões concluídas")
+                .focusSection()
+            VStack(spacing: 75) {
+                VStack {
+                    Text("Missões bronze")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.gray)
+                    ScrollView(.horizontal) {
+                        HStack {
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                        }
+                        .padding(.vertical, 20)
+                    }
+                }
+                VStack {
+                    Text("Missões prata")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.gray)
+                    ScrollView(.horizontal) {
+                        HStack {
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                        }
+                    }
+                }
+                .focusSection()
+                VStack {
+                    Text("Missões ouro")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.gray)
+                    ScrollView(.horizontal) {
+                        HStack {
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                            Button {
+                                
+                            } label: {
+                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                            }
+                            .buttonStyle(.card)
+                        }
+                    }
                 }
             }
-            ScrollView {
-                HStack {
-                    MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
-                    MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
-                    MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
-                }
-            }
-            ScrollView {
-                HStack {
-                    MissionCard(image: MissionTypeImage.gold, title: "Mission title", description: "Mission description")
-                    MissionCard(image: MissionTypeImage.gold, title: "Mission title", description: "Mission description")
-                    MissionCard(image: MissionTypeImage.gold, title: "Mission title", description: "Mission description")
-                }
-            }
+            .focusSection()
         }
         .background {
             Image("background")
