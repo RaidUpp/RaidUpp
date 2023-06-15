@@ -8,13 +8,34 @@
 import SwiftUI
 
 struct ListView: View {
+    var title: String
+
+    @State var searchText: String = ""
+
+    var addAction: () -> Void
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                Text(title)
+            }
+            .navigationTitle(title)
+            .searchable(text: $searchText,
+                        placement: .navigationBarDrawer,
+                        prompt: title)
+            .toolbar {
+                Button {
+                    addAction()
+                }label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: CGFloat(FontSizeEnum.small.rawValue)))
+                }
+            }
+        }
     }
 }
-
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        ListView(title: "Global", addAction: {})
     }
 }
