@@ -21,13 +21,19 @@ struct ClassesView: View {
                         prompt: "classes")
             .toolbar {
                 Button {
-
+                    addClass()
                 }label: {
                     Image(systemName: "plus")
                         .font(.system(size: CGFloat(FontSizeEnum.small.rawValue)))
                 }
             }
         }
+    }
+}
+
+extension ClassesView {
+    private func addClass() {
+
     }
 }
 
