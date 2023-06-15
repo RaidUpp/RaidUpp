@@ -19,8 +19,13 @@ struct FormClass: View {
                     Button {
 
                     }label: {
-                        Text("Take a picture")
-                            .foregroundColor(.orange)
+                        Button {
+                            capturePicture()
+                        } label: {
+                            Text("Take a picture")
+                                .foregroundColor(.orange)
+                        }
+
                     }
 
                     NavigationLink(destination: ClassesView(), label: {
@@ -38,10 +43,11 @@ struct FormClass: View {
             }
             .navigationTitle("Class")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button {
-
+                        cancelForm()
                     } label: {
                         Text("Cancel")
                             .foregroundColor(.red)
@@ -50,7 +56,7 @@ struct FormClass: View {
 
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
-
+                        doneForm()
                     } label: {
                         Text("Done")
                     }
@@ -59,6 +65,21 @@ struct FormClass: View {
             }
         }
     }
+}
+
+extension FormClass {
+    private func cancelForm() {
+
+    }
+
+    private func doneForm() {
+
+    }
+
+    private func capturePicture() {
+
+    }
+
 }
 
 struct FormClass_Previews: PreviewProvider {
