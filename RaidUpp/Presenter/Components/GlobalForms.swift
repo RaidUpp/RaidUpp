@@ -57,7 +57,6 @@ struct GlobalForms: View {
                                 fatalError("\(failure)")
                             }
                         }
-
                     })
 
                     HStack {
@@ -71,7 +70,6 @@ struct GlobalForms: View {
                                 ) {
                                     Image(uiImage: uiImage)
                                         .resizable()
-
                                 }
                             }
                         Spacer()
