@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ClassesView: View {
+    @State var isShowForms: Bool = false
 
     var body: some View {
-       ListView(title: "Class", addAction: {})
-    }
-}
-
-extension ClassesView {
-    private func addClass() {
-
+        ListView(title: "Classes", addAction: {
+            isShowForms.toggle()
+        })
+        .sheet(isPresented: $isShowForms) {
+            GlobalForms(title: "Class") {
+            }
+        }
     }
 }
 
