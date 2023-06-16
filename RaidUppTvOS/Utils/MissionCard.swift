@@ -20,7 +20,6 @@ struct MissionCard: View {
     }
     
     var body: some View {
-        
         HStack(spacing: 20) {
             ZStack {
                 Color(uiColor: .white)
@@ -28,7 +27,6 @@ struct MissionCard: View {
                     .opacity(0.8)
                 self.image
             }
-            // .border(.red)
             VStack(alignment: .leading, spacing: 20) {
                 Text(self.title)
                     .foregroundColor(.black)
@@ -38,7 +36,6 @@ struct MissionCard: View {
                     .font(.caption)
             }
             .frame(maxWidth: 350, alignment: .leading)
-            // .border(.black)
             Spacer()
         }
         .frame(width: 571, height: 178)
@@ -47,8 +44,8 @@ struct MissionCard: View {
     }
 }
 
-//struct MissionCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MissionCard(image: MissionTypeI, title: "teste", description: "teste 2")
-//    }
-//}
+struct MissionCard_Previews: PreviewProvider {
+    static var previews: some View {
+        MissionCard(image: MissionTypeImage.bronze.image, title: "teste", description: "teste 2")
+    }
+}

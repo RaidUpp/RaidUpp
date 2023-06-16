@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-//struct MissionTypeImage {
-//    static let gold = Image("gold")
-//    static let silver = Image("silver")
-//    static let bronze = Image("bronze")
-//}
-
 struct MissionTypeImage {
     let image: Image
     let title: String

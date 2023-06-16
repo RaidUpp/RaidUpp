@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     let missionTypes: [MissionTypeImage] = [.bronze, .silver, .gold]
     let missionCount = 4
+    
     var body: some View {
         VStack {
             BoardHeader(title: "Design", firstSubheadline: "Lorem ipsum dorem", secondSubheadline: "13 missões concluídas")
