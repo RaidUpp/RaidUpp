@@ -8,24 +8,16 @@
 import SwiftUI
 
 struct ClassesView: View {
-    @State var searchText: String = ""
+    @State var isShowForms: Bool = false
 
     var body: some View {
-        NavigationStack {
-            List {
-                Text("Moyses")
-            }
-            .navigationTitle("Classes")
-            .searchable(text: $searchText,
-                        placement: .navigationBarDrawer,
-                        prompt: "classes")
-            .toolbar {
-                Button {
-
-                }label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: CGFloat(FontSizeEnum.small.rawValue)))
-                }
+        ListView(title: "Classes", addAction: {
+            isShowForms.toggle()
+        }, content: { _ in
+            ClassView()
+        })
+        .sheet(isPresented: $isShowForms) {
+            GlobalForms(title: "Class") {
             }
         }
     }
