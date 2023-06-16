@@ -16,6 +16,9 @@
 		954F26CC2A39DBE6009FAD10 /* FontSizeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */; };
 		954F26CE2A39E0E0009FAD10 /* ClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26CD2A39E0E0009FAD10 /* ClassesView.swift */; };
 		954F26D62A39F2C3009FAD10 /* FormClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26D52A39F2C3009FAD10 /* FormClass.swift */; };
+		95B49B062A3C6A8A0028D940 /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B052A3C6A8A0028D940 /* ClassView.swift */; };
+		95B49B082A3C6BB20028D940 /* GuildsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B072A3C6BB20028D940 /* GuildsView.swift */; };
+		95B49B0A2A3C6BBC0028D940 /* StudentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B092A3C6BBC0028D940 /* StudentsView.swift */; };
 		D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889C2A2F5C7600A20667 /* RaidUppApp.swift */; };
 		D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889E2A2F5C7600A20667 /* ContentView.swift */; };
 		D62388A12A2F5C7700A20667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62388A02A2F5C7700A20667 /* Assets.xcassets */; };
@@ -71,6 +74,9 @@
 		954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeEnum.swift; sourceTree = "<group>"; };
 		954F26CD2A39E0E0009FAD10 /* ClassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesView.swift; sourceTree = "<group>"; };
 		954F26D52A39F2C3009FAD10 /* FormClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormClass.swift; sourceTree = "<group>"; };
+		95B49B052A3C6A8A0028D940 /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
+		95B49B072A3C6BB20028D940 /* GuildsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildsView.swift; sourceTree = "<group>"; };
+		95B49B092A3C6BBC0028D940 /* StudentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsView.swift; sourceTree = "<group>"; };
 		D62388992A2F5C7600A20667 /* RaidUpp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaidUpp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D623889C2A2F5C7600A20667 /* RaidUppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppApp.swift; sourceTree = "<group>"; };
 		D623889E2A2F5C7600A20667 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 		954F26C42A39DA53009FAD10 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				95B49B0B2A3C6C7E0028D940 /* Design */,
 				954F26CA2A39DBBB009FAD10 /* Enums */,
 				954F26C92A39DBAF009FAD10 /* Components */,
 				954F26C82A39DB25009FAD10 /* Guilds */,
@@ -175,6 +182,7 @@
 		954F26C62A39DA70009FAD10 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				95B49B052A3C6A8A0028D940 /* ClassView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 		954F26C72A39DB0F009FAD10 /* Students */ = {
 			isa = PBXGroup;
 			children = (
+				95B49B092A3C6BBC0028D940 /* StudentsView.swift */,
 			);
 			path = Students;
 			sourceTree = "<group>";
@@ -189,6 +198,7 @@
 		954F26C82A39DB25009FAD10 /* Guilds */ = {
 			isa = PBXGroup;
 			children = (
+				95B49B072A3C6BB20028D940 /* GuildsView.swift */,
 			);
 			path = Guilds;
 			sourceTree = "<group>";
@@ -209,6 +219,13 @@
 				954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		95B49B0B2A3C6C7E0028D940 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		D62388902A2F5C7600A20667 = {
@@ -537,6 +554,7 @@
 				D6924B382A39FC63007CB0B0 /* Student+CoreDataClass.swift in Sources */,
 				D62388A92A2F5C7700A20667 /* RaidUpp.xcdatamodeld in Sources */,
 				D6924B302A39FC63007CB0B0 /* Badge+CoreDataClass.swift in Sources */,
+				95B49B0A2A3C6BBC0028D940 /* StudentsView.swift in Sources */,
 				D6924B352A39FC63007CB0B0 /* Mission+CoreDataProperties.swift in Sources */,
 				954F26CE2A39E0E0009FAD10 /* ClassesView.swift in Sources */,
 				D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */,
@@ -545,8 +563,10 @@
 				D6924B392A39FC63007CB0B0 /* Student+CoreDataProperties.swift in Sources */,
 				D6924B332A39FC63007CB0B0 /* Guild+CoreDataProperties.swift in Sources */,
 				D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */,
+				95B49B062A3C6A8A0028D940 /* ClassView.swift in Sources */,
 				D6924B342A39FC63007CB0B0 /* Mission+CoreDataClass.swift in Sources */,
 				D6924B362A39FC63007CB0B0 /* Academy+CoreDataClass.swift in Sources */,
+				95B49B082A3C6BB20028D940 /* GuildsView.swift in Sources */,
 				D6924B312A39FC63007CB0B0 /* Badge+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
