@@ -8,114 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    let missionTypes: [MissionTypeImage] = [.bronze, .silver, .gold]
+    let missionCount = 4
     var body: some View {
         VStack {
             BoardHeader(title: "Design", firstSubheadline: "Lorem ipsum dorem", secondSubheadline: "13 missões concluídas")
                 .focusSection()
-            VStack(spacing: 75) {
-                VStack {
-                    Text("Missões bronze")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.gray)
-                    ScrollView(.horizontal) {
-                        HStack {
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
+                .padding(.bottom, 20)
+            VStack(spacing: 50) {
+                ForEach(missionTypes, id: \.title) { missionType in
+                    VStack {
+                        Text("Missões \(missionType.title)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(.gray)
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach(0..<missionCount) { _ in
+                                    Button {
+                                        
+                                    } label: {
+                                        MissionCard(image: missionType.image, title: "Mission title", description: "Mission description")
+                                            .buttonStyle(.card)
+                                    }
+                                    .buttonStyle(.card)
+                                }
                             }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
+                            .padding(80)
                         }
-                        .padding(.vertical, 20)
-                    }
-                }
-                VStack {
-                    Text("Missões prata")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.gray)
-                    ScrollView(.horizontal) {
-                        HStack {
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.silver, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                        }
-                    }
-                }
-                .focusSection()
-                VStack {
-                    Text("Missões ouro")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.gray)
-                    ScrollView(.horizontal) {
-                        HStack {
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                            Button {
-                                
-                            } label: {
-                                MissionCard(image: MissionTypeImage.bronze, title: "Mission title", description: "Mission description")
-                            }
-                            .buttonStyle(.card)
-                        }
+                        .padding(-80)
                     }
                 }
             }
-            .focusSection()
         }
         .background {
             Image("background")

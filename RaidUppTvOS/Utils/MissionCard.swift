@@ -47,8 +47,8 @@ struct MissionCard: View {
     }
 }
 
-struct MissionCard_Previews: PreviewProvider {
-    static var previews: some View {
-        MissionCard(image: MissionTypeImage.bronze, title: "teste", description: "teste 2")
-    }
-}
+//struct MissionCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MissionCard(image: MissionTypeI, title: "teste", description: "teste 2")
+//    }
+//}
