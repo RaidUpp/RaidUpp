@@ -13,35 +13,45 @@ struct MissionDetails: View {
     let endDate: String
     let missionDescription: String
     let missionLeaders: [String]?
+    var rating: Int = 0
     
-    init(missionTitle: String, startDate: String, endDate: String, missionDescription: String, missionLeaders: [String]?) {
+    init(missionTitle: String, startDate: String, endDate: String, missionDescription: String, missionLeaders: [String]?, rating: Int) {
         self.missionTitle = missionTitle
         self.startDate = startDate
         self.endDate = endDate
         self.missionDescription = missionDescription
         self.missionLeaders = missionLeaders
+        self.rating = rating
     }
     
     var body: some View {
         HStack {
             VStack(alignment: .trailing, spacing: 8) {
+                HStack(spacing: 10) {
+                    ForEach(0..<5) { index in
+                        Image(systemName: index < rating ? "star.fill" : "star.fill")
+                            .foregroundColor(index < rating ? .white : .white.opacity(0.5))
+                    }
+                }
+                .padding(.top, 50)
                 Text("Leaders")
                     .font(.caption2)
                     .foregroundColor(.black)
-                    // .alignmentGuide(.leading) { _ in 0 }
+                    .padding(.top, 32)
                 ForEach(missionLeaders?.prefix(2) ?? [], id: \.self) { leader in
                     Text(leader)
                         .foregroundColor(.gray)
-                        .font(.footnote)
+                        .font(.caption)
                 }
+                Spacer()
             }
-            VStack(alignment: .leading, spacing: 8) {
+            .padding(.leading, -150)
+            VStack(alignment: .leading, spacing: 16) {
                 Text(self.missionTitle)
                     .font(.title2)
                     .foregroundColor(.black)
                 HStack {
                     Text(self.startDate)
-                        // .alignmentGuide(.leading) { _ in 0 }
                     Text(self.endDate)
                 }
                 .font(.body)
@@ -50,14 +60,36 @@ struct MissionDetails: View {
                     .font(.body)
                     .foregroundColor(.black)
                     .frame(width: 823, height: 180)
+                HStack {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "checkmark")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "star.fill")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "ellipsis")
+                    }
+                }
+                .frame(width: 474, height: 114)
             }
+            Image("gold")
+                .resizable()
+                .frame(width: 368, height: 368)
         }
-        .background(Color.white)
+        .frame(width: 1505, height: 521)
+//        .background(.white)
     }
 }
 
 struct MissionDetails_Previews: PreviewProvider {
     static var previews: some View {
-        MissionDetails(missionTitle: "Title", startDate: "aaaaa", endDate: "bbbbb", missionDescription: "daiosjo dsoijdoiaj dlasijdlijdlijaoisdjioajsf kjdnskjfoisdjofjsodjfs", missionLeaders: ["Teste1", "Teste2", "teste3"])
+        MissionDetails(missionTitle: "Mission title", startDate: "DD/MM/YYYY", endDate: "DD/MM/YYYY", missionDescription: "Mission description here.", missionLeaders: ["Name 01", "Name 02", "Name 03"], rating: 4)
     }
 }
