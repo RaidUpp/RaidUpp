@@ -25,10 +25,8 @@ struct FormClass: View {
                             Text("Take a picture")
                                 .foregroundColor(.orange)
                         }
-
                     }
-
-                    NavigationLink(destination: ClassesView(), label: {
+                    NavigationLink(destination: Text("i"), label: {
                         Text("From Gallery")
                     })
                     HStack {
