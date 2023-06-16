@@ -13,6 +13,8 @@ struct ClassesView: View {
     var body: some View {
         ListView(title: "Classes", addAction: {
             isShowForms.toggle()
+        }, content: { _ in
+            ClassView()
         })
         .sheet(isPresented: $isShowForms) {
             GlobalForms(title: "Class") {

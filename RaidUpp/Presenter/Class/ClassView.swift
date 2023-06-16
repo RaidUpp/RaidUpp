@@ -21,7 +21,6 @@ struct ClassView: View {
                 } label: {
                     Text("Guilds")
                 }
-
             }
             .navigationTitle("Class")
         }

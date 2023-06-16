@@ -7,17 +7,23 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct ListView<Content: View>: View {
     var title: String
 
     @State var searchText: String = ""
+    @State var listObjects: [String] = ["Strdings", "Strings", "Strindgs"]
 
     var addAction: () -> Void
+    var content: (_ value: String ) -> Content
 
     var body: some View {
         NavigationStack {
             List {
-                Text(title)
+                ForEach(listObjects, id: \.self) { obj in
+                    NavigationLink(obj,
+                                   destination: content(obj)
+                    )
+                }
             }
             .navigationTitle(title)
             .searchable(text: $searchText,
@@ -37,6 +43,8 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(title: "Global", addAction: {})
+        ListView(title: "Global", addAction: {}, content: {value in
+            Text(value)
+        })
     }
 }

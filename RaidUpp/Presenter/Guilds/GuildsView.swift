@@ -13,6 +13,8 @@ struct GuildsView: View {
     var body: some View {
         ListView(title: "Guilds", addAction: {
             isShowForms.toggle()
+        }, content: { value in
+            Text(value)
         })
         .sheet(isPresented: $isShowForms) {
             GlobalForms(title: "Guild") {
