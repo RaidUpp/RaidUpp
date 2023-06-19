@@ -10,7 +10,6 @@ import SwiftUI
 struct MissionSection: View {
     let missionType: MissionTypeImage
     let missionCount: Int
-    let horizontalPadding: CGFloat = 80
     
     var body: some View {
         VStack {
@@ -24,9 +23,9 @@ struct MissionSection: View {
                             .buttonStyle(.card)
                     }
                 }
-                .padding(horizontalPadding)
+                .padding(80)
             }
-            .padding(-horizontalPadding)
+            .padding(-80)
         }
     }
 }
