@@ -26,11 +26,29 @@ struct MissionDetailsView: View {
     
     var body: some View {
         VStack {
-            ZStack{
-                HStack {
-                    MissionDetails(missionTitle: self.missionTitle, startDate: self.startDate, endDate: self.endDate, missionDescription: self.missionDescription, missionLeaders: nil, rating: self.rating)
-                }
-            }
+            MissionDetails(
+                missionTitle: self.missionTitle,
+                startDate: self.startDate,
+                endDate: self.endDate,
+                missionDescription: self.missionDescription,
+                missionLeaders: nil,
+                rating: self.rating
+            )
+            Spacer()
+            BadgesList(imagesNames: [
+                "bronze",
+                "gold",
+                "silver",
+                "silver",
+                "gold",
+                "bronze",
+                "bronze",
+                "gold",
+                "silver",
+                "silver",
+                "gold",
+                "bronze"
+            ])
         }
         .background {
             Image("background")

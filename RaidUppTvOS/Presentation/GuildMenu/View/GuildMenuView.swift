@@ -43,8 +43,26 @@ struct GuildMenuView: View {
                     }
                     .buttonStyle(.plain)
                     .foregroundColor(Color("gray"))
-                    
-                    Button(action: {}) {
+
+                    NavigationLink {
+                        BadgesView(
+                            guild: self.guildType,
+                            imagesNames: [
+                                "bronze",
+                                "gold",
+                                "silver",
+                                "silver",
+                                "gold",
+                                "bronze",
+                                "bronze",
+                                "gold",
+                                "silver",
+                                "silver",
+                                "gold",
+                                "bronze"
+                            ]
+                        )
+                    } label: {
                         Text("Badges")
                             .frame(width: 430, alignment: .leading)
                     }

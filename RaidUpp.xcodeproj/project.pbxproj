@@ -33,6 +33,8 @@
 		D62388C02A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62388BF2A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift */; };
 		D62388CF2A2F5DBD00A20667 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D62388CE2A2F5DBD00A20667 /* .gitignore */; };
 		D62388D12A2F5DCA00A20667 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D62388D02A2F5DCA00A20667 /* readme.md */; };
+		FE8A923A2A40892F00EB8A6C /* BadgesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92392A40892F00EB8A6C /* BadgesList.swift */; };
+		FE8A923E2A40936F00EB8A6C /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A923D2A40936F00EB8A6C /* BadgesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		D62388BF2A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D62388CE2A2F5DBD00A20667 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D62388D02A2F5DCA00A20667 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		FE8A92392A40892F00EB8A6C /* BadgesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesList.swift; sourceTree = "<group>"; };
+		FE8A923D2A40936F00EB8A6C /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				350388C22A3C700A00FC3E3C /* MissionDetails.swift */,
+				FE8A92392A40892F00EB8A6C /* BadgesList.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -237,9 +242,9 @@
 				D62388D02A2F5DCA00A20667 /* readme.md */,
 				D62388CE2A2F5DBD00A20667 /* .gitignore */,
 				D623889B2A2F5C7600A20667 /* RaidUpp */,
+				35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */,
 				D62388B22A2F5C7700A20667 /* RaidUppTests */,
 				D62388BC2A2F5C7700A20667 /* RaidUppUITests */,
-				35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */,
 				D623889A2A2F5C7600A20667 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -315,10 +320,27 @@
 			children = (
 				350388CC2A4074D800FC3E3C /* Content */,
 				350388D72A4076D600FC3E3C /* GuildMenu */,
+				FE8A923B2A40933D00EB8A6C /* Badges */,
 				350388D82A4076E300FC3E3C /* MissionBoard */,
 				350388D12A40757F00FC3E3C /* MissionDetails */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FE8A923B2A40933D00EB8A6C /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A923C2A40935D00EB8A6C /* View */,
+			);
+			path = Badges;
+			sourceTree = "<group>";
+		};
+		FE8A923C2A40935D00EB8A6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A923D2A40936F00EB8A6C /* BadgesView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,6 +529,7 @@
 			files = (
 				35F5CA732A3BF00B00621119 /* MissionSection.swift in Sources */,
 				350388C72A3C88A400FC3E3C /* GuildMenuView.swift in Sources */,
+				FE8A923A2A40892F00EB8A6C /* BadgesList.swift in Sources */,
 				350388C12A3C6EB200FC3E3C /* MissionRating.swift in Sources */,
 				35B1A1562A3B34CE00FAF555 /* BoardHeader.swift in Sources */,
 				35B1A1542A3A058E00FAF555 /* MissionTypeImage.swift in Sources */,
@@ -514,6 +537,7 @@
 				35B1A1512A39EDAB00FAF555 /* MissionCard.swift in Sources */,
 				35ED6C312A38B385005E5BDE /* ContentView.swift in Sources */,
 				35ED6C2F2A38B385005E5BDE /* RaidUppTvOSApp.swift in Sources */,
+				FE8A923E2A40936F00EB8A6C /* BadgesView.swift in Sources */,
 				350388C92A3C88B400FC3E3C /* GuildDetails.swift in Sources */,
 				350388CB2A40620200FC3E3C /* MissionBoardView.swift in Sources */,
 				350388C32A3C700A00FC3E3C /* MissionDetails.swift in Sources */,
