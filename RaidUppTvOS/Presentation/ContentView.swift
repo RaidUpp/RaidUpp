@@ -12,37 +12,47 @@ struct ContentView: View {
     let missionCount = 4
     
     var body: some View {
-        VStack {
-            BoardHeader(title: "Design", firstSubheadline: "Lorem ipsum dorem", secondSubheadline: "13 missões concluídas")
-                .focusSection()
-                .padding(.bottom, 20)
-            VStack(spacing: 50) {
-                ForEach(missionTypes, id: \.title) { missionType in
-                    VStack {
-                        Text("Missões \(missionType.title)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(.gray)
-                        ScrollView(.horizontal) {
-                            HStack {
-                                ForEach(0..<missionCount) { _ in
-                                    Button {
-                                        
-                                    } label: {
-                                        MissionCard(image: missionType.image, title: "Mission title", description: "Mission description")
-                                            .buttonStyle(.card)
-                                    }
-                                    .buttonStyle(.card)
-                                }
-                            }
-                            .padding(80)
-                        }
-                        .padding(-80)
-                    }
-                }
-            }
-        }
-        .background {
+        ZStack {
             Image("background")
+            VStack {
+                Rectangle()
+                    .foregroundColor(Color("gray-header"))
+                    .frame(width: 1920, height: 380)
+                    .ignoresSafeArea()
+                Spacer()
+            }
+            
+            HStack {
+                GuildDetails(guild: "guilds", guildName: "", mentor: "Related Subtitle1", guildDescription: "Location ipsum dolor sit amet, consectetur adipiscing elit. Sed magna quam, volutpat porttitor quam non, condimentum varius lectus. Ut mattis convallis odio...")
+                VStack(alignment: .leading, spacing: 36) {
+                    Text("Guildas")
+                        .font(.title2)
+                        .padding(.bottom, 100)
+                    NavigationLink {
+                        GuildMenuView(guildType: "code")
+                    } label: {
+                        Text("Programação")
+                            .frame(width: 430, alignment: .leading)
+                    }
+                    .buttonStyle(.plain)
+                    NavigationLink {
+                        GuildMenuView(guildType: "design")
+                    } label: {
+                        Text("Design")
+                            .frame(width: 430, alignment: .leading)
+                    }
+                    .buttonStyle(.plain)
+                    NavigationLink {
+                        GuildMenuView(guildType: "management")
+                    } label: {
+                        Text("Gestão")
+                            .frame(width: 430, alignment: .leading)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.leading, 80)
+                .padding(.bottom, 150)
+            }
         }
     }
 }

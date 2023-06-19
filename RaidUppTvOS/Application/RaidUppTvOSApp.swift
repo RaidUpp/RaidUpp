@@ -11,7 +11,9 @@ import SwiftUI
 struct RaidUppTvOSApp: App {
     var body: some Scene {
         WindowGroup {
-            GuildMenuView()
+            NavigationView {
+                ContentView()
+            }
         }
     }
 }

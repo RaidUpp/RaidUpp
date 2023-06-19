@@ -12,6 +12,7 @@
 		350388C52A3C7E2D00FC3E3C /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388C42A3C7E2D00FC3E3C /* MissionDetailsView.swift */; };
 		350388C72A3C88A400FC3E3C /* GuildMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388C62A3C88A400FC3E3C /* GuildMenuView.swift */; };
 		350388C92A3C88B400FC3E3C /* GuildDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388C82A3C88B400FC3E3C /* GuildDetails.swift */; };
+		350388CB2A40620200FC3E3C /* MissionBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388CA2A40620200FC3E3C /* MissionBoardView.swift */; };
 		35B1A1512A39EDAB00FAF555 /* MissionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1A1502A39EDAB00FAF555 /* MissionCard.swift */; };
 		35B1A1542A3A058E00FAF555 /* MissionTypeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1A1532A3A058E00FAF555 /* MissionTypeImage.swift */; };
 		35B1A1562A3B34CE00FAF555 /* BoardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1A1552A3B34CE00FAF555 /* BoardHeader.swift */; };
@@ -56,6 +57,7 @@
 		350388C42A3C7E2D00FC3E3C /* MissionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
 		350388C62A3C88A400FC3E3C /* GuildMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildMenuView.swift; sourceTree = "<group>"; };
 		350388C82A3C88B400FC3E3C /* GuildDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetails.swift; sourceTree = "<group>"; };
+		350388CA2A40620200FC3E3C /* MissionBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionBoardView.swift; sourceTree = "<group>"; };
 		35B1A1502A39EDAB00FAF555 /* MissionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MissionCard.swift; path = RaidUppTvOS/Utils/MissionCard.swift; sourceTree = SOURCE_ROOT; };
 		35B1A1532A3A058E00FAF555 /* MissionTypeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTypeImage.swift; sourceTree = "<group>"; };
 		35B1A1552A3B34CE00FAF555 /* BoardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoardHeader.swift; path = RaidUppTvOS/Utils/BoardHeader.swift; sourceTree = SOURCE_ROOT; };
@@ -241,6 +243,7 @@
 				35ED6C302A38B385005E5BDE /* ContentView.swift */,
 				350388C42A3C7E2D00FC3E3C /* MissionDetailsView.swift */,
 				350388C62A3C88A400FC3E3C /* GuildMenuView.swift */,
+				350388CA2A40620200FC3E3C /* MissionBoardView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				35ED6C312A38B385005E5BDE /* ContentView.swift in Sources */,
 				35ED6C2F2A38B385005E5BDE /* RaidUppTvOSApp.swift in Sources */,
 				350388C92A3C88B400FC3E3C /* GuildDetails.swift in Sources */,
+				350388CB2A40620200FC3E3C /* MissionBoardView.swift in Sources */,
 				350388C32A3C700A00FC3E3C /* MissionDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
