@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		350388C12A3C6EB200FC3E3C /* MissionRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388C02A3C6EB200FC3E3C /* MissionRating.swift */; };
-		350388C32A3C700A00FC3E3C /* MissionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388C22A3C700A00FC3E3C /* MissionDetails.swift */; };
-		350388C52A3C7E2D00FC3E3C /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388C42A3C7E2D00FC3E3C /* MissionDetailsView.swift */; };
-		350388C72A3C88A400FC3E3C /* GuildMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388C62A3C88A400FC3E3C /* GuildMenuView.swift */; };
-		350388C92A3C88B400FC3E3C /* GuildDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388C82A3C88B400FC3E3C /* GuildDetails.swift */; };
-		350388CB2A40620200FC3E3C /* MissionBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350388CA2A40620200FC3E3C /* MissionBoardView.swift */; };
 		350388D62A4075DE00FC3E3C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D62388CE2A2F5DBD00A20667 /* .gitignore */; };
-		35B1A1512A39EDAB00FAF555 /* MissionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1A1502A39EDAB00FAF555 /* MissionCard.swift */; };
-		35B1A1542A3A058E00FAF555 /* MissionTypeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1A1532A3A058E00FAF555 /* MissionTypeImage.swift */; };
+		351D80502A41CB6F00D3CC53 /* BadgesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80442A41CB6F00D3CC53 /* BadgesList.swift */; };
+		351D80512A41CB6F00D3CC53 /* MissionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80452A41CB6F00D3CC53 /* MissionDetails.swift */; };
+		351D80522A41CB6F00D3CC53 /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80462A41CB6F00D3CC53 /* MissionDetailsView.swift */; };
+		351D80532A41CB6F00D3CC53 /* MissionBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80492A41CB6F00D3CC53 /* MissionBoardView.swift */; };
+		351D80542A41CB6F00D3CC53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D804C2A41CB6F00D3CC53 /* ContentView.swift */; };
+		351D80552A41CB6F00D3CC53 /* GuildMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */; };
+		351D805B2A41CB9500D3CC53 /* MissionRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80562A41CB9500D3CC53 /* MissionRating.swift */; };
+		351D805C2A41CB9500D3CC53 /* MissionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80572A41CB9500D3CC53 /* MissionCard.swift */; };
+		351D805D2A41CB9500D3CC53 /* GuildDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80582A41CB9500D3CC53 /* GuildDetails.swift */; };
+		351D805F2A41CB9500D3CC53 /* MissionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D805A2A41CB9500D3CC53 /* MissionSection.swift */; };
+		351D80622A41CC1E00D3CC53 /* MissionTypeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80612A41CC1E00D3CC53 /* MissionTypeImage.swift */; };
+		351D80632A41CC7100D3CC53 /* RaidUppTvOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C2E2A38B385005E5BDE /* RaidUppTvOSApp.swift */; };
 		35B1A1562A3B34CE00FAF555 /* BoardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1A1552A3B34CE00FAF555 /* BoardHeader.swift */; };
-		35ED6C2F2A38B385005E5BDE /* RaidUppTvOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C2E2A38B385005E5BDE /* RaidUppTvOSApp.swift */; };
-		35ED6C312A38B385005E5BDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C302A38B385005E5BDE /* ContentView.swift */; };
 		35ED6C332A38B386005E5BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35ED6C322A38B386005E5BDE /* Assets.xcassets */; };
 		35ED6C362A38B386005E5BDE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35ED6C352A38B386005E5BDE /* Preview Assets.xcassets */; };
-		35F5CA732A3BF00B00621119 /* MissionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F5CA722A3BF00B00621119 /* MissionSection.swift */; };
+		9543E4262A3B3FBF005D2345 /* GlobalForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543E4252A3B3FBF005D2345 /* GlobalForms.swift */; };
+		9543E4282A3B43ED005D2345 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543E4272A3B43ED005D2345 /* ListView.swift */; };
+		954F26CC2A39DBE6009FAD10 /* FontSizeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */; };
+		954F26CE2A39E0E0009FAD10 /* ClassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26CD2A39E0E0009FAD10 /* ClassesView.swift */; };
+		954F26D62A39F2C3009FAD10 /* FormClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26D52A39F2C3009FAD10 /* FormClass.swift */; };
+		95B49B062A3C6A8A0028D940 /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B052A3C6A8A0028D940 /* ClassView.swift */; };
+		95B49B082A3C6BB20028D940 /* GuildsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B072A3C6BB20028D940 /* GuildsView.swift */; };
+		95B49B0A2A3C6BBC0028D940 /* StudentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B092A3C6BBC0028D940 /* StudentsView.swift */; };
 		D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889C2A2F5C7600A20667 /* RaidUppApp.swift */; };
 		D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889E2A2F5C7600A20667 /* ContentView.swift */; };
 		D62388A12A2F5C7700A20667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62388A02A2F5C7700A20667 /* Assets.xcassets */; };
@@ -33,7 +42,20 @@
 		D62388C02A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62388BF2A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift */; };
 		D62388CF2A2F5DBD00A20667 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D62388CE2A2F5DBD00A20667 /* .gitignore */; };
 		D62388D12A2F5DCA00A20667 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D62388D02A2F5DCA00A20667 /* readme.md */; };
-		FE8A923A2A40892F00EB8A6C /* BadgesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92392A40892F00EB8A6C /* BadgesList.swift */; };
+		D6924B232A39F910007CB0B0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62388A52A2F5C7700A20667 /* Persistence.swift */; };
+		D6924B242A39F910007CB0B0 /* DatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */; };
+		D6924B252A39F913007CB0B0 /* RaidUpp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D62388A72A2F5C7700A20667 /* RaidUpp.xcdatamodeld */; };
+		D6924B302A39FC63007CB0B0 /* Badge+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B262A39FC63007CB0B0 /* Badge+CoreDataClass.swift */; };
+		D6924B312A39FC63007CB0B0 /* Badge+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B272A39FC63007CB0B0 /* Badge+CoreDataProperties.swift */; };
+		D6924B322A39FC63007CB0B0 /* Guild+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B282A39FC63007CB0B0 /* Guild+CoreDataClass.swift */; };
+		D6924B332A39FC63007CB0B0 /* Guild+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B292A39FC63007CB0B0 /* Guild+CoreDataProperties.swift */; };
+		D6924B342A39FC63007CB0B0 /* Mission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B2A2A39FC63007CB0B0 /* Mission+CoreDataClass.swift */; };
+		D6924B352A39FC63007CB0B0 /* Mission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B2B2A39FC63007CB0B0 /* Mission+CoreDataProperties.swift */; };
+		D6924B362A39FC63007CB0B0 /* Academy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B2C2A39FC63007CB0B0 /* Academy+CoreDataClass.swift */; };
+		D6924B372A39FC63007CB0B0 /* Academy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B2D2A39FC63007CB0B0 /* Academy+CoreDataProperties.swift */; };
+		D6924B382A39FC63007CB0B0 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B2E2A39FC63007CB0B0 /* Student+CoreDataClass.swift */; };
+		D6924B392A39FC63007CB0B0 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B2F2A39FC63007CB0B0 /* Student+CoreDataProperties.swift */; };
+		D6B47AC92A37927400F80F95 /* DatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */; };
 		FE8A923E2A40936F00EB8A6C /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A923D2A40936F00EB8A6C /* BadgesView.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,15 +83,34 @@
 		350388C62A3C88A400FC3E3C /* GuildMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildMenuView.swift; sourceTree = "<group>"; };
 		350388C82A3C88B400FC3E3C /* GuildDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetails.swift; sourceTree = "<group>"; };
 		350388CA2A40620200FC3E3C /* MissionBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionBoardView.swift; sourceTree = "<group>"; };
+		351D80442A41CB6F00D3CC53 /* BadgesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesList.swift; sourceTree = "<group>"; };
+		351D80452A41CB6F00D3CC53 /* MissionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetails.swift; sourceTree = "<group>"; };
+		351D80462A41CB6F00D3CC53 /* MissionDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
+		351D80492A41CB6F00D3CC53 /* MissionBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionBoardView.swift; sourceTree = "<group>"; };
+		351D804C2A41CB6F00D3CC53 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildMenuView.swift; sourceTree = "<group>"; };
+		351D80562A41CB9500D3CC53 /* MissionRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionRating.swift; sourceTree = "<group>"; };
+		351D80572A41CB9500D3CC53 /* MissionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionCard.swift; sourceTree = "<group>"; };
+		351D80582A41CB9500D3CC53 /* GuildDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildDetails.swift; sourceTree = "<group>"; };
+		351D80592A41CB9500D3CC53 /* BoardHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardHeader.swift; sourceTree = "<group>"; };
+		351D805A2A41CB9500D3CC53 /* MissionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionSection.swift; sourceTree = "<group>"; };
+		351D80612A41CC1E00D3CC53 /* MissionTypeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionTypeImage.swift; sourceTree = "<group>"; };
 		35B1A1502A39EDAB00FAF555 /* MissionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MissionCard.swift; path = RaidUppTvOS/Utils/MissionCard.swift; sourceTree = SOURCE_ROOT; };
 		35B1A1532A3A058E00FAF555 /* MissionTypeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTypeImage.swift; sourceTree = "<group>"; };
 		35B1A1552A3B34CE00FAF555 /* BoardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoardHeader.swift; path = RaidUppTvOS/Utils/BoardHeader.swift; sourceTree = SOURCE_ROOT; };
 		35ED6C2C2A38B385005E5BDE /* RaidUppTvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaidUppTvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35ED6C2E2A38B385005E5BDE /* RaidUppTvOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppTvOSApp.swift; sourceTree = "<group>"; };
-		35ED6C302A38B385005E5BDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		35ED6C322A38B386005E5BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35ED6C352A38B386005E5BDE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35F5CA722A3BF00B00621119 /* MissionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionSection.swift; sourceTree = "<group>"; };
+		9543E4252A3B3FBF005D2345 /* GlobalForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalForms.swift; sourceTree = "<group>"; };
+		9543E4272A3B43ED005D2345 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeEnum.swift; sourceTree = "<group>"; };
+		954F26CD2A39E0E0009FAD10 /* ClassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesView.swift; sourceTree = "<group>"; };
+		954F26D52A39F2C3009FAD10 /* FormClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormClass.swift; sourceTree = "<group>"; };
+		95B49B052A3C6A8A0028D940 /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
+		95B49B072A3C6BB20028D940 /* GuildsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildsView.swift; sourceTree = "<group>"; };
+		95B49B092A3C6BBC0028D940 /* StudentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsView.swift; sourceTree = "<group>"; };
 		D62388992A2F5C7600A20667 /* RaidUpp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaidUpp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D623889C2A2F5C7600A20667 /* RaidUppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppApp.swift; sourceTree = "<group>"; };
 		D623889E2A2F5C7600A20667 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +126,17 @@
 		D62388BF2A2F5C7700A20667 /* RaidUppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D62388CE2A2F5DBD00A20667 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D62388D02A2F5DCA00A20667 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		D6924B262A39FC63007CB0B0 /* Badge+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Badge+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D6924B272A39FC63007CB0B0 /* Badge+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Badge+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D6924B282A39FC63007CB0B0 /* Guild+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Guild+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D6924B292A39FC63007CB0B0 /* Guild+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Guild+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D6924B2A2A39FC63007CB0B0 /* Mission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D6924B2B2A39FC63007CB0B0 /* Mission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D6924B2C2A39FC63007CB0B0 /* Academy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Academy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D6924B2D2A39FC63007CB0B0 /* Academy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Academy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D6924B2E2A39FC63007CB0B0 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D6924B2F2A39FC63007CB0B0 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseInteractor.swift; sourceTree = "<group>"; };
 		FE8A92392A40892F00EB8A6C /* BadgesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesList.swift; sourceTree = "<group>"; };
 		FE8A923D2A40936F00EB8A6C /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,108 +173,114 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		350388CC2A4074D800FC3E3C /* Content */ = {
+		351D80402A41CACB00D3CC53 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				350388CF2A40750F00FC3E3C /* View */,
+				35F5CA722A3BF00B00621119 /* MissionSection.swift */,
+				350388C62A3C88A400FC3E3C /* GuildMenuView.swift */,
+				FE8A92392A40892F00EB8A6C /* BadgesList.swift */,
+				350388C02A3C6EB200FC3E3C /* MissionRating.swift */,
+				35B1A1552A3B34CE00FAF555 /* BoardHeader.swift */,
+				35B1A1532A3A058E00FAF555 /* MissionTypeImage.swift */,
+				350388C42A3C7E2D00FC3E3C /* MissionDetailsView.swift */,
+				35B1A1502A39EDAB00FAF555 /* MissionCard.swift */,
+				350388C82A3C88B400FC3E3C /* GuildDetails.swift */,
+				350388CA2A40620200FC3E3C /* MissionBoardView.swift */,
+				350388C22A3C700A00FC3E3C /* MissionDetails.swift */,
 			);
-			path = Content;
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		350388CF2A40750F00FC3E3C /* View */ = {
+		351D80412A41CB6F00D3CC53 /* MissionDetails */ = {
 			isa = PBXGroup;
 			children = (
-				35ED6C302A38B385005E5BDE /* ContentView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		350388D12A40757F00FC3E3C /* MissionDetails */ = {
-			isa = PBXGroup;
-			children = (
-				350388D32A40759200FC3E3C /* View */,
+				351D80422A41CB6F00D3CC53 /* View */,
 			);
 			path = MissionDetails;
 			sourceTree = "<group>";
 		};
-		350388D32A40759200FC3E3C /* View */ = {
+		351D80422A41CB6F00D3CC53 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				350388D52A4075AE00FC3E3C /* Component */,
-				350388C42A3C7E2D00FC3E3C /* MissionDetailsView.swift */,
+				351D80432A41CB6F00D3CC53 /* Component */,
+				351D80462A41CB6F00D3CC53 /* MissionDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		350388D52A4075AE00FC3E3C /* Component */ = {
+		351D80432A41CB6F00D3CC53 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				350388C22A3C700A00FC3E3C /* MissionDetails.swift */,
-				FE8A92392A40892F00EB8A6C /* BadgesList.swift */,
+				351D80442A41CB6F00D3CC53 /* BadgesList.swift */,
+				351D80452A41CB6F00D3CC53 /* MissionDetails.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
 		};
-		350388D72A4076D600FC3E3C /* GuildMenu */ = {
+		351D80472A41CB6F00D3CC53 /* MissionBoard */ = {
 			isa = PBXGroup;
 			children = (
-				350388DD2A40770300FC3E3C /* View */,
-			);
-			path = GuildMenu;
-			sourceTree = "<group>";
-		};
-		350388D82A4076E300FC3E3C /* MissionBoard */ = {
-			isa = PBXGroup;
-			children = (
-				350388DA2A4076F400FC3E3C /* View */,
+				351D80482A41CB6F00D3CC53 /* View */,
 			);
 			path = MissionBoard;
 			sourceTree = "<group>";
 		};
-		350388DA2A4076F400FC3E3C /* View */ = {
+		351D80482A41CB6F00D3CC53 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				350388CA2A40620200FC3E3C /* MissionBoardView.swift */,
+				351D80492A41CB6F00D3CC53 /* MissionBoardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		350388DD2A40770300FC3E3C /* View */ = {
+		351D804A2A41CB6F00D3CC53 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				350388C62A3C88A400FC3E3C /* GuildMenuView.swift */,
+				351D804B2A41CB6F00D3CC53 /* View */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		351D804B2A41CB6F00D3CC53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				351D804C2A41CB6F00D3CC53 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		35B1A1522A3A057000FAF555 /* Domain */ = {
+		351D804D2A41CB6F00D3CC53 /* GuildMenu */ = {
 			isa = PBXGroup;
 			children = (
-				35B1A1532A3A058E00FAF555 /* MissionTypeImage.swift */,
+				351D804E2A41CB6F00D3CC53 /* View */,
+			);
+			path = GuildMenu;
+			sourceTree = "<group>";
+		};
+		351D804E2A41CB6F00D3CC53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		351D80602A41CC1E00D3CC53 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				351D80612A41CC1E00D3CC53 /* MissionTypeImage.swift */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		35B1A1592A3B519800FAF555 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				35B1A1502A39EDAB00FAF555 /* MissionCard.swift */,
-				35B1A1552A3B34CE00FAF555 /* BoardHeader.swift */,
-				35F5CA722A3BF00B00621119 /* MissionSection.swift */,
-				350388C02A3C6EB200FC3E3C /* MissionRating.swift */,
-				350388C82A3C88B400FC3E3C /* GuildDetails.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */ = {
 			isa = PBXGroup;
 			children = (
-				35B1A1592A3B519800FAF555 /* Utils */,
 				FE8A92342A39E38B00EB8A6C /* Application */,
+				351D80602A41CC1E00D3CC53 /* Domain */,
 				FE8A92352A39E3B200EB8A6C /* Resources */,
 				FE8A92362A39E3C400EB8A6C /* Presentation */,
-				35B1A1522A3A057000FAF555 /* Domain */,
+				FE8A92372A39E3DF00EB8A6C /* Utils */,
 				35ED6C342A38B386005E5BDE /* Preview Content */,
 			);
 			path = RaidUppTvOS;
@@ -236,16 +294,81 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		954F26C42A39DA53009FAD10 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				954F26CA2A39DBBB009FAD10 /* Enums */,
+				954F26C92A39DBAF009FAD10 /* Components */,
+				954F26C82A39DB25009FAD10 /* Guilds */,
+				954F26C72A39DB0F009FAD10 /* Students */,
+				954F26C62A39DA70009FAD10 /* Class */,
+				954F26C52A39DA6A009FAD10 /* Classes */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		954F26C52A39DA6A009FAD10 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				954F26CD2A39E0E0009FAD10 /* ClassesView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		954F26C62A39DA70009FAD10 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				95B49B052A3C6A8A0028D940 /* ClassView.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		954F26C72A39DB0F009FAD10 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				95B49B092A3C6BBC0028D940 /* StudentsView.swift */,
+			);
+			path = Students;
+			sourceTree = "<group>";
+		};
+		954F26C82A39DB25009FAD10 /* Guilds */ = {
+			isa = PBXGroup;
+			children = (
+				95B49B072A3C6BB20028D940 /* GuildsView.swift */,
+			);
+			path = Guilds;
+			sourceTree = "<group>";
+		};
+		954F26C92A39DBAF009FAD10 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				954F26D52A39F2C3009FAD10 /* FormClass.swift */,
+				9543E4252A3B3FBF005D2345 /* GlobalForms.swift */,
+				9543E4272A3B43ED005D2345 /* ListView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		954F26CA2A39DBBB009FAD10 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				954F26CB2A39DBE6009FAD10 /* FontSizeEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		D62388902A2F5C7600A20667 = {
 			isa = PBXGroup;
 			children = (
 				D62388D02A2F5DCA00A20667 /* readme.md */,
 				D62388CE2A2F5DBD00A20667 /* .gitignore */,
+				D6924B182A39EAE5007CB0B0 /* Persistance */,
 				D623889B2A2F5C7600A20667 /* RaidUpp */,
-				35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */,
 				D62388B22A2F5C7700A20667 /* RaidUppTests */,
 				D62388BC2A2F5C7700A20667 /* RaidUppUITests */,
+				35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */,
 				D623889A2A2F5C7600A20667 /* Products */,
+				351D80402A41CACB00D3CC53 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,12 +386,11 @@
 		D623889B2A2F5C7600A20667 /* RaidUpp */ = {
 			isa = PBXGroup;
 			children = (
+				954F26C42A39DA53009FAD10 /* Presenter */,
 				D62388AA2A2F5C7700A20667 /* Info.plist */,
 				D62388A02A2F5C7700A20667 /* Assets.xcassets */,
 				D623889C2A2F5C7600A20667 /* RaidUppApp.swift */,
-				D62388A52A2F5C7700A20667 /* Persistence.swift */,
 				D623889E2A2F5C7600A20667 /* ContentView.swift */,
-				D62388A72A2F5C7700A20667 /* RaidUpp.xcdatamodeld */,
 				D62388A22A2F5C7700A20667 /* Preview Content */,
 			);
 			path = RaidUpp;
@@ -299,6 +421,34 @@
 			path = RaidUppUITests;
 			sourceTree = "<group>";
 		};
+		D6924AEF2A39E705007CB0B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6924B262A39FC63007CB0B0 /* Badge+CoreDataClass.swift */,
+				D6924B272A39FC63007CB0B0 /* Badge+CoreDataProperties.swift */,
+				D6924B282A39FC63007CB0B0 /* Guild+CoreDataClass.swift */,
+				D6924B292A39FC63007CB0B0 /* Guild+CoreDataProperties.swift */,
+				D6924B2A2A39FC63007CB0B0 /* Mission+CoreDataClass.swift */,
+				D6924B2B2A39FC63007CB0B0 /* Mission+CoreDataProperties.swift */,
+				D6924B2C2A39FC63007CB0B0 /* Academy+CoreDataClass.swift */,
+				D6924B2D2A39FC63007CB0B0 /* Academy+CoreDataProperties.swift */,
+				D6924B2E2A39FC63007CB0B0 /* Student+CoreDataClass.swift */,
+				D6924B2F2A39FC63007CB0B0 /* Student+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6924B182A39EAE5007CB0B0 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				D6924AEF2A39E705007CB0B0 /* Model */,
+				D62388A72A2F5C7700A20667 /* RaidUpp.xcdatamodeld */,
+				D62388A52A2F5C7700A20667 /* Persistence.swift */,
+				D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
 		FE8A92342A39E38B00EB8A6C /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,13 +468,25 @@
 		FE8A92362A39E3C400EB8A6C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				350388CC2A4074D800FC3E3C /* Content */,
-				350388D72A4076D600FC3E3C /* GuildMenu */,
 				FE8A923B2A40933D00EB8A6C /* Badges */,
-				350388D82A4076E300FC3E3C /* MissionBoard */,
-				350388D12A40757F00FC3E3C /* MissionDetails */,
+				351D804A2A41CB6F00D3CC53 /* Content */,
+				351D804D2A41CB6F00D3CC53 /* GuildMenu */,
+				351D80472A41CB6F00D3CC53 /* MissionBoard */,
+				351D80412A41CB6F00D3CC53 /* MissionDetails */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FE8A92372A39E3DF00EB8A6C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				351D80592A41CB9500D3CC53 /* BoardHeader.swift */,
+				351D80582A41CB9500D3CC53 /* GuildDetails.swift */,
+				351D80572A41CB9500D3CC53 /* MissionCard.swift */,
+				351D80562A41CB9500D3CC53 /* MissionRating.swift */,
+				351D805A2A41CB9500D3CC53 /* MissionSection.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FE8A923B2A40933D00EB8A6C /* Badges */ = {
@@ -527,20 +689,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35F5CA732A3BF00B00621119 /* MissionSection.swift in Sources */,
-				350388C72A3C88A400FC3E3C /* GuildMenuView.swift in Sources */,
-				FE8A923A2A40892F00EB8A6C /* BadgesList.swift in Sources */,
-				350388C12A3C6EB200FC3E3C /* MissionRating.swift in Sources */,
+				351D80632A41CC7100D3CC53 /* RaidUppTvOSApp.swift in Sources */,
+				351D805C2A41CB9500D3CC53 /* MissionCard.swift in Sources */,
 				35B1A1562A3B34CE00FAF555 /* BoardHeader.swift in Sources */,
-				35B1A1542A3A058E00FAF555 /* MissionTypeImage.swift in Sources */,
-				350388C52A3C7E2D00FC3E3C /* MissionDetailsView.swift in Sources */,
-				35B1A1512A39EDAB00FAF555 /* MissionCard.swift in Sources */,
-				35ED6C312A38B385005E5BDE /* ContentView.swift in Sources */,
-				35ED6C2F2A38B385005E5BDE /* RaidUppTvOSApp.swift in Sources */,
+				351D80512A41CB6F00D3CC53 /* MissionDetails.swift in Sources */,
+				351D805B2A41CB9500D3CC53 /* MissionRating.swift in Sources */,
+				351D805F2A41CB9500D3CC53 /* MissionSection.swift in Sources */,
+				351D805D2A41CB9500D3CC53 /* GuildDetails.swift in Sources */,
+				351D80502A41CB6F00D3CC53 /* BadgesList.swift in Sources */,
 				FE8A923E2A40936F00EB8A6C /* BadgesView.swift in Sources */,
-				350388C92A3C88B400FC3E3C /* GuildDetails.swift in Sources */,
-				350388CB2A40620200FC3E3C /* MissionBoardView.swift in Sources */,
-				350388C32A3C700A00FC3E3C /* MissionDetails.swift in Sources */,
+				351D80542A41CB6F00D3CC53 /* ContentView.swift in Sources */,
+				351D80552A41CB6F00D3CC53 /* GuildMenuView.swift in Sources */,
+				D6924B232A39F910007CB0B0 /* Persistence.swift in Sources */,
+				D6924B252A39F913007CB0B0 /* RaidUpp.xcdatamodeld in Sources */,
+				351D80622A41CC1E00D3CC53 /* MissionTypeImage.swift in Sources */,
+				351D80522A41CB6F00D3CC53 /* MissionDetailsView.swift in Sources */,
+				351D80532A41CB6F00D3CC53 /* MissionBoardView.swift in Sources */,
+				D6924B242A39F910007CB0B0 /* DatabaseInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,10 +713,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9543E4262A3B3FBF005D2345 /* GlobalForms.swift in Sources */,
+				954F26CC2A39DBE6009FAD10 /* FontSizeEnum.swift in Sources */,
 				D62388A62A2F5C7700A20667 /* Persistence.swift in Sources */,
+				D6924B372A39FC63007CB0B0 /* Academy+CoreDataProperties.swift in Sources */,
+				954F26D62A39F2C3009FAD10 /* FormClass.swift in Sources */,
+				D6B47AC92A37927400F80F95 /* DatabaseInteractor.swift in Sources */,
+				D6924B382A39FC63007CB0B0 /* Student+CoreDataClass.swift in Sources */,
 				D62388A92A2F5C7700A20667 /* RaidUpp.xcdatamodeld in Sources */,
+				D6924B302A39FC63007CB0B0 /* Badge+CoreDataClass.swift in Sources */,
+				95B49B0A2A3C6BBC0028D940 /* StudentsView.swift in Sources */,
+				D6924B352A39FC63007CB0B0 /* Mission+CoreDataProperties.swift in Sources */,
+				954F26CE2A39E0E0009FAD10 /* ClassesView.swift in Sources */,
 				D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */,
+				9543E4282A3B43ED005D2345 /* ListView.swift in Sources */,
+				D6924B322A39FC63007CB0B0 /* Guild+CoreDataClass.swift in Sources */,
+				D6924B392A39FC63007CB0B0 /* Student+CoreDataProperties.swift in Sources */,
+				D6924B332A39FC63007CB0B0 /* Guild+CoreDataProperties.swift in Sources */,
 				D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */,
+				95B49B062A3C6A8A0028D940 /* ClassView.swift in Sources */,
+				D6924B342A39FC63007CB0B0 /* Mission+CoreDataClass.swift in Sources */,
+				D6924B362A39FC63007CB0B0 /* Academy+CoreDataClass.swift in Sources */,
+				95B49B082A3C6BB20028D940 /* GuildsView.swift in Sources */,
+				D6924B312A39FC63007CB0B0 /* Badge+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,12 +965,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Copland.RaidUpp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "2,3";
 			};
 			name = Debug;
 		};
@@ -813,12 +997,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Copland.RaidUpp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "2,3";
 			};
 			name = Release;
 		};
