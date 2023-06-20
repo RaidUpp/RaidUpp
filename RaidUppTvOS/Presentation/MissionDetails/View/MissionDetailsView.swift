@@ -58,6 +58,11 @@ struct MissionDetailsView: View {
 
 struct MissionDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MissionDetailsView(missionTitle: "Mission title", startDate: "DD/MM/YY", endDate: "DD/MM/YY", missionDescription: "Mission description here. Mission description here. Mission description here.", missionLeaders: ["Teste1", "Teste2"], rating: 4)
+        MissionDetailsView(missionTitle: "Mission title",
+                           startDate: "DD/MM/YY",
+                           endDate: "DD/MM/YY",
+                           missionDescription: "Mission description here. Mission description here. Mission description here.",
+                           missionLeaders: ["Teste1", "Teste2"],
+                           rating: 4)
     }
 }

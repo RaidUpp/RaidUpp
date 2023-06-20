@@ -28,7 +28,7 @@ struct GuildMenuView: View {
                 GuildDetails(guild: self.guildType,
                              guildName: "Nome da guilda",
                              mentor: "Carolina Barbalho",
-                             guildDescription: "A guilda valoriza a experimentação e encoraja seus membros a explorarem novas abordagens, técnicas e soluções inovadoras no campo do design. O objetivo é impulsionar a criatividade e estimular o pensamento fora da caixa, resultando em projetos originais e impactantes.")
+                             guildDescription: "teste")
                 
                 VStack(alignment: .leading, spacing: 36) {
                     Text(self.guildType.capitalized)

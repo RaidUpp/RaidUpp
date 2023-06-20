@@ -43,6 +43,9 @@ struct GuildDetails: View {
 
 struct GuildDetails_Previews: PreviewProvider {
     static var previews: some View {
-        GuildDetails(guild: "design", guildName: "Nome personalizado", mentor: "Carolina Barbalho", guildDescription: "A guilda valoriza a experimentação e encoraja seus membros a explorarem novas abordagens, técnicas e soluções inovadoras no campo do design. O objetivo é impulsionar a criatividade e estimular o pensamento fora da caixa, resultando em projetos originais e impactantes.")
+        GuildDetails(guild: "design",
+                     guildName: "Nome personalizado",
+                     mentor: "Carolina Barbalho",
+                     guildDescription: "teste")
     }
 }

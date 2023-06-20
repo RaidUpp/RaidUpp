@@ -31,7 +31,11 @@ struct MissionBoardView: View {
                             HStack {
                                 ForEach(0..<missionCount) { _ in
                                     NavigationLink {
-                                        MissionDetailsView(missionTitle: "teste", startDate: "dd/mm/yyyy", endDate: "dd/mm/yyyy", missionDescription: "description", missionLeaders: ["alumni", "alumni"], rating: 3)
+                                        MissionDetailsView(missionTitle: "teste",
+                                                           startDate: "dd/mm/yyyy",
+                                                           endDate: "dd/mm/yyyy",
+                                                           missionDescription: "description",
+                                                           missionLeaders: ["alumni", "alumni"], rating: 3)
                                     } label: {
                                         MissionCard(image: missionType.image, title: "Mission title", description: "Mission description")
                                             .buttonStyle(.card)

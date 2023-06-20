@@ -23,7 +23,10 @@ struct ContentView: View {
             }
             
             HStack {
-                GuildDetails(guild: "guilds", guildName: "", mentor: "Related Subtitle1", guildDescription: "Location ipsum dolor sit amet, consectetur adipiscing elit. Sed magna quam, volutpat porttitor quam non, condimentum varius lectus. Ut mattis convallis odio...")
+                GuildDetails(guild: "guilds",
+                             guildName: "",
+                             mentor: "Related Subtitle1",
+                             guildDescription: "teste")
                 VStack(alignment: .leading, spacing: 36) {
                     Text("Guildas")
                         .font(.title2)
