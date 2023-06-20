@@ -15,15 +15,6 @@ struct MissionDetails: View {
     let missionLeaders: [String]?
     var rating: Int = 0
     
-    init(missionTitle: String, startDate: String, endDate: String, missionDescription: String, missionLeaders: [String]?, rating: Int) {
-        self.missionTitle = missionTitle
-        self.startDate = startDate
-        self.endDate = endDate
-        self.missionDescription = missionDescription
-        self.missionLeaders = missionLeaders
-        self.rating = rating
-    }
-    
     var body: some View {
         HStack {
             VStack(alignment: .trailing, spacing: 8) {

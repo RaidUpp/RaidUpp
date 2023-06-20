@@ -26,6 +26,12 @@ struct MissionCard: View {
                     .frame(width: 200)
                     .opacity(0.8)
                 self.image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(
+                        maxWidth: 100,
+                        maxHeight: 140
+                    )
             }
             VStack(alignment: .leading, spacing: 20) {
                 Text(self.title)

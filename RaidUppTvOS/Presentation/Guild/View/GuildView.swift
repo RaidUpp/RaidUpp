@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GuildView: View {
     let missionTypes: [MissionTypeImage] = [.bronze, .silver, .gold]
     let missionCount = 4
     
@@ -30,25 +30,29 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 36) {
                     Text("Guildas")
                         .font(.title2)
+                        .foregroundColor(.black)
                         .padding(.bottom, 100)
                     NavigationLink {
                         GuildMenuView(guildType: "code")
                     } label: {
-                        Text("Programação")
+                        MenuButton(title: "Programação")
+                            .foregroundColor(.black)
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
                     NavigationLink {
                         GuildMenuView(guildType: "design")
                     } label: {
-                        Text("Design")
+                        MenuButton(title: "Design")
+                            .foregroundColor(.black)
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
                     NavigationLink {
                         GuildMenuView(guildType: "management")
                     } label: {
-                        Text("Gestão")
+                        MenuButton(title: "Gestão")
+                            .foregroundColor(.black)
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
@@ -62,6 +66,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GuildView()
     }
 }

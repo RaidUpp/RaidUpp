@@ -12,7 +12,7 @@
 		351D80512A41CB6F00D3CC53 /* MissionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80452A41CB6F00D3CC53 /* MissionDetails.swift */; };
 		351D80522A41CB6F00D3CC53 /* MissionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80462A41CB6F00D3CC53 /* MissionDetailsView.swift */; };
 		351D80532A41CB6F00D3CC53 /* MissionBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80492A41CB6F00D3CC53 /* MissionBoardView.swift */; };
-		351D80542A41CB6F00D3CC53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D804C2A41CB6F00D3CC53 /* ContentView.swift */; };
+		351D80542A41CB6F00D3CC53 /* GuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D804C2A41CB6F00D3CC53 /* GuildView.swift */; };
 		351D80552A41CB6F00D3CC53 /* GuildMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */; };
 		351D805B2A41CB9500D3CC53 /* MissionRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80562A41CB9500D3CC53 /* MissionRating.swift */; };
 		351D805C2A41CB9500D3CC53 /* MissionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80572A41CB9500D3CC53 /* MissionCard.swift */; };
@@ -57,6 +57,8 @@
 		D6924B392A39FC63007CB0B0 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6924B2F2A39FC63007CB0B0 /* Student+CoreDataProperties.swift */; };
 		D6B47AC92A37927400F80F95 /* DatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */; };
 		FE8A923E2A40936F00EB8A6C /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A923D2A40936F00EB8A6C /* BadgesView.swift */; };
+		FE8A92412A41D57700EB8A6C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92402A41D57700EB8A6C /* MenuView.swift */; };
+		FE8A92452A41D5C900EB8A6C /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92442A41D5C900EB8A6C /* MenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +89,7 @@
 		351D80452A41CB6F00D3CC53 /* MissionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetails.swift; sourceTree = "<group>"; };
 		351D80462A41CB6F00D3CC53 /* MissionDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsView.swift; sourceTree = "<group>"; };
 		351D80492A41CB6F00D3CC53 /* MissionBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionBoardView.swift; sourceTree = "<group>"; };
-		351D804C2A41CB6F00D3CC53 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		351D804C2A41CB6F00D3CC53 /* GuildView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildView.swift; sourceTree = "<group>"; };
 		351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildMenuView.swift; sourceTree = "<group>"; };
 		351D80562A41CB9500D3CC53 /* MissionRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionRating.swift; sourceTree = "<group>"; };
 		351D80572A41CB9500D3CC53 /* MissionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionCard.swift; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 		D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseInteractor.swift; sourceTree = "<group>"; };
 		FE8A92392A40892F00EB8A6C /* BadgesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesList.swift; sourceTree = "<group>"; };
 		FE8A923D2A40936F00EB8A6C /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
+		FE8A92402A41D57700EB8A6C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		FE8A92442A41D5C900EB8A6C /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,18 +237,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		351D804A2A41CB6F00D3CC53 /* Content */ = {
+		351D804A2A41CB6F00D3CC53 /* Guild */ = {
 			isa = PBXGroup;
 			children = (
 				351D804B2A41CB6F00D3CC53 /* View */,
 			);
-			path = Content;
+			path = Guild;
 			sourceTree = "<group>";
 		};
 		351D804B2A41CB6F00D3CC53 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				351D804C2A41CB6F00D3CC53 /* ContentView.swift */,
+				351D804C2A41CB6F00D3CC53 /* GuildView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,11 +472,12 @@
 		FE8A92362A39E3C400EB8A6C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FE8A923B2A40933D00EB8A6C /* Badges */,
-				351D804A2A41CB6F00D3CC53 /* Content */,
+				FE8A923F2A41D53E00EB8A6C /* Menu */,
+				351D804A2A41CB6F00D3CC53 /* Guild */,
 				351D804D2A41CB6F00D3CC53 /* GuildMenu */,
 				351D80472A41CB6F00D3CC53 /* MissionBoard */,
 				351D80412A41CB6F00D3CC53 /* MissionDetails */,
+				FE8A923B2A40933D00EB8A6C /* Badges */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 		FE8A92372A39E3DF00EB8A6C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FE8A92442A41D5C900EB8A6C /* MenuButton.swift */,
 				351D80592A41CB9500D3CC53 /* BoardHeader.swift */,
 				351D80582A41CB9500D3CC53 /* GuildDetails.swift */,
 				351D80572A41CB9500D3CC53 /* MissionCard.swift */,
@@ -501,6 +507,22 @@
 			isa = PBXGroup;
 			children = (
 				FE8A923D2A40936F00EB8A6C /* BadgesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE8A923F2A41D53E00EB8A6C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A92422A41D5A600EB8A6C /* View */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		FE8A92422A41D5A600EB8A6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A92402A41D57700EB8A6C /* MenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -698,11 +720,13 @@
 				351D805D2A41CB9500D3CC53 /* GuildDetails.swift in Sources */,
 				351D80502A41CB6F00D3CC53 /* BadgesList.swift in Sources */,
 				FE8A923E2A40936F00EB8A6C /* BadgesView.swift in Sources */,
-				351D80542A41CB6F00D3CC53 /* ContentView.swift in Sources */,
+				351D80542A41CB6F00D3CC53 /* GuildView.swift in Sources */,
 				351D80552A41CB6F00D3CC53 /* GuildMenuView.swift in Sources */,
 				D6924B232A39F910007CB0B0 /* Persistence.swift in Sources */,
 				D6924B252A39F913007CB0B0 /* RaidUpp.xcdatamodeld in Sources */,
+				FE8A92412A41D57700EB8A6C /* MenuView.swift in Sources */,
 				351D80622A41CC1E00D3CC53 /* MissionTypeImage.swift in Sources */,
+				FE8A92452A41D5C900EB8A6C /* MenuButton.swift in Sources */,
 				351D80522A41CB6F00D3CC53 /* MissionDetailsView.swift in Sources */,
 				351D80532A41CB6F00D3CC53 /* MissionBoardView.swift in Sources */,
 				D6924B242A39F910007CB0B0 /* DatabaseInteractor.swift in Sources */,

@@ -41,11 +41,17 @@ struct BadgesView: View {
                 spacing: 16) {
                     ForEach(imagesNames.indices, id: \.self) { index in
                         let imageName = imagesNames[index]
-                        Image(imageName)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 308, height: 308)
-                            .id(index)
+                        Button(action: {}) {
+                            Image(imageName)
+                                .resizable()
+                                .scaledToFit()
+                                .id(index)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(
+                            width: 308,
+                            height: 308
+                        )
                     }
             }
         }

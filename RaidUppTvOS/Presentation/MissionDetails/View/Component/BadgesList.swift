@@ -10,25 +10,22 @@ import SwiftUI
 struct BadgesList: View {
     let imagesNames: [String]
 
-    init(imagesNames: [String]) {
-        self.imagesNames = imagesNames
-    }
-
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
 
             Text("Badges Relacionadas")
-                .font(.caption2)
+                .font(.body)
                 .foregroundColor(.black)
 
             ScrollView(
                 .horizontal,
                 showsIndicators: false
             ) {
-                badges()
-                    .buttonStyle(.card)
+                badges().padding()
             }
-        }.background(
+        }
+        .padding()
+        .background(
             Color(.white).opacity(0.5)
         )
     }
@@ -36,13 +33,16 @@ struct BadgesList: View {
     private func badges() -> some View {
         return HStack(spacing: 50){
             ForEach(imagesNames, id: \.self){ imageName in
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(
-                        width: 204,
-                        height: 204
-                    )
+                Button(action: {}) {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFit()
+                }
+                .buttonStyle(.plain)
+                .frame(
+                    width: 204,
+                    height: 204
+                )
             }
         }
     }

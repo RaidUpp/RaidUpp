@@ -9,9 +9,6 @@ import SwiftUI
 
 struct GuildMenuView: View {
     let guildType: String
-    init(guildType: String) {
-        self.guildType = guildType
-    }
     
     var body: some View {
         ZStack {
@@ -38,7 +35,7 @@ struct GuildMenuView: View {
                     NavigationLink {
                         MissionBoardView(guild: self.guildType)
                     } label: {
-                        Text("Missões")
+                        MenuButton(title: "Missões")
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
@@ -63,21 +60,21 @@ struct GuildMenuView: View {
                             ]
                         )
                     } label: {
-                        Text("Badges")
+                        MenuButton(title: "Badges")
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
                     .foregroundColor(Color("gray"))
                     
                     Button(action: {}) {
-                        Text("Participantes")
+                        MenuButton(title: "Participantes")
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
                     .foregroundColor(Color("gray"))
                     
                     Button(action: {}) {
-                        Text("Calendário/Reuniões")
+                        MenuButton(title: "Calendário/Reuniões")
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)

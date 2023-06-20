@@ -12,10 +12,6 @@ struct MissionBoardView: View {
     let missionTypes: [MissionTypeImage] = [.bronze, .silver, .gold]
     let missionCount = 4
     
-    init(guild: String) {
-        self.guild = guild
-    }
-    
     var body: some View {
         VStack {
             BoardHeader(title: self.guild.capitalized, firstSubheadline: "Lorem ipsum dorem", secondSubheadline: "13 missões concluídas")
