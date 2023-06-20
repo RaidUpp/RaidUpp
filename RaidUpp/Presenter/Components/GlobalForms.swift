@@ -10,12 +10,17 @@ import PhotosUI
 
 struct GlobalForms: View {
     var title: String
+    var subtitle: String
 
     @State var nameTitle: String = ""
+    @State var nameSubtitle: String = ""
     @State var selectedItems: [PhotosPickerItem] = []
     @State var data: Data?
 
-    var doneAction: () -> Void
+    @Binding var showingSheet: Bool
+//    @Binding var viewModel: ListViewModel
+
+    var doneAction: (_ title: String, _ subtitle: String) -> Void
 
     var body: some View {
         NavigationStack {
@@ -23,10 +28,13 @@ struct GlobalForms: View {
                 Section("Name \(title)") {
                     TextField("Name \(title)", text: $nameTitle)
                 }
+                Section("Subtitle \(subtitle)") {
+                    TextField("Name \(subtitle)", text: $nameSubtitle)
+                }
                 Section("Imagem") {
                     Button {
 
-                    }label: {
+                    } label: {
                         Button {
                             capturePicture()
                         } label: {
@@ -91,7 +99,9 @@ struct GlobalForms: View {
 
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
-                        doneAction()
+                        doneAction(nameTitle, nameSubtitle)
+//                        viewModel.createEntity(guest: 0, title: title /*, image: data!*/)
+                        showingSheet.toggle()
                     } label: {
                         Text("Done")
                     }
@@ -111,10 +121,10 @@ extension GlobalForms {
     }
 }
 
-struct GlobalForms_Previews: PreviewProvider {
-    static var previews: some View {
-        GlobalForms(title: "Global", doneAction: {
-
-        })
-    }
-}
+//struct GlobalForms_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GlobalForms(title: "Global", doneAction: {
+//
+//        })
+//    }
+//}
