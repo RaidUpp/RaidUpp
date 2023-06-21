@@ -37,12 +37,7 @@ struct BoardHeader: View {
             } label: {
                 Text("Calendar")
                     .font(.body)
-            }
-            Button {
-                print("calendario")
-            } label: {
-                Text("Calendar")
-                    .font(.body)
+                    .foregroundColor(.black)
             }
         }
         .frame(width: 1739, height: 111)

@@ -30,6 +30,7 @@ struct GuildMenuView: View {
                 VStack(alignment: .leading, spacing: 36) {
                     Text(self.guildType.capitalized)
                         .font(.title2)
+                        .foregroundColor(.black)
                         .padding(.bottom, 100)
                     
                     NavigationLink {
