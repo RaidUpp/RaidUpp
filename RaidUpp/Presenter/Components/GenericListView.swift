@@ -7,7 +7,7 @@ struct GenericListView: View {
         if entryPoint != nil {
             self.viewModel = GenericListViewModel(entryPoint)
         } else {
-            self.viewModel = HomeViewModel(nil)
+            self.viewModel = GenericListViewModel(nil)
         }
     }
 
@@ -18,19 +18,18 @@ struct GenericListView: View {
 
     var body: some View {
         NavigationStack {
+            // TODO: - Construir a quantidade de listas específicas para as entidades convidadas
             List {
-                if viewModel.listTitle != "Test" {
-                    ForEach(Array(viewModel.mainGuestEntities as Set), id: \.self) { obj in
-                        NavigationLink (
-                            // swiftlint:disable force_cast
-                            "\(obj)", destination: GenericListView(obj as! NSManagedObject)
-                            // swiftlint:enable force_cast
-                        )
-                    }
+                ForEach(Array(viewModel.mainGuestEntities as Set), id: \.self) { obj in
+                    NavigationLink (
+                        // swiftlint:disable force_cast
+                        "\(obj)", destination: GenericListView(obj as! NSManagedObject)
+                        // swiftlint:enable force_cast
+                    )
                 }
             }
             .onChange(of: showingForm, perform: { _ in
-                self.refreshable { }
+                _ = refreshable {}
             })
             .navigationTitle(viewModel.listTitle)
             .searchable(text: $searchText,
@@ -45,7 +44,7 @@ struct GenericListView: View {
                 }
             }
             .sheet(isPresented: $showingForm) {
-                GlobalForms(title: "Class", subtitle: "Year...", showingSheet: $showingForm) {title , subtitle in
+                GlobalForms(title: "Class", subtitle: "Year...", showingSheet: $showingForm) {title, subtitle in
                     viewModel.createEntity(guest: 0, title: title, subtitle: subtitle)
                 }
 //                GlobalForms(title: "Class", showingSheet: $showingForm, viewModel: $viewModel)

@@ -23,6 +23,8 @@ class GenericListViewModel: ObservableObject {
             return
         }
 
+        // TODO: - Mentor -> Academy, Academy -> Guilda, Academy -> Students
+
         switch type(of: entryPoint!) {
         case is Academy.Type:
             guard let entity = entryPoint as? Academy else { fatalError() }
@@ -64,6 +66,8 @@ class GenericListViewModel: ObservableObject {
 
 extension GenericListViewModel {
 
+    // TODO: - Mentor -> Academy, Academy -> Guilda, Academy -> Students
+
     func createEntity(guest: Int?, title: String/*, image: Data*/, subtitle: String) {
         switch type(of: hostEntity) {
         case is Mentor.Type:
@@ -72,7 +76,7 @@ extension GenericListViewModel {
             newAcademy.title = title
             newAcademy.years = subtitle
 
-            host.addToAcademies(newAcademy)
+            host.addToAcademies(newAcademy) // host: mentor, host tem um método que é para adicionar a suas relações
             _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
         case is Academy.Type:
             guard let host: Academy = hostEntity as? Academy else { fatalError() }
