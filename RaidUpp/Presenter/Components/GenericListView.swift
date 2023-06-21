@@ -5,13 +5,14 @@ struct GenericListView: View {
 
     init<T: NSManagedObject>(_ entryPoint: T?) {
         if entryPoint != nil {
-            self.viewModel = ListViewModel(entryPoint)
+            self.viewModel = GenericListViewModel(entryPoint)
         } else {
             self.viewModel = HomeViewModel(nil)
         }
     }
 
-    @State var viewModel: ListViewModel
+    @State var viewModel: GenericListViewModel
+
     @State var showingForm: Bool = false
     @State var searchText: String = ""
 
@@ -28,6 +29,9 @@ struct GenericListView: View {
                     }
                 }
             }
+            .onChange(of: showingForm, perform: { _ in
+                self.refreshable { }
+            })
             .navigationTitle(viewModel.listTitle)
             .searchable(text: $searchText,
                         placement: .navigationBarDrawer,
@@ -43,8 +47,6 @@ struct GenericListView: View {
             .sheet(isPresented: $showingForm) {
                 GlobalForms(title: "Class", subtitle: "Year...", showingSheet: $showingForm) {title , subtitle in
                     viewModel.createEntity(guest: 0, title: title, subtitle: subtitle)
-                }.onDisappear {
-
                 }
 //                GlobalForms(title: "Class", showingSheet: $showingForm, viewModel: $viewModel)
             }
