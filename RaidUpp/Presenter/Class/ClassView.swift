@@ -7,28 +7,28 @@
 
 import SwiftUI
 
-struct ClassView: View {
-    var body: some View {
-        NavigationStack {
-            List {
-                NavigationLink {
-                    StudentsView()
-                } label: {
-                    Text("Students")
-                }
-                NavigationLink {
-                    GuildsView()
-                } label: {
-                    Text("Guilds")
-                }
-            }
-            .navigationTitle("Class")
-        }
-    }
-}
-
-struct ClassView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClassView()
-    }
-}
+//struct ClassView: View {
+//    var body: some View {
+//        NavigationStack {
+//            List {
+//                NavigationLink {
+//                    StudentsView()
+//                } label: {
+//                    Text("Students")
+//                }
+//                NavigationLink {
+//                    GuildsView()
+//                } label: {
+//                    Text("Guilds")
+//                }
+//            }
+//            .navigationTitle("Class")
+//        }
+//    }
+//}
+//
+//struct ClassView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ClassView()
+//    }
+//}
