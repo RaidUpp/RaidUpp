@@ -22,11 +22,13 @@ struct GuildView: View {
                 Spacer()
             }
             
-            HStack {
-                GuildDetails(guild: "guilds",
-                             guildName: "",
-                             mentor: "Related Subtitle1",
-                             guildDescription: "teste")
+            HStack{
+                MenuImageWithDescription(
+                    imageName: "guilds",
+                    title: "",
+                    subtitle: "",
+                    mentor: "Caroline Barreto"
+                )
                 VStack(alignment: .leading, spacing: 36) {
                     Text("Guildas")
                         .font(.title2)

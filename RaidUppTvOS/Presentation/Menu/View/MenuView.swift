@@ -10,8 +10,11 @@ import SwiftUI
 struct MenuView: View {
     var classesList: [String]
 
+    @StateObject var viewModel = MenuViewModel()
+
+
     var body: some View {
-        HStack(spacing: 255){
+        HStack(spacing: 255) {
             Image("Logo")
                 .resizable()
                 .scaledToFit()
@@ -32,12 +35,14 @@ struct MenuView: View {
     }
 
     private func buildClassesList() -> some View{
-        return ForEach(classesList, id: \.self){ className in
+        return ForEach(Array(viewModel.classList as Set), id: \.self){ className in
             NavigationLink {
                 GuildView()
             } label: {
                 MenuButton(
-                    title: className,
+                    // swiftlint:disable force_cast
+                    title: String(describing: className),
+                    // swiftlint:enable force_cast
                     font: .headline
                 )
                     .frame(

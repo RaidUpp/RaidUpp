@@ -22,10 +22,12 @@ struct GuildMenuView: View {
             }
             
             HStack {
-                GuildDetails(guild: self.guildType,
-                             guildName: "Nome da guilda",
-                             mentor: "Carolina Barbalho",
-                             guildDescription: "teste")
+                MenuImageWithDescription(
+                    imageName: self.guildType,
+                    title: "Nome da guilda",
+                    subtitle: "teste",
+                    mentor: "Carolina Barbalho"
+                )
                 
                 VStack(alignment: .leading, spacing: 36) {
                     Text(self.guildType.capitalized)
