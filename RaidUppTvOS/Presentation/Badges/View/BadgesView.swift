@@ -11,15 +11,15 @@ struct BadgesView: View {
     let guild: String
     let imagesNames: [String]
 
-    init(guild: String, imagesNames: [String]) {
-        self.guild = guild
-        self.imagesNames = imagesNames
-    }
-    
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
     var body: some View {
-        VStack(spacing: 34){
-            BoardHeader(title: self.guild.capitalized, firstSubheadline: "Lorem ipsum dorem", secondSubheadline: "\(imagesNames.count) badges")
-                .focusSection()
+        VStack(spacing: 34) {
+            BoardHeader(
+                title: self.guild.capitalized,
+                firstSubheadline: "Lorem ipsum dorem",
+                secondSubheadline: "\(imagesNames.count) badges"
+            ).focusSection()
 
             buildGrid()
 
@@ -77,6 +77,6 @@ struct BadgesView_Previews: PreviewProvider {
                 "bronze"
             ]
 
-        )
+        ).environmentObject(EntityFetcher())
     }
 }

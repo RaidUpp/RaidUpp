@@ -14,7 +14,9 @@ struct MissionDetailsView: View {
     let missionDescription: String
     let missionLeaders: [String]?
     var rating: Int
-    
+
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
     var body: some View {
         VStack {
             MissionDetails(
@@ -24,7 +26,7 @@ struct MissionDetailsView: View {
                 missionDescription: self.missionDescription,
                 missionLeaders: nil,
                 rating: self.rating
-            )
+            ).environmentObject(entityFetcher)
             Spacer()
             BadgesList(imagesNames: [
                 "bronze",
@@ -39,7 +41,7 @@ struct MissionDetailsView: View {
                 "silver",
                 "gold",
                 "bronze"
-            ])
+            ]).environmentObject(entityFetcher)
         }
         .background {
             Image("background")
@@ -56,6 +58,6 @@ struct MissionDetailsView_Previews: PreviewProvider {
             missionDescription: "Mission description here. Mission description here. Mission description here.",
             missionLeaders: ["Teste1", "Teste2"],
             rating: 4
-        )
+        ).environmentObject(EntityFetcher())
     }
 }

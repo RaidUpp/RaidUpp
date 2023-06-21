@@ -7,16 +7,16 @@
 
 import Foundation
 
-class MenuViewModel: ObservableObject {
+class EntityFetcher: ObservableObject {
 
     var dataBase: DatabaseInteractor = DatabaseInteractor.shared
-    @Published var classList: NSSet = NSSet()
+    @Published var entities: NSSet = NSSet()
     private var hostEntity: Mentor
 
-    init(){
+    init() {
         self.dataBase = DatabaseInteractor.shared
         self.hostEntity = dataBase.mentor
-        self.classList = dataBase.fetchEntitiesFor(hostEntity)
-        print(classList)
+        self.entities = dataBase.fetchEntitiesFor(hostEntity)
+        print(entities)
     }
 }

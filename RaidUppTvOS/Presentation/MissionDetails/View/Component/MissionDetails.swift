@@ -14,7 +14,9 @@ struct MissionDetails: View {
     let missionDescription: String
     let missionLeaders: [String]?
     var rating: Int = 0
-    
+
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
     var body: some View {
         HStack {
             VStack(alignment: .trailing, spacing: 8) {
@@ -52,19 +54,13 @@ struct MissionDetails: View {
                     .foregroundColor(.black)
                     .frame(width: 823, height: 180)
                 HStack {
-                    Button {
-                        
-                    } label: {
+                    Button {} label: {
                         Image(systemName: "checkmark")
                     }
-                    Button {
-                        
-                    } label: {
+                    Button {} label: {
                         Image(systemName: "star.fill")
                     }
-                    Button {
-                        
-                    } label: {
+                    Button {} label: {
                         Image(systemName: "ellipsis")
                     }
                 }
@@ -81,10 +77,13 @@ struct MissionDetails: View {
 
 struct MissionDetails_Previews: PreviewProvider {
     static var previews: some View {
-        MissionDetails(missionTitle: "Mission title",
-                       startDate: "DD/MM/YYYY",
-                       endDate: "DD/MM/YYYY",
-                       missionDescription: "Mission description here.",
-                       missionLeaders: ["Name 01", "Name 02", "Name 03"], rating: 4)
+        MissionDetails(
+            missionTitle: "Mission title",
+            startDate: "DD/MM/YYYY",
+            endDate: "DD/MM/YYYY",
+            missionDescription: "Mission description here.",
+            missionLeaders: ["Name 01", "Name 02", "Name 03"],
+            rating: 4
+        ).environmentObject(EntityFetcher())
     }
 }

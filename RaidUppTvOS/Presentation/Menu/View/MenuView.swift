@@ -10,8 +10,7 @@ import SwiftUI
 struct MenuView: View {
     var classesList: [String]
 
-    @StateObject var viewModel = MenuViewModel()
-
+    @StateObject var entityFetcher = EntityFetcher()
 
     var body: some View {
         HStack(spacing: 255) {
@@ -23,8 +22,8 @@ struct MenuView: View {
                     height: 320
                 )
 
-            VStack{
-                Text("Turmas")
+            VStack {
+                Text("Classes")
                     .foregroundColor(.black)
                     .font(.title)
                     .bold()
@@ -34,15 +33,16 @@ struct MenuView: View {
         }.background(Image("background"))
     }
 
-    private func buildClassesList() -> some View{
-        return ForEach(Array(viewModel.classList as Set), id: \.self){ className in
+    private func buildClassesList() -> some View {
+        return ForEach(
+            Array(entityFetcher.entities as Set),
+            id: \.self
+        ) { entity in
             NavigationLink {
-                GuildView()
+                GuildView().environmentObject(entityFetcher)
             } label: {
                 MenuButton(
-                    // swiftlint:disable force_cast
-                    title: String(describing: className),
-                    // swiftlint:enable force_cast
+                    title: String(describing: entity),
                     font: .headline
                 )
                     .frame(

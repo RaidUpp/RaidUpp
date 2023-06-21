@@ -10,7 +10,9 @@ import SwiftUI
 struct GuildView: View {
     let missionTypes: [MissionTypeImage] = [.bronze, .silver, .gold]
     let missionCount = 4
-    
+
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
     var body: some View {
         ZStack {
             Image("background")
@@ -21,8 +23,8 @@ struct GuildView: View {
                     .ignoresSafeArea()
                 Spacer()
             }
-            
-            HStack{
+
+            HStack {
                 MenuImageWithDescription(
                     imageName: "guilds",
                     title: "",
@@ -30,20 +32,20 @@ struct GuildView: View {
                     mentor: "Caroline Barreto"
                 )
                 VStack(alignment: .leading, spacing: 36) {
-                    Text("Guildas")
+                    Text("Guilds")
                         .font(.title2)
                         .foregroundColor(.black)
                         .padding(.bottom, 100)
                     NavigationLink {
-                        GuildMenuView(guildType: "code")
+                        GuildMenuView(guildType: "code").environmentObject(entityFetcher)
                     } label: {
-                        MenuButton(title: "Programação")
+                        MenuButton(title: "Code")
                             .foregroundColor(.black)
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
                     NavigationLink {
-                        GuildMenuView(guildType: "design")
+                        GuildMenuView(guildType: "design").environmentObject(entityFetcher)
                     } label: {
                         MenuButton(title: "Design")
                             .foregroundColor(.black)
@@ -51,9 +53,9 @@ struct GuildView: View {
                     }
                     .buttonStyle(.plain)
                     NavigationLink {
-                        GuildMenuView(guildType: "management")
+                        GuildMenuView(guildType: "management").environmentObject(entityFetcher)
                     } label: {
-                        MenuButton(title: "Gestão")
+                        MenuButton(title: "Management")
                             .foregroundColor(.black)
                             .frame(width: 430, alignment: .leading)
                     }
@@ -68,6 +70,6 @@ struct GuildView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        GuildView()
+        GuildView().environmentObject(EntityFetcher())
     }
 }

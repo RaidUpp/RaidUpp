@@ -7,18 +7,17 @@
 
 import SwiftUI
 
-
 struct MissionCard: View {
     let image: Image
     let title: String
     let description: String
-    
+
     init(image: Image, title: String, description: String) {
         self.image = image
         self.title = title
         self.description = description
     }
-    
+
     var body: some View {
         HStack(spacing: 20) {
             ZStack {

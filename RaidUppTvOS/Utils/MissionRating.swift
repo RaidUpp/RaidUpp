@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MissionRating: View {
     let rating: Int
-    
+
     var body: some View {
         HStack(spacing: 10) {
             ForEach(0..<5) { index in

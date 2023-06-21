@@ -10,6 +10,8 @@ import SwiftUI
 struct BadgesList: View {
     let imagesNames: [String]
 
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
 
@@ -31,8 +33,8 @@ struct BadgesList: View {
     }
 
     private func badges() -> some View {
-        return HStack(spacing: 50){
-            ForEach(imagesNames, id: \.self){ imageName in
+        return HStack(spacing: 50) {
+            ForEach(imagesNames, id: \.self) { imageName in
                 Button(action: {}) {
                     Image(imageName)
                         .resizable()
@@ -63,6 +65,6 @@ struct BadgesList_Previews: PreviewProvider {
             "silver",
             "gold",
             "bronze"
-        ])
+        ]).environmentObject(EntityFetcher())
     }
 }

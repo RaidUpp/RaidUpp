@@ -12,7 +12,7 @@ struct MenuButton: View {
     var font: Font? = .body
 
     var body: some View {
-        HStack{
+        HStack {
             Text(title)
                 .foregroundColor(.black)
                 .font(self.font ?? .body)

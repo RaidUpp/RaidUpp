@@ -9,7 +9,9 @@ import SwiftUI
 
 struct GuildMenuView: View {
     let guildType: String
-    
+
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
     var body: some View {
         ZStack {
             Image("background")
@@ -20,25 +22,26 @@ struct GuildMenuView: View {
                     .ignoresSafeArea()
                 Spacer()
             }
-            
+
             HStack {
                 MenuImageWithDescription(
                     imageName: self.guildType,
-                    title: "Nome da guilda",
+                    title: self.guildType.capitalized,
                     subtitle: "teste",
                     mentor: "Carolina Barbalho"
                 )
-                
+
                 VStack(alignment: .leading, spacing: 36) {
                     Text(self.guildType.capitalized)
                         .font(.title2)
                         .foregroundColor(.black)
                         .padding(.bottom, 100)
-                    
+
                     NavigationLink {
                         MissionBoardView(guild: self.guildType)
+                            .environmentObject(entityFetcher)
                     } label: {
-                        MenuButton(title: "Missões")
+                        MenuButton(title: "Missions")
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
@@ -61,28 +64,27 @@ struct GuildMenuView: View {
                                 "gold",
                                 "bronze"
                             ]
-                        )
+                        ).environmentObject(entityFetcher)
                     } label: {
                         MenuButton(title: "Badges")
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
                     .foregroundColor(Color("gray"))
-                    
+
                     Button(action: {}) {
-                        MenuButton(title: "Participantes")
+                        MenuButton(title: "Participants")
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
                     .foregroundColor(Color("gray"))
-                    
+
                     Button(action: {}) {
-                        MenuButton(title: "Calendário/Reuniões")
+                        MenuButton(title: "Calendar/Meetings")
                             .frame(width: 430, alignment: .leading)
                     }
                     .buttonStyle(.plain)
                     .foregroundColor(Color("gray"))
-                    
                 }
                 .padding(.leading, 80)
             }
@@ -92,6 +94,6 @@ struct GuildMenuView: View {
 
 struct GuildMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        GuildMenuView(guildType: "design")
+        GuildMenuView(guildType: "design").environmentObject(EntityFetcher())
     }
 }

@@ -51,7 +51,7 @@
 		FE8A92452A41D5C900EB8A6C /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92442A41D5C900EB8A6C /* MenuButton.swift */; };
 		FE8A92472A4319A400EB8A6C /* MissionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92462A4319A400EB8A6C /* MissionCard.swift */; };
 		FE8A924B2A4319C600EB8A6C /* BoardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A924A2A4319C600EB8A6C /* BoardHeader.swift */; };
-		FE8A924E2A431DC200EB8A6C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A924D2A431DC200EB8A6C /* MenuViewModel.swift */; };
+		FE8A924E2A431DC200EB8A6C /* EntityFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +117,7 @@
 		FE8A92442A41D5C900EB8A6C /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		FE8A92462A4319A400EB8A6C /* MissionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionCard.swift; sourceTree = "<group>"; };
 		FE8A924A2A4319C600EB8A6C /* BoardHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardHeader.swift; sourceTree = "<group>"; };
-		FE8A924D2A431DC200EB8A6C /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,8 +229,7 @@
 		351D80602A41CC1E00D3CC53 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				FE8A924D2A431DC200EB8A6C /* MenuViewModel.swift */,
-				351D80612A41CC1E00D3CC53 /* MissionTypeImage.swift */,
+				FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -426,6 +425,7 @@
 		FE8A92372A39E3DF00EB8A6C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				351D80612A41CC1E00D3CC53 /* MissionTypeImage.swift */,
 				351D80582A41CB9500D3CC53 /* MenuImageWithDescription.swift */,
 				FE8A92462A4319A400EB8A6C /* MissionCard.swift */,
 				FE8A92442A41D5C900EB8A6C /* MenuButton.swift */,
@@ -655,7 +655,7 @@
 				FE8A92472A4319A400EB8A6C /* MissionCard.swift in Sources */,
 				351D80632A41CC7100D3CC53 /* RaidUppTvOSApp.swift in Sources */,
 				351D80512A41CB6F00D3CC53 /* MissionDetails.swift in Sources */,
-				FE8A924E2A431DC200EB8A6C /* MenuViewModel.swift in Sources */,
+				FE8A924E2A431DC200EB8A6C /* EntityFetcher.swift in Sources */,
 				351D805B2A41CB9500D3CC53 /* MissionRating.swift in Sources */,
 				FE8A924B2A4319C600EB8A6C /* BoardHeader.swift in Sources */,
 				351D805F2A41CB9500D3CC53 /* MissionSection.swift in Sources */,
