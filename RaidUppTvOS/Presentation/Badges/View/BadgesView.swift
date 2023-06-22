@@ -11,17 +11,18 @@ struct BadgesView: View {
     let guild: String
     let imagesNames: [String]
 
-    init(guild: String, imagesNames: [String]) {
-        self.guild = guild
-        self.imagesNames = imagesNames
-    }
-    
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
     var body: some View {
-        VStack(spacing: 34){
-            BoardHeader(title: self.guild.capitalized, firstSubheadline: "Lorem ipsum dorem", secondSubheadline: "\(imagesNames.count) badges")
-                .focusSection()
+        VStack(spacing: 30) {
+            BoardHeader(
+                title: self.guild.capitalized,
+                firstSubheadline: "Lorem ipsum dorem",
+                secondSubheadline: "\(imagesNames.count) badges"
+            ).focusSection()
 
             buildGrid()
+                .padding(.horizontal, -80)
 
         }.background {
             Image("background")
@@ -38,15 +39,22 @@ struct BadgesView: View {
                     GridItem(.flexible()),
                     GridItem(.flexible())
                 ],
-                spacing: 16) {
-                    ForEach(imagesNames.indices, id: \.self) { index in
-                        let imageName = imagesNames[index]
+                spacing: 50
+            ) {
+                ForEach(imagesNames.indices, id: \.self) { index in
+                    let imageName = imagesNames[index]
+                    Button(action: {}) {
                         Image(imageName)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 308, height: 308)
                             .id(index)
                     }
+                    .buttonStyle(.plain)
+                    .frame(
+                        width: 250,
+                        height: 250
+                    )
+                }
             }
         }
     }
@@ -71,6 +79,6 @@ struct BadgesView_Previews: PreviewProvider {
                 "bronze"
             ]
 
-        )
+        ).environmentObject(EntityFetcher())
     }
 }

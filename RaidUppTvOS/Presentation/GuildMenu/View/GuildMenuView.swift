@@ -9,89 +9,59 @@ import SwiftUI
 
 struct GuildMenuView: View {
     let guildType: String
-    init(guildType: String) {
-        self.guildType = guildType
-    }
-    
-    var body: some View {
-        ZStack {
-            Image("background")
-            VStack {
-                Rectangle()
-                    .foregroundColor(Color("gray-header"))
-                    .frame(width: 1920, height: 380)
-                    .ignoresSafeArea()
-                Spacer()
-            }
-            
-            HStack {
-                GuildDetails(guild: self.guildType,
-                             guildName: "Nome da guilda",
-                             mentor: "Carolina Barbalho",
-                             guildDescription: "teste")
-                
-                VStack(alignment: .leading, spacing: 36) {
-                    Text(self.guildType.capitalized)
-                        .font(.title2)
-                        .padding(.bottom, 100)
-                    
-                    NavigationLink {
-                        MissionBoardView(guild: self.guildType)
-                    } label: {
-                        Text("Missões")
-                            .frame(width: 430, alignment: .leading)
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundColor(Color("gray"))
 
-                    NavigationLink {
-                        BadgesView(
-                            guild: self.guildType,
-                            imagesNames: [
-                                "bronze",
-                                "gold",
-                                "silver",
-                                "silver",
-                                "gold",
-                                "bronze",
-                                "bronze",
-                                "gold",
-                                "silver",
-                                "silver",
-                                "gold",
-                                "bronze"
-                            ]
-                        )
-                    } label: {
-                        Text("Badges")
-                            .frame(width: 430, alignment: .leading)
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundColor(Color("gray"))
-                    
-                    Button(action: {}) {
-                        Text("Participantes")
-                            .frame(width: 430, alignment: .leading)
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundColor(Color("gray"))
-                    
-                    Button(action: {}) {
-                        Text("Calendário/Reuniões")
-                            .frame(width: 430, alignment: .leading)
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundColor(Color("gray"))
-                    
-                }
-                .padding(.leading, 80)
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
+    var body: some View {
+        GenericMenu(
+            title: self.guildType.capitalized,
+            imageName: self.guildType,
+            imageTitle: self.guildType.capitalized,
+            imageSubtitle: "test"
+        ) {
+            MenuButton(title: "Missions") {
+                MissionBoardView(guild: self.guildType)
+                    .environmentObject(entityFetcher)
             }
+
+            MenuButton(title: "Badges") {
+                BadgesView(
+                    guild: self.guildType,
+                    imagesNames: [
+                        "bronze",
+                        "gold",
+                        "silver",
+                        "silver",
+                        "gold",
+                        "bronze",
+                        "bronze",
+                        "gold",
+                        "silver",
+                        "silver",
+                        "gold",
+                        "bronze",
+                        "silver",
+                        "silver",
+                        "gold",
+                        "bronze",
+                        "bronze",
+                        "gold",
+                        "silver",
+                        "silver",
+                        "gold"
+                    ]
+                ).environmentObject(entityFetcher)
+            }
+
+            MenuButton(title: "Participants") {}
+
+            MenuButton(title: "Calendar/Meetings") {}
         }
     }
 }
 
 struct GuildMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        GuildMenuView(guildType: "design")
+        GuildMenuView(guildType: "design").environmentObject(EntityFetcher())
     }
 }

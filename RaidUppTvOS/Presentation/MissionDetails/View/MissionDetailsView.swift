@@ -14,16 +14,9 @@ struct MissionDetailsView: View {
     let missionDescription: String
     let missionLeaders: [String]?
     var rating: Int
-    
-    init(missionTitle: String, startDate: String, endDate: String, missionDescription: String, missionLeaders: [String]?, rating: Int) {
-        self.missionTitle = missionTitle
-        self.startDate = startDate
-        self.endDate = endDate
-        self.missionDescription = missionDescription
-        self.missionLeaders = missionLeaders
-        self.rating = rating
-    }
-    
+
+    @EnvironmentObject var entityFetcher: EntityFetcher
+
     var body: some View {
         VStack {
             MissionDetails(
@@ -33,7 +26,7 @@ struct MissionDetailsView: View {
                 missionDescription: self.missionDescription,
                 missionLeaders: nil,
                 rating: self.rating
-            )
+            ).environmentObject(entityFetcher)
             Spacer()
             BadgesList(imagesNames: [
                 "bronze",
@@ -48,7 +41,7 @@ struct MissionDetailsView: View {
                 "silver",
                 "gold",
                 "bronze"
-            ])
+            ]).environmentObject(entityFetcher)
         }
         .background {
             Image("background")
@@ -58,11 +51,13 @@ struct MissionDetailsView: View {
 
 struct MissionDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MissionDetailsView(missionTitle: "Mission title",
-                           startDate: "DD/MM/YY",
-                           endDate: "DD/MM/YY",
-                           missionDescription: "Mission description here. Mission description here. Mission description here.",
-                           missionLeaders: ["Teste1", "Teste2"],
-                           rating: 4)
+        MissionDetailsView(
+            missionTitle: "Mission title",
+            startDate: "DD/MM/YY",
+            endDate: "DD/MM/YY",
+            missionDescription: "Mission description here. Mission description here. Mission description here.",
+            missionLeaders: ["Teste1", "Teste2"],
+            rating: 4
+        ).environmentObject(EntityFetcher())
     }
 }
