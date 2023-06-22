@@ -17,14 +17,11 @@ class GenericListViewModel: ObservableObject {
             self.listTitle = "Academy"
             self.hostEntity = self.database.mentor
             self.expectedGuest = Academy.self
-
             self.mainGuestEntities = database.fetchEntitiesFor(hostEntity)
-
             return
         }
 
         // TODO: - Mentor -> Academy, Academy -> Guilda, Academy -> Students
-
         switch type(of: entryPoint!) {
         case is Academy.Type:
             guard let entity = entryPoint as? Academy else { fatalError() }
@@ -53,7 +50,7 @@ class GenericListViewModel: ObservableObject {
 
     var database: DatabaseInteractor
 
-    private var hostEntity: NSManagedObject
+    public var hostEntity: NSManagedObject
     private var expectedGuest: NSManagedObject.Type
     private var secondExpectedGuest: NSManagedObject.Type?
 
@@ -65,9 +62,6 @@ class GenericListViewModel: ObservableObject {
 }
 
 extension GenericListViewModel {
-
-    // TODO: - Mentor -> Academy, Academy -> Guilda, Academy -> Students
-
     func createEntity(guest: Int?, title: String/*, image: Data*/, subtitle: String) {
         switch type(of: hostEntity) {
         case is Mentor.Type:
@@ -75,7 +69,6 @@ extension GenericListViewModel {
             let newAcademy = Academy(context: database.managedObjectContext)
             newAcademy.title = title
             newAcademy.years = subtitle
-
             host.addToAcademies(newAcademy) // host: mentor, host tem um método que é para adicionar a suas relações
             _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
         case is Academy.Type:
@@ -85,14 +78,12 @@ extension GenericListViewModel {
                 let newStudent = Student(context: database.managedObjectContext)
                 newStudent.title = title
                 newStudent.subtitle = subtitle
-
                 host.addToStudents(newStudent)
                 _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
             case 1:
                 let newGuild = Guild(context: database.managedObjectContext)
                 newGuild.title = title
                 newGuild.subtitle = subtitle
-
                 host.addToGuilds(newGuild)
                 _ = $scndGuestEntities.append(database.fetchEntitiesFor(host))
             default:
@@ -104,14 +95,56 @@ extension GenericListViewModel {
         database.saveData()
     }
 
+    public  func creaateAcademyEntity(title: String, subtitle: String) {
+        guard let host: Mentor = self.hostEntity as? Mentor else { fatalError() }
+        let newAcademy = Academy(context: database.managedObjectContext)
+        newAcademy.title = title
+        newAcademy.years = subtitle
+        host.addToAcademies(newAcademy)
+        _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
+    }
+
+    private func creaateStudentEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
+        guard let host: Academy = self.hostEntity as? Academy else { fatalError() }
+        let newStudent = Student(context: database.managedObjectContext)
+        newStudent.title = title
+        newStudent.subtitle = subtitle
+        host.addToStudents(newStudent)
+        _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
+    }
+
+    private func creaateGuildEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
+        guard let host: Academy = self.hostEntity as? Academy else { fatalError() }
+        let newGuild = Guild(context: database.managedObjectContext)
+        newGuild.title = title
+        newGuild.subtitle = subtitle
+        host.addToGuilds(newGuild)
+        _ = $scndGuestEntities.append(database.fetchEntitiesFor(host))
+    }
+
+    private func creaateGlobalBadgesEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
+        guard let host: Academy = self.hostEntity as? Academy else { fatalError() }
+        let newBadge = Badge(context: database.managedObjectContext)
+        newBadge.title = title
+        newBadge.subtitle = subtitle
+        host.addToGlobalBadges(newBadge)
+        _ = $scndGuestEntities.append(database.fetchEntitiesFor(host))
+    }
+
+    private func creaateAcademyEntity(title: String, subtitle: String, hostEntity: Guild.Type) {
+
+    }
+
+    private func creaateStudentEntity(title: String, subtitle: String, hostEntity: UUID) {
+
+    }
+
 }
 
 class HomeViewModel: GenericListViewModel {
 
-
-
 }
 
 extension NSSet: ObservableObject {
-    
+
 }

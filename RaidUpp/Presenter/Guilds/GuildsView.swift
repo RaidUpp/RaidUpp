@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//
 //struct GuildsView: View {
 //    @State var isShowForms: Bool = false
 //

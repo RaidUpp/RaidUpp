@@ -10,7 +10,6 @@ import PhotosUI
 
 struct GlobalForms: View {
     var title: String
-    var subtitle: String
 
     @State var nameTitle: String = ""
     @State var nameSubtitle: String = ""
@@ -28,8 +27,8 @@ struct GlobalForms: View {
                 Section("Name \(title)") {
                     TextField("Name \(title)", text: $nameTitle)
                 }
-                Section("Subtitle \(subtitle)") {
-                    TextField("Name \(subtitle)", text: $nameSubtitle)
+                Section("Subtitle \(title)") {
+                    TextField("Name \(title)", text: $nameSubtitle)
                 }
                 Section("Imagem") {
                     Button {
