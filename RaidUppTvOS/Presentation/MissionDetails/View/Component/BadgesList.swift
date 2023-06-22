@@ -23,8 +23,8 @@ struct BadgesList: View {
                 .horizontal,
                 showsIndicators: false
             ) {
-                badges().padding()
-            }
+                badges().padding(80)
+            }.padding(-80)
         }
         .padding()
         .background(

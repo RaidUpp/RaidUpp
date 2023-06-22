@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
-//    var classesList: [String]
+    var classesList: [String]
 
     @StateObject var entityFetcher = EntityFetcher()
 
@@ -35,11 +35,13 @@ struct MenuView: View {
 
     private func buildClassesList() -> some View {
         return ForEach(
-            Array(entityFetcher.entities as Set),
+            classesList.indices,
+//            Array(entityFetcher.entities as Set),
             id: \.self
         ) { entity in
             MenuButton(
-                title: String(describing: entity),
+//                title: String(describing: entity),
+                title: classesList[entity],
                 font: .headline,
                 isBigButton: true
             ) {
@@ -51,13 +53,13 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-//        MenuView(classesList: [
-//            "Turma 2022",
-//            "Turma 2020",
-//            "Turma 2018",
-//            "Turma 2016",
-//            "Turma 2014"
-//        ])
-        MenuView()
+        MenuView(classesList: [
+            "Turma 2022",
+            "Turma 2020",
+            "Turma 2018",
+            "Turma 2016",
+            "Turma 2014"
+        ])
+//        MenuView()
     }
 }

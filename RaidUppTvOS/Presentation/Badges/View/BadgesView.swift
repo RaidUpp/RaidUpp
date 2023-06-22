@@ -53,8 +53,8 @@ struct BadgesView: View {
                             height: 308
                         )
                     }
-            }
-        }
+                }.padding(80)
+        }.padding(-80)
     }
 }
 

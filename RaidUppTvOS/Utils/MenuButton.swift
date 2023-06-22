@@ -40,7 +40,7 @@ struct MenuButton<Destination: View> : View {
 struct ClassButton_Previews: PreviewProvider {
     static var previews: some View {
         MenuButton(title: "Turma 2022", font: .headline) {
-            MenuView()
+            GuildView().environmentObject(EntityFetcher())
         }
     }
 }
