@@ -328,9 +328,9 @@
 			children = (
 				954F26D52A39F2C3009FAD10 /* FormClass.swift */,
 				9543E4252A3B3FBF005D2345 /* GlobalForms.swift */,
-				9543E4272A3B43ED005D2345 /* ListView.swift */,
 				D6E3D6052A41C80B00F11BC9 /* GenericListView.swift */,
 				D6E3D6072A41C82D00F11BC9 /* GenericListViewModel.swift */,
+				9543E4272A3B43ED005D2345 /* ListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";

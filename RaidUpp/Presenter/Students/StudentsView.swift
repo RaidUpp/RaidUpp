@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-//struct StudentsView: View {
-//    @State var isShowForms: Bool = false
-//
-//    var body: some View {
-//        ListView(title: "Students", addAction: {
-//            isShowForms.toggle()
-//        }, content: { value in
-//            Text(value)
-//        })
-//        .sheet(isPresented: $isShowForms) {
-//            GlobalForms(title: "Student") {
-//            }
-//        }
-//    }}
-//
-//struct StudentsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        StudentsView()
-//    }
-//}
+struct StudentsView: View {
+    @State var viewModel: GenericListViewModel
+    @State var isShowForms: Bool = false
+
+    var body: some View {
+        ListView(title: "Students", guests: viewModel.mainGuestEntities, addAction: {
+            isShowForms.toggle()
+        }, content: { obj in
+            ClassView(viewModel: GenericListViewModel(obj))
+        })
+        .onChange(of: isShowForms, perform: { _ in
+            _ = refreshable {}
+        })
+        .sheet(isPresented: $isShowForms) {
+            GlobalForms(title: "Student", showingSheet: $isShowForms) { title, subtitle in
+                viewModel.createStudentEntity(title: title, subtitle: subtitle)
+            }
+        }
+    }
+}

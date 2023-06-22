@@ -6,23 +6,30 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ListView<Content: View>: View {
     var title: String
+    var guests: NSSet
+    var addAction: () -> Void
+    var content: (_ value: NSManagedObject) -> Content
 
     @State var searchText: String = ""
-    @State var listObjects: [String] = ["Strdings", "Strings", "Strindgs"]
-
-    var addAction: () -> Void
-    var content: (_ value: String ) -> Content
 
     var body: some View {
         NavigationStack {
             List {
-                ForEach(listObjects, id: \.self) { obj in
-                    NavigationLink(obj,
-                                   destination: content(obj)
-                    )
+                ForEach(Array(guests as Set), id: \.self) { obj in
+                    if let managedObject = obj as? NSManagedObject {
+                        NavigationLink("\(obj)") {
+                            content(managedObject)
+                        }
+                    } else {
+                        Text("Error data")
+                            .task {
+                                NSLog("Problem in obj: \(obj)")
+                            }
+                    }
                 }
             }
             .navigationTitle(title)
@@ -40,11 +47,11 @@ struct ListView<Content: View>: View {
         }
     }
 }
-
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListView(title: "Global", addAction: {}, content: {value in
-            Text(value)
-        })
-    }
-}
+//
+//struct ListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListView(title: "Global", addAction: {}, content: {value in
+//            Text(value)
+//        })
+//    }
+//}
