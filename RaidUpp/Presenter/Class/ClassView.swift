@@ -16,12 +16,15 @@ struct ClassView: View {
         NavigationStack {
             List {
                 NavigationLink {
-                    StudentsView(viewModel: GenericListViewModel(viewModel.hostEntity))
+                    let viewModel = GenericListViewModel(viewModel.hostEntity)
+                    StudentsView(viewModel: viewModel)
                 } label: {
                     Text("Students")
                 }
                 NavigationLink {
-                    EmptyView()
+                    let viewModel = GenericListViewModel(viewModel.hostEntity)
+                    GuildsView(viewModel: viewModel)
+
                 } label: {
                     Text("Guilds")
                 }

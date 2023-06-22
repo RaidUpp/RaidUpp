@@ -10,28 +10,28 @@ import CoreData
 
 struct ListView<Content: View>: View {
     var title: String
-
-    @State var searchText: String = ""
-
     var guests: NSSet
-
     var addAction: () -> Void
     var content: (_ value: NSManagedObject) -> Content
+
+    @State var searchText: String = ""
 
     var body: some View {
         NavigationStack {
             List {
                 ForEach(Array(guests as Set), id: \.self) { obj in
-                    NavigationLink("\(obj)") {
-                        // swiftlint:disable force_cast
-                        content(obj as! NSManagedObject)
-                        // swiftlint:disable force_cast
+                    if let managedObject = obj as? NSManagedObject {
+                        NavigationLink("\(obj)") {
+                            content(managedObject)
+                        }
+                    } else {
+                        Text("Error data")
+                            .task {
+                                NSLog("Problem in obj: \(obj)")
+                            }
                     }
                 }
             }
-//                        .onChange(of: showingForm, perform: { _ in
-//                            _ = refreshable {}
-//                        })
             .navigationTitle(title)
             .searchable(text: $searchText,
                         placement: .navigationBarDrawer,

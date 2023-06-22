@@ -26,22 +26,16 @@ class GenericListViewModel: ObservableObject {
         case is Academy.Type:
             guard let entity = entryPoint as? Academy else { fatalError() }
             self.hostEntity = entity
-
             self.expectedGuest = Student.self
             self.secondExpectedGuest = Guild.self
-
             self.mainGuestEntities = entity.students!
             self.scndGuestEntities = entity.guilds!
-
             self.listTitle = entity.title ?? "Turma Debug"
         case is Student.Type:
             guard let entity = entryPoint as? Student else { fatalError() }
             self.hostEntity = entity
-
             self.expectedGuest = Badge.self
-
             self.mainGuestEntities = entity.soloBadges!
-
             self.listTitle = entity.title ?? "Turma Debug"
         default:
             fatalError()
@@ -95,7 +89,7 @@ extension GenericListViewModel {
         database.saveData()
     }
 
-    public  func creaateAcademyEntity(title: String, subtitle: String) {
+    public  func createAcademyEntity(title: String, subtitle: String) {
         guard let host: Mentor = self.hostEntity as? Mentor else { fatalError() }
         let newAcademy = Academy(context: database.managedObjectContext)
         newAcademy.title = title
@@ -105,7 +99,7 @@ extension GenericListViewModel {
         database.saveData()
     }
 
-    private func creaateStudentEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
+    public func createStudentEntity(title: String, subtitle: String) {
         guard let host: Academy = self.hostEntity as? Academy else { fatalError() }
         let newStudent = Student(context: database.managedObjectContext)
         newStudent.title = title
@@ -115,7 +109,7 @@ extension GenericListViewModel {
         database.saveData()
     }
 
-    private func creaateGuildEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
+    public func createGuildEntity(title: String, subtitle: String) {
         guard let host: Academy = self.hostEntity as? Academy else { fatalError() }
         let newGuild = Guild(context: database.managedObjectContext)
         newGuild.title = title
@@ -125,7 +119,7 @@ extension GenericListViewModel {
         database.saveData()
     }
 
-    private func creaateGlobalBadgesEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
+    private func createGlobalBadgesEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
         guard let host: Academy = self.hostEntity as? Academy else { fatalError() }
         let newBadge = Badge(context: database.managedObjectContext)
         newBadge.title = title

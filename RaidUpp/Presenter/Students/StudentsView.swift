@@ -14,12 +14,15 @@ struct StudentsView: View {
     var body: some View {
         ListView(title: "Students", guests: viewModel.mainGuestEntities, addAction: {
             isShowForms.toggle()
-        }, content: {value in 
-            EmptyView()
+        }, content: { obj in
+            ClassView(viewModel: GenericListViewModel(obj))
+        })
+        .onChange(of: isShowForms, perform: { _ in
+            _ = refreshable {}
         })
         .sheet(isPresented: $isShowForms) {
             GlobalForms(title: "Student", showingSheet: $isShowForms) { title, subtitle in
-                viewModel.creaateAcademyEntity(title: title, subtitle: subtitle)
+                viewModel.createStudentEntity(title: title, subtitle: subtitle)
             }
         }
     }

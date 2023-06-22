@@ -17,9 +17,12 @@ struct ClassesView: View {
         }, content: { obj in
             ClassView(viewModel: GenericListViewModel(obj))
         })
+        .onChange(of: isShowForms, perform: { _ in
+            _ = refreshable {}
+        })
         .sheet(isPresented: $isShowForms) {
             GlobalForms(title: "Class", showingSheet: $isShowForms) { title, subtitle in
-                viewModel.creaateAcademyEntity(title: title, subtitle: subtitle)
+                viewModel.createAcademyEntity(title: title, subtitle: subtitle)
             }
         }
     }
