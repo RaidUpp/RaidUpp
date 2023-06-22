@@ -15,7 +15,6 @@
 		351D80542A41CB6F00D3CC53 /* GuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D804C2A41CB6F00D3CC53 /* GuildView.swift */; };
 		351D80552A41CB6F00D3CC53 /* GuildMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */; };
 		351D805B2A41CB9500D3CC53 /* MissionRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80562A41CB9500D3CC53 /* MissionRating.swift */; };
-		351D805D2A41CB9500D3CC53 /* MenuImageWithDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80582A41CB9500D3CC53 /* MenuImageWithDescription.swift */; };
 		351D805F2A41CB9500D3CC53 /* MissionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D805A2A41CB9500D3CC53 /* MissionSection.swift */; };
 		351D80622A41CC1E00D3CC53 /* MissionTypeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D80612A41CC1E00D3CC53 /* MissionTypeImage.swift */; };
 		351D80632A41CC7100D3CC53 /* RaidUppTvOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED6C2E2A38B385005E5BDE /* RaidUppTvOSApp.swift */; };
@@ -52,6 +51,7 @@
 		FE8A92472A4319A400EB8A6C /* MissionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92462A4319A400EB8A6C /* MissionCard.swift */; };
 		FE8A924B2A4319C600EB8A6C /* BoardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A924A2A4319C600EB8A6C /* BoardHeader.swift */; };
 		FE8A924E2A431DC200EB8A6C /* EntityFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */; };
+		FE8A92542A43D7DB00EB8A6C /* GenericMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92532A43D7DB00EB8A6C /* GenericMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		351D804C2A41CB6F00D3CC53 /* GuildView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildView.swift; sourceTree = "<group>"; };
 		351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildMenuView.swift; sourceTree = "<group>"; };
 		351D80562A41CB9500D3CC53 /* MissionRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionRating.swift; sourceTree = "<group>"; };
-		351D80582A41CB9500D3CC53 /* MenuImageWithDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuImageWithDescription.swift; sourceTree = "<group>"; };
 		351D805A2A41CB9500D3CC53 /* MissionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionSection.swift; sourceTree = "<group>"; };
 		351D80612A41CC1E00D3CC53 /* MissionTypeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionTypeImage.swift; sourceTree = "<group>"; };
 		35ED6C2C2A38B385005E5BDE /* RaidUppTvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaidUppTvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +117,7 @@
 		FE8A92462A4319A400EB8A6C /* MissionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionCard.swift; sourceTree = "<group>"; };
 		FE8A924A2A4319C600EB8A6C /* BoardHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardHeader.swift; sourceTree = "<group>"; };
 		FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFetcher.swift; sourceTree = "<group>"; };
+		FE8A92532A43D7DB00EB8A6C /* GenericMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,12 +226,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		351D80602A41CC1E00D3CC53 /* Domain */ = {
+		351D80602A41CC1E00D3CC53 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */,
 			);
-			path = Domain;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */ = {
@@ -240,7 +240,7 @@
 				FE8A92342A39E38B00EB8A6C /* Application */,
 				FE8A92352A39E3B200EB8A6C /* Resources */,
 				FE8A92362A39E3C400EB8A6C /* Presentation */,
-				351D80602A41CC1E00D3CC53 /* Domain */,
+				351D80602A41CC1E00D3CC53 /* Data */,
 				FE8A92372A39E3DF00EB8A6C /* Utils */,
 				35ED6C342A38B386005E5BDE /* Preview Content */,
 			);
@@ -426,12 +426,12 @@
 			isa = PBXGroup;
 			children = (
 				351D80612A41CC1E00D3CC53 /* MissionTypeImage.swift */,
-				351D80582A41CB9500D3CC53 /* MenuImageWithDescription.swift */,
 				FE8A92462A4319A400EB8A6C /* MissionCard.swift */,
 				FE8A92442A41D5C900EB8A6C /* MenuButton.swift */,
 				FE8A924A2A4319C600EB8A6C /* BoardHeader.swift */,
 				351D80562A41CB9500D3CC53 /* MissionRating.swift */,
 				351D805A2A41CB9500D3CC53 /* MissionSection.swift */,
+				FE8A92532A43D7DB00EB8A6C /* GenericMenu.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -659,7 +659,6 @@
 				351D805B2A41CB9500D3CC53 /* MissionRating.swift in Sources */,
 				FE8A924B2A4319C600EB8A6C /* BoardHeader.swift in Sources */,
 				351D805F2A41CB9500D3CC53 /* MissionSection.swift in Sources */,
-				351D805D2A41CB9500D3CC53 /* MenuImageWithDescription.swift in Sources */,
 				351D80502A41CB6F00D3CC53 /* BadgesList.swift in Sources */,
 				FE8A923E2A40936F00EB8A6C /* BadgesView.swift in Sources */,
 				351D80542A41CB6F00D3CC53 /* GuildView.swift in Sources */,
@@ -668,6 +667,7 @@
 				D6924B252A39F913007CB0B0 /* RaidUpp.xcdatamodeld in Sources */,
 				FE8A92412A41D57700EB8A6C /* MenuView.swift in Sources */,
 				351D80622A41CC1E00D3CC53 /* MissionTypeImage.swift in Sources */,
+				FE8A92542A43D7DB00EB8A6C /* GenericMenu.swift in Sources */,
 				FE8A92452A41D5C900EB8A6C /* MenuButton.swift in Sources */,
 				351D80522A41CB6F00D3CC53 /* MissionDetailsView.swift in Sources */,
 				351D80532A41CB6F00D3CC53 /* MissionBoardView.swift in Sources */,

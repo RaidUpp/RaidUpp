@@ -14,16 +14,18 @@ struct RaidUppTvOSApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MenuView(classesList: [
-                    "Turma 2022",
-                    "Turma 2020",
-                    "Turma 2018",
-                    "Turma 2016",
-                    "Turma 2014"
-                ]).environment(
-                    \.managedObjectContext,
-                     persistenceController.container.viewContext
-                )
+//                MenuView(classesList: [
+//                    "Turma 2022",
+//                    "Turma 2020",
+//                    "Turma 2018",
+//                    "Turma 2016",
+//                    "Turma 2014"
+//                ]).environment(
+//                    \.managedObjectContext,
+//                     persistenceController.container.viewContext
+//                )
+
+                GuildView().environmentObject(EntityFetcher())
             }
         }
     }

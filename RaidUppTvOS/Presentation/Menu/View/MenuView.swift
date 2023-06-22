@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    var classesList: [String]
+//    var classesList: [String]
 
     @StateObject var entityFetcher = EntityFetcher()
 
@@ -38,30 +38,26 @@ struct MenuView: View {
             Array(entityFetcher.entities as Set),
             id: \.self
         ) { entity in
-            NavigationLink {
+            MenuButton(
+                title: String(describing: entity),
+                font: .headline,
+                isBigButton: true
+            ) {
                 GuildView().environmentObject(entityFetcher)
-            } label: {
-                MenuButton(
-                    title: String(describing: entity),
-                    font: .headline
-                )
-                    .frame(
-                        width: 760,
-                        height: 66
-                    )
-            }.buttonStyle(.plain)
+            }
         }
     }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(classesList: [
-            "Turma 2022",
-            "Turma 2020",
-            "Turma 2018",
-            "Turma 2016",
-            "Turma 2014"
-        ])
+//        MenuView(classesList: [
+//            "Turma 2022",
+//            "Turma 2020",
+//            "Turma 2018",
+//            "Turma 2016",
+//            "Turma 2014"
+//        ])
+        MenuView()
     }
 }
