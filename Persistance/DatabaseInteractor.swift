@@ -27,7 +27,8 @@ class DatabaseInteractor: ObservableObject {
             do {
                 try managedObjectContext.save()
             } catch {
-                fatalError()
+                print("- - -- - - - - - - - - ---- - -- - - - - -")
+                print(error)
             }
         }
     }

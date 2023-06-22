@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import CloudKit
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -32,9 +33,37 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "RaidUpp")
+        
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("Error")
+        }
+//        container.persistentStoreDescriptions.first?.cloudKitContainerOptions? = .init(containerIdentifier: "com.RaidUpp")
+//        description.cloudKitContainerOptions?.databaseScope = .public
+
+//        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "com.RaidUpp")
+//        container.persistentStoreDescriptions.first?.cloudKitContainerOptions?.databaseScope = .public
+//        container.persistentStoreDescriptions = [description]
+
+        let defaultDesctiption = container.persistentStoreDescriptions.first
+        let url = defaultDesctiption?.url?.deletingLastPathComponent()
+
+        let publicDescription = NSPersistentStoreDescription(url: url!.appendingPathComponent("public.sqlite"))
+        let publicOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.RaidUpp")
+        publicOptions.databaseScope = .public
+        publicDescription.cloudKitContainerOptions = publicOptions
+//        publicDescription.configuration = "Public"
+        publicDescription.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        publicDescription.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        container.persistentStoreDescriptions = [publicDescription]
+
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+
+        container.viewContext.mergePolicy = NSMergePolicy(merge: .mergeByPropertyStoreTrumpMergePolicyType)
+        container.viewContext.automaticallyMergesChangesFromParent = true
+
+
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -51,6 +80,7 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
