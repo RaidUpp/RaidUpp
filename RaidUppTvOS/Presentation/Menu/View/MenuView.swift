@@ -45,7 +45,7 @@ struct MenuView: View {
                 font: .headline,
                 isBigButton: true
             ) {
-                GuildView().environmentObject(entityFetcher)
+                ClassMenuView(title: classesList[entity]).environmentObject(entityFetcher)
             }
         }
     }
