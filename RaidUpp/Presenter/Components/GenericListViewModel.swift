@@ -102,6 +102,7 @@ extension GenericListViewModel {
         newAcademy.years = subtitle
         host.addToAcademies(newAcademy)
         _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
+        database.saveData()
     }
 
     private func creaateStudentEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
@@ -111,6 +112,7 @@ extension GenericListViewModel {
         newStudent.subtitle = subtitle
         host.addToStudents(newStudent)
         _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
+        database.saveData()
     }
 
     private func creaateGuildEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
@@ -120,6 +122,7 @@ extension GenericListViewModel {
         newGuild.subtitle = subtitle
         host.addToGuilds(newGuild)
         _ = $scndGuestEntities.append(database.fetchEntitiesFor(host))
+        database.saveData()
     }
 
     private func creaateGlobalBadgesEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
@@ -129,6 +132,7 @@ extension GenericListViewModel {
         newBadge.subtitle = subtitle
         host.addToGlobalBadges(newBadge)
         _ = $scndGuestEntities.append(database.fetchEntitiesFor(host))
+        database.saveData()
     }
 
     private func creaateAcademyEntity(title: String, subtitle: String, hostEntity: Guild.Type) {

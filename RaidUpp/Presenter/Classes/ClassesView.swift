@@ -15,7 +15,7 @@ struct ClassesView: View {
         ListView(title: "Classes", guests: viewModel.mainGuestEntities, addAction: {
             isShowForms.toggle()
         }, content: { obj in
-            Text(obj.description)
+            ClassView(viewModel: GenericListViewModel(obj))
         })
         .sheet(isPresented: $isShowForms) {
             GlobalForms(title: "Class", showingSheet: $isShowForms) { title, subtitle in

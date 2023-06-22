@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ListView<Content: View>: View {
     var title: String
@@ -15,17 +16,17 @@ struct ListView<Content: View>: View {
     var guests: NSSet
 
     var addAction: () -> Void
-    var content: (_ value: NSObject) -> Content
+    var content: (_ value: NSManagedObject) -> Content
 
     var body: some View {
         NavigationStack {
             List {
                 ForEach(Array(guests as Set), id: \.self) { obj in
-                    Text("oi")
-                        .task {
-                            print(obj)
-                            print("V")
-                        }
+                    NavigationLink("\(obj)") {
+                        // swiftlint:disable force_cast
+                        content(obj as! NSManagedObject)
+                        // swiftlint:disable force_cast
+                    }
                 }
             }
 //                        .onChange(of: showingForm, perform: { _ in

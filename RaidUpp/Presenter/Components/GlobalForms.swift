@@ -99,7 +99,6 @@ struct GlobalForms: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
                         doneAction(nameTitle, nameSubtitle)
-//                        viewModel.createEntity(guest: 0, title: title /*, image: data!*/)
                         showingSheet.toggle()
                     } label: {
                         Text("Done")
