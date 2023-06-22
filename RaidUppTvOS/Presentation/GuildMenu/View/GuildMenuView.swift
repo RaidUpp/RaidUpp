@@ -39,7 +39,16 @@ struct GuildMenuView: View {
                         "silver",
                         "silver",
                         "gold",
-                        "bronze"
+                        "bronze",
+                        "silver",
+                        "silver",
+                        "gold",
+                        "bronze",
+                        "bronze",
+                        "gold",
+                        "silver",
+                        "silver",
+                        "gold"
                     ]
                 ).environmentObject(entityFetcher)
             }

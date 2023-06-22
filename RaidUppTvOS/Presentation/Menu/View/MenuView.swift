@@ -41,9 +41,7 @@ struct MenuView: View {
         ) { entity in
             MenuButton(
 //                title: String(describing: entity),
-                title: classesList[entity],
-                font: .headline,
-                isBigButton: true
+                title: classesList[entity]
             ) {
                 ClassMenuView(title: classesList[entity]).environmentObject(entityFetcher)
             }

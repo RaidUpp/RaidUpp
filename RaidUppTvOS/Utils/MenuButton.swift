@@ -10,8 +10,7 @@ import SwiftUI
 
 struct MenuButton<Destination: View> : View {
     let title: String
-    var font: Font? = .body
-    var isBigButton: Bool = false
+    var font: Font? = .headline
 
     @ViewBuilder var destination: () -> Destination
 
@@ -29,10 +28,6 @@ struct MenuButton<Destination: View> : View {
                     .font(self.font ?? .body)
             }
         }
-        .frame(
-            width: isBigButton ? 760 : 430,
-            alignment: .leading
-        )
         .buttonStyle(.plain)
     }
 }

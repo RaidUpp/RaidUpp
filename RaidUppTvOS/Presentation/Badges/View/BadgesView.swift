@@ -14,7 +14,7 @@ struct BadgesView: View {
     @EnvironmentObject var entityFetcher: EntityFetcher
 
     var body: some View {
-        VStack(spacing: 34) {
+        VStack(spacing: 30) {
             BoardHeader(
                 title: self.guild.capitalized,
                 firstSubheadline: "Lorem ipsum dorem",
@@ -22,6 +22,7 @@ struct BadgesView: View {
             ).focusSection()
 
             buildGrid()
+                .padding(.horizontal, -80)
 
         }.background {
             Image("background")
@@ -38,23 +39,24 @@ struct BadgesView: View {
                     GridItem(.flexible()),
                     GridItem(.flexible())
                 ],
-                spacing: 16) {
-                    ForEach(imagesNames.indices, id: \.self) { index in
-                        let imageName = imagesNames[index]
-                        Button(action: {}) {
-                            Image(imageName)
-                                .resizable()
-                                .scaledToFit()
-                                .id(index)
-                        }
-                        .buttonStyle(.plain)
-                        .frame(
-                            width: 308,
-                            height: 308
-                        )
+                spacing: 50
+            ) {
+                ForEach(imagesNames.indices, id: \.self) { index in
+                    let imageName = imagesNames[index]
+                    Button(action: {}) {
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .id(index)
                     }
-                }.padding(80)
-        }.padding(-80)
+                    .buttonStyle(.plain)
+                    .frame(
+                        width: 250,
+                        height: 250
+                    )
+                }
+            }
+        }
     }
 }
 

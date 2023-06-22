@@ -57,17 +57,19 @@ struct GenericMenu<Content: View>: View {
     }
 
     private func buildList() -> some View {
-        ScrollView {
             VStack(alignment: .leading, spacing: 100) {
                 Text(self.title)
                     .font(.title2)
                     .foregroundColor(.black)
                 VStack(alignment: .leading, spacing: 36) {
                     content()
-                }.frame(maxWidth: 600, maxHeight: 800)
-            }
-        }
-    }
+                        .padding(.horizontal)
+                }.frame(
+                    width: 600,
+                    height: 600,
+                    alignment: .top
+                )
+            }    }
 }
 
 struct GenericMenu_Previews: PreviewProvider {
