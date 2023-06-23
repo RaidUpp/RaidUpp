@@ -15,11 +15,11 @@ struct ParticipantsView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 32) {
                 Button(action: {
                     //self.selectedIndex = 0
                 }) {
-                    Text("Opção 1")
+                    Text("Code")
                 }
                 .buttonStyle(.plain)
                 .focused($selected, equals: 0)
@@ -27,7 +27,7 @@ struct ParticipantsView: View {
                 Button(action: {
                     //self.selectedIndex = 1
                 }) {
-                    Text("Opção 2")
+                    Text("Design")
                 }
                 .buttonStyle(.plain)
                 .focused($selected, equals: 1)
@@ -35,12 +35,13 @@ struct ParticipantsView: View {
                 Button(action: {
                     //self.selectedIndex = 2
                 }) {
-                    Text("Opção 3")
+                    Text("Management")
                 }
                 .buttonStyle(.plain)
                 .focused($selected, equals: 2)
             }
-            
+            .frame(width: 571, height: 278)
+
             VStack(alignment: .leading) {
                 if let selected {
                     Text("Conteúdo \(selected + 1)")
