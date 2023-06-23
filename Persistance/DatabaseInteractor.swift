@@ -2,6 +2,7 @@
 
 import SwiftUI  // So we have access to @Published
 import CoreData // So we can access our glorious CoreData entities
+import CloudKit
 
 class DatabaseInteractor: ObservableObject {
 
@@ -9,7 +10,13 @@ class DatabaseInteractor: ObservableObject {
 
     init() {
         managedObjectContext = PersistenceController.shared.container.viewContext
-        if checkIfUserExists() { assignUser() } else { createUser() }
+        if checkIfUserExists() { assignUser() } else { /*createUser()*/ }
+        print("User id -> \(self.mentor.description)")
+
+        // IPAD: User id -> <Mentor: 0x60000129e3f0> (entity: Mentor; id: 0xb46ba92484b05914 <x-coredata://29634696-AC25-46E0-9ED9-56F210EB6DB0/Mentor/p1>; data: <fault>)
+
+        // TV: User id -> <Mentor: 0x60000153e490> (entity: Mentor; id: 0xa87cb506d87979f4 <x-coredata://B8F2EE0E-21D8-4B4B-BBE0-D6ACB0DA3FD5/Mentor/p1>; data: <fault>)
+
 
     }
     static let shared = DatabaseInteractor()
@@ -27,7 +34,6 @@ class DatabaseInteractor: ObservableObject {
             do {
                 try managedObjectContext.save()
             } catch {
-                print("- - -- - - - - - - - - ---- - -- - - - - -")
                 print(error)
             }
         }
@@ -50,7 +56,8 @@ class DatabaseInteractor: ObservableObject {
         let request = Mentor.fetchRequest()
         do {
             let response = try managedObjectContext.fetch(request)
-            if response.isEmpty { return false } else { return true }
+            if response.isEmpty { print("user doesn't exists") ; return false }
+            else { print("user exists") ; return true }
         } catch {
             fatalError()
         }
@@ -77,7 +84,7 @@ class DatabaseInteractor: ObservableObject {
         switch type(of: host) {
         case is Mentor.Type:
             // swiftlint:disable force_cast
-            var host: Mentor = host as! Mentor
+            let host: Mentor = host as! Mentor
             return host.academies!
             // swiftlint:enable force_cast
         default:

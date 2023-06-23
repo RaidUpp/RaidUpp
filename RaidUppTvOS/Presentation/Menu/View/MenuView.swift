@@ -35,15 +35,15 @@ struct MenuView: View {
 
     private func buildClassesList() -> some View {
         return ForEach(
-            classesList.indices,
-//            Array(entityFetcher.entities as Set),
+//            classesList.indices,
+            Array(entityFetcher.mainEntities as Set),
             id: \.self
         ) { entity in
             MenuButton(
-//                title: String(describing: entity),
-                title: classesList[entity]
+                title: String(describing: entity)
+//                title: classesList[entity]
             ) {
-                ClassMenuView(title: classesList[entity]).environmentObject(entityFetcher)
+                ClassMenuView(title: String(describing: entity)).environmentObject(entityFetcher)
             }
         }
     }

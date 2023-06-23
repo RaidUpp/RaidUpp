@@ -6,17 +6,21 @@
 //
 
 import Foundation
+import CoreData
 
 class EntityFetcher: ObservableObject {
 
     var dataBase: DatabaseInteractor = DatabaseInteractor.shared
-    @Published var entities: NSSet = NSSet()
-    private var hostEntity: Mentor
 
     init() {
         self.dataBase = DatabaseInteractor.shared
+
         self.hostEntity = dataBase.mentor
-        self.entities = dataBase.fetchEntitiesFor(hostEntity)
-        print(entities)
+        self.mainEntities = dataBase.fetchEntitiesFor(hostEntity)
+
+//        print(mainEntities)
     }
+
+    private var hostEntity: Mentor
+    @Published var mainEntities = NSSet()
 }
