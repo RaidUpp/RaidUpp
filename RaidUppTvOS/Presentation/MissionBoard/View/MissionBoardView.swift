@@ -31,7 +31,7 @@ struct MissionBoardView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundColor(.gray)
                         ScrollView(.horizontal) {
-                            HStack {
+                            HStack(spacing: 30) {
                                 ForEach(0..<missionCount) { _ in
                                     NavigationLink {
                                         MissionDetailsView(

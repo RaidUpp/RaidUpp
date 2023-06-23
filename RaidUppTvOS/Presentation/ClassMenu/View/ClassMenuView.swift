@@ -27,6 +27,7 @@ struct ClassMenuView: View {
                 MenuButton(title: "Individual missions") {
                 }
                 MenuButton(title: "Participants") {
+                    ParticipantsView().environmentObject(entityFetcher)
                 }
             })
     }
