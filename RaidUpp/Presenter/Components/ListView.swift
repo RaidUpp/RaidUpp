@@ -15,7 +15,7 @@ struct ListView<Content: View, Banner: View>: View {
     @State var showNextView: Bool = false
 
     // MARK: - Guests that will be iterated over when creating NavLinks
-    var guests: NSSet
+    var guests: [NSManagedObject]
 
     // MARK: - Closures for configuring
     var addAction: () -> Void
@@ -27,7 +27,7 @@ struct ListView<Content: View, Banner: View>: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(Array(guests as Set), id: \.self) { obj in
+                ForEach(guests, id: \.self) { obj in
                     if let managedObject = obj as? NSManagedObject {
                         NavigationLink("\(generateName(obj))") {
                             content(managedObject)

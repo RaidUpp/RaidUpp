@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AcademyView: View {
     @State var viewModel: GenericListViewModel
     @State var isShowingForms: Bool = false
 
     var body: some View {
-        ListView(navigationTitle: "Academies", guests: viewModel.guestEntities, addAction: {
+        ListView(navigationTitle: "Academies",
+                 // swiftlint: disable force_cast
+                 guests: Array(viewModel.guestEntities as! Set<NSManagedObject>).sorted
+                 { ($0.value(forKey: "years") as? String ?? "debug") > ($1.value(forKey: "years") as? String ?? "debug") },
+                 // swiftlint: enable force_cast
+                 addAction: {
             isShowingForms.toggle() // Allows the list to pop open the sheet if needed
         }, content: { obj in
             ClassView(viewModel: GenericListViewModel(obj)) // NextView in the Stack

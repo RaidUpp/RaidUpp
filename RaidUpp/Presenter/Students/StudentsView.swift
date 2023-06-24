@@ -19,7 +19,9 @@ struct StudentsView: View {
 
     var body: some View {
         List {
-            ForEach(Array(viewModel.guestEntities as Set), id: \.self) { obj in
+            ForEach(Array(viewModel.guestEntities as Set).sorted
+            { ($0.value(forKey: "title") as? String ?? "debug") < ($1.value(forKey: "title") as? String ?? "debug") },
+            id: \.self) { obj in
                 Button {
                     print("🛠️ - Casting \(obj) as Student")
                     guard let validatedStudent: Student = obj as? Student else { fatalError() }

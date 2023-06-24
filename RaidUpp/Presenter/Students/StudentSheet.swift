@@ -49,7 +49,9 @@ struct StudentSheet: View {
             .toolbar {
                 Button {
                     print("🛠️ - Trying to save with selected guild being \(selectedGuild)")
-                    saveEdits(hostEntity, selectedGuild)
+                    if !availableGuilds.isEmpty {
+                        saveEdits(hostEntity, selectedGuild)
+                    }
                     isShowingInfo.toggle()
                 } label: {
                     Text("Save")

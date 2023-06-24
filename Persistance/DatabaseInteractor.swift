@@ -9,7 +9,7 @@ class DatabaseInteractor: ObservableObject {
     // MARK: - Initialization
 
     init() {
-        print("🛠️ - Initing Database Interactor")
+        print("🗳️ - Initing Database Interactor")
         managedObjectContext = PersistenceController.shared.container.viewContext
         if checkIfUserExists() { assignUser() } else { createUser() }
 
@@ -56,8 +56,8 @@ class DatabaseInteractor: ObservableObject {
         let request = Mentor.fetchRequest()
         do {
             let response = try managedObjectContext.fetch(request)
-            if response.isEmpty { print("🛠️ User doesn't exists") ; return false }
-            else { print("🛠️ User exists") ; return true }
+            if response.isEmpty { print("🗳️ User doesn't exists") ; return false }
+            else { print("🗳️ User exists") ; return true }
         } catch {
             fatalError()
         }
@@ -75,14 +75,14 @@ class DatabaseInteractor: ObservableObject {
         let request = Mentor.fetchRequest()
         do {
             self.mentor = try managedObjectContext.fetch(request).first!
-            print("🛠️ - Assinged User -> \(mentor.name)")
+            print("🗳️ Assinged User -> \(mentor.name)")
         } catch {
             fatalError()
         }
     }
 
     func fetchEntitiesFor(_ host: NSManagedObject) -> NSSet {
-        print("🛠️ Fetching entities for ", type(of: host))
+        print("🗳️ Fetching entities for ", type(of: host))
         switch type(of: host) {
         case is Mentor.Type:
             // swiftlint:disable force_cast
