@@ -9,9 +9,9 @@ class DatabaseInteractor: ObservableObject {
     // MARK: - Initialization
 
     init() {
+        print("🛠️ - Initing Database Interactor")
         managedObjectContext = PersistenceController.shared.container.viewContext
-        if checkIfUserExists() { assignUser() } else { /*createUser()*/ }
-        print("User id -> \(self.mentor.description)")
+        if checkIfUserExists() { assignUser() } else { createUser() }
 
         // IPAD: User id -> <Mentor: 0x60000129e3f0> (entity: Mentor; id: 0xb46ba92484b05914 <x-coredata://29634696-AC25-46E0-9ED9-56F210EB6DB0/Mentor/p1>; data: <fault>)
 
@@ -56,8 +56,8 @@ class DatabaseInteractor: ObservableObject {
         let request = Mentor.fetchRequest()
         do {
             let response = try managedObjectContext.fetch(request)
-            if response.isEmpty { print("user doesn't exists") ; return false }
-            else { print("user exists") ; return true }
+            if response.isEmpty { print("🛠️ User doesn't exists") ; return false }
+            else { print("🛠️ User exists") ; return true }
         } catch {
             fatalError()
         }
@@ -75,20 +75,28 @@ class DatabaseInteractor: ObservableObject {
         let request = Mentor.fetchRequest()
         do {
             self.mentor = try managedObjectContext.fetch(request).first!
+            print("🛠️ - Assinged User -> \(mentor.name)")
         } catch {
             fatalError()
         }
     }
 
     func fetchEntitiesFor(_ host: NSManagedObject) -> NSSet {
+        print("🛠️ Fetching entities for ", type(of: host))
         switch type(of: host) {
         case is Mentor.Type:
             // swiftlint:disable force_cast
             let host: Mentor = host as! Mentor
             return host.academies!
-            // swiftlint:enable force_cast
+        case is Academy.Type:
+            let host: Academy = host as! Academy
+            return host.students!
+        case is Guild.Type:
+            let host: Guild = host as! Guild
+            return host.guildBadges!
         default:
             fatalError()
+            // swiftlint:enable force_cast
         }
     }
 
