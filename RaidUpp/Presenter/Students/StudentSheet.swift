@@ -14,6 +14,8 @@ struct StudentSheet: View {
     @State var isShowingInfo: Bool = false
     @State private var selectedGuild = Guild()
 
+    var saveEdits: (_ student: Student, _ chosenGuild: Guild) -> Void
+
     var body: some View {
         NavigationStack {
             List {

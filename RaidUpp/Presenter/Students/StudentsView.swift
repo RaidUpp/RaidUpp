@@ -57,7 +57,10 @@ struct StudentsView: View {
 //            }
 //        }
         .sheet(isPresented: $isShowingInfo) {
-            StudentSheet(hostEntity: $targetStudent, availableGuilds: $viewModel.alternativeGuestEntities)
+            StudentSheet(hostEntity: $targetStudent,
+                         availableGuilds: $viewModel.alternativeGuestEntities) { student, chosenGuild in
+                viewModel.saveEditsTo(student, chosenGuild)
+            }
         }
     }
 }

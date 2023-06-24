@@ -14,7 +14,7 @@ class GenericListViewModel: ObservableObject {
         self.database = DatabaseInteractor.shared
 
         if entryPoint == nil {
-            self.listTitle = "Academy"
+            self.listTitle = "Academies"
             self.hostEntity = self.database.mentor
             self.expectedGuest = Academy.self
             self.guestEntities = database.fetchEntitiesFor(hostEntity)
@@ -153,6 +153,14 @@ extension GenericListViewModel {
     public func fetchGuilds(_ host: Academy) -> NSSet? {
         guard let guilds = host.guilds else { return nil }
         return guilds
+    }
+
+}
+
+extension GenericListViewModel {
+
+    public func saveEditsTo(_ student: Student, _ chosenGuild: Guild?) {
+
     }
 
 }

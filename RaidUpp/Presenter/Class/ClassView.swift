@@ -29,7 +29,7 @@ struct ClassView: View {
                     Text("Guilds")
                 }
             }
-            .navigationTitle("Class")
+            .navigationTitle("\(viewModel.listTitle)")
         }
     }
 }
