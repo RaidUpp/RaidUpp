@@ -9,88 +9,44 @@ import SwiftUI
 import PhotosUI
 
 struct GlobalForms: View {
-    var title: String
-    var subtitle: String
 
-    @State var nameTitle: String = ""
-    @State var nameSubtitle: String = ""
-    @State var selectedItems: [PhotosPickerItem] = []
-    @State var data: Data?
+    // MARK: - Sheet Information
+    var navigationTitle: String
+    var firstFormTitle: String
+    var firstFormTextFieldTip: String
+
+    var secondFormTitle: String
+    var secondFormTextFieldTip: String
+
+    @State var whichChild = Int()
+    @State var firstField: String = ""
+    @State var secondField: String = ""
+//    @State var selectedItems: [PhotosPickerItem] = []
+//    @State var data: Data?
 
     @Binding var showingSheet: Bool
-//    @Binding var viewModel: ListViewModel
 
-    var doneAction: (_ title: String, _ subtitle: String) -> Void
+
+    var doneAction: (_ child: Int, _ title: String, _ subtitle: String) -> Void
 
     var body: some View {
         NavigationStack {
             List {
-                Section("Name \(title)") {
-                    TextField("Name \(title)", text: $nameTitle)
+                Section("\(firstFormTitle)") {
+                    TextField("\(firstFormTextFieldTip)", text: $firstField)
                 }
-                Section("Subtitle \(subtitle)") {
-                    TextField("Name \(subtitle)", text: $nameSubtitle)
-                }
-                Section("Imagem") {
-                    Button {
-
-                    } label: {
-                        Button {
-                            capturePicture()
-                        } label: {
-                            Text("Take a picture")
-                                .foregroundColor(.orange)
-                        }
-
-                    }
-                    PhotosPicker(selection: $selectedItems,
-                                 maxSelectionCount: 1
-                    ) {
-                        Text("From Gallery")
-                    }
-                    .onChange(of: selectedItems, perform: { _ in
-                        guard let item = selectedItems.first else {
-                            return
-                        }
-
-                        item.loadTransferable(type: Data.self) { result in
-                            switch result {
-                            case .success(let data):
-                                if let data = data {
-                                    self.data = data
-                                } else {
-                                    print("Data is nil")
-                                }
-                            case .failure(let failure):
-                                fatalError("\(failure)")
-                            }
-                        }
-                    })
-
-                    HStack {
-                        Spacer()
-                        Rectangle()
-                            .frame(width: 222, height: 242, alignment: .center)
-                            .foregroundColor(.gray)
-                            .padding(16)
-                            .overlay {
-                                if let data = data, let uiImage = UIImage(data: data
-                                ) {
-                                    Image(uiImage: uiImage)
-                                        .resizable()
-                                }
-                            }
-                        Spacer()
-                    }
+                Section("\(secondFormTitle)") {
+                    TextField("\(secondFormTextFieldTip)", text: $secondField)
                 }
             }
-            .navigationTitle(title)
+            .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button {
                         cancelForm()
+                        showingSheet.toggle()
                     } label: {
                         Text("Cancel")
                             .foregroundColor(.red)
@@ -99,12 +55,15 @@ struct GlobalForms: View {
 
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
-                        doneAction(nameTitle, nameSubtitle)
-//                        viewModel.createEntity(guest: 0, title: title /*, image: data!*/)
+                        doneAction(whichChild, firstField, secondField)
                         showingSheet.toggle()
                     } label: {
                         Text("Done")
-                    }
+                    }.disabled(
+                        firstField.isEmpty ||
+                        secondField.isEmpty ||
+                        navigationTitle == "Creating new Academy Class" && secondField.count < 9
+                    )
                 }
             }
         }
@@ -121,10 +80,58 @@ extension GlobalForms {
     }
 }
 
-//struct GlobalForms_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GlobalForms(title: "Global", doneAction: {
-//
-//        })
-//    }
-//}
+/*
+                 Section("Imagem") {
+                     Button {
+
+                     } label: {
+                         Button {
+                             capturePicture()
+                         } label: {
+                             Text("Take a picture")
+                                 .foregroundColor(.orange)
+                         }
+
+                     }
+                     PhotosPicker(selection: $selectedItems,
+                                  maxSelectionCount: 1
+                     ) {
+                         Text("From Gallery")
+                     }
+                     .onChange(of: selectedItems, perform: { _ in
+                         guard let item = selectedItems.first else {
+                             return
+                         }
+
+                         item.loadTransferable(type: Data.self) { result in
+                             switch result {
+                             case .success(let data):
+                                 if let data = data {
+                                     self.data = data
+                                 } else {
+                                     print("Data is nil")
+                                 }
+                             case .failure(let failure):
+                                 fatalError("\(failure)")
+                             }
+                         }
+                     })
+
+                     HStack {
+                         Spacer()
+                         Rectangle()
+                             .frame(width: 222, height: 242, alignment: .center)
+                             .foregroundColor(.gray)
+                             .padding(16)
+                             .overlay {
+                                 if let data = data, let uiImage = UIImage(data: data
+                                 ) {
+                                     Image(uiImage: uiImage)
+                                         .resizable()
+                                 }
+                             }
+                         Spacer()
+                     }
+                 }
+             }
+ */

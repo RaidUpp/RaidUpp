@@ -11,13 +11,13 @@ struct BoardHeader: View {
     let title: String
     let firstSubheadline: String
     let secondSubheadline: String
-    
+
     init(title: String, firstSubheadline: String, secondSubheadline: String) {
         self.title = title
         self.firstSubheadline = firstSubheadline
         self.secondSubheadline = secondSubheadline
     }
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -37,12 +37,7 @@ struct BoardHeader: View {
             } label: {
                 Text("Calendar")
                     .font(.body)
-            }
-            Button {
-                print("calendario")
-            } label: {
-                Text("Calendar")
-                    .font(.body)
+                    .foregroundColor(.black)
             }
         }
         .frame(width: 1739, height: 111)
