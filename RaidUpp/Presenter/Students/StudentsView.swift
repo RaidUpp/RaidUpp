@@ -14,6 +14,7 @@ struct StudentsView: View {
     @State var isShowingInfo: Bool = false
     @State var targetStudent = Student()
     @State var searchText: String = ""
+    
     var navigationTitle: String
 
     var body: some View {
@@ -46,20 +47,23 @@ struct StudentsView: View {
         .onChange(of: isShowingForms, perform: { _ in
             _ = refreshable {}
         })
-//        .sheet(isPresented: $isShowingForms) {
-//            GlobalForms(navigationTitle: "Adding new Student to Academy",
-//                        firstFormTitle: "Student Name",
-//                        firstFormTextFieldTip: "Example: Ping Pongerson!",
-//                        secondFormTitle: "Active Years",
-//                        secondFormTextFieldTip: "Example: He's a goof ball",
-//                        showingSheet: $isShowingForms) { _, title, subtitle in
-//                viewModel.createStudentEntity(title: title, subtitle: subtitle)
-//            }
-//        }
+        .sheet(isPresented: $isShowingForms) {
+            GlobalForms(navigationTitle: "Adding new Student to Academy",
+                        firstFormTitle: "Student Name",
+                        firstFormTextFieldTip: "Example: Ping Pongerson!",
+                        secondFormTitle: "Notes about Student",
+                        secondFormTextFieldTip: "Example: He's a goof ball",
+                        showingSheet: $isShowingForms) { _, title, subtitle in
+                viewModel.createStudentEntity(title: title, subtitle: subtitle)
+            }
+        }
         .sheet(isPresented: $isShowingInfo) {
             StudentSheet(hostEntity: $targetStudent,
-                         availableGuilds: $viewModel.alternativeGuestEntities) { student, chosenGuild in
-                viewModel.saveEditsTo(student, chosenGuild)
+                         isShowingInfo: $isShowingInfo,
+                         // swiftlint: disable force_cast
+                         availableGuilds: Array(viewModel.alternativeGuestEntities as! Set<Guild>).sorted { $0.title! > $1.title! }) { student, guild in
+                         // swiftlint: enable force_cast
+                viewModel.saveEditsTo(student, guild)
             }
         }
     }

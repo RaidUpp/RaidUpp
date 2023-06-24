@@ -10,9 +10,11 @@ import SwiftUI
 struct StudentSheet: View {
 
     @Binding var hostEntity: Student
-    @Binding var availableGuilds: NSSet
-    @State var isShowingInfo: Bool = false
-    @State private var selectedGuild = Guild()
+    @Binding var isShowingInfo: Bool
+
+    var availableGuilds: [Guild]
+
+    @State var selectedGuild = Guild()
 
     var saveEdits: (_ student: Student, _ chosenGuild: Guild) -> Void
 
@@ -26,22 +28,33 @@ struct StudentSheet: View {
                     Text("\(hostEntity.subtitle!)")
                 }
                 Section("Guild") {
-                    Picker("", selection: $selectedGuild) {
-                        ForEach(Array(availableGuilds as Set), id: \.self) { guild -> Text? in
-                            if let validGuild = guild as? Guild {
-                                return Text("\(validGuild.title!)")
+                    Picker("\(hostEntity.title!)'s Guild", selection: $selectedGuild) {
+                        ForEach(availableGuilds, id: \.self) { guild in
+                            // swiftlint: disable force_cast
+                            Button {
+                                selectedGuild = guild
+                            } label: {
+                                Text("\(guild.title!)")
                             }
-                            return nil
+                            // swiftlint: enable force_cast
+                        }.task {
+                            print("🛠️ - Currently Select Guild - \(selectedGuild)")
                         }
                     }
                 }
             }
-            .onDisappear {
-                print("🛠️ - Executed before closing Sheet")
-            }
             .navigationTitle(hostEntity.title!)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible)
+            .toolbar {
+                Button {
+                    print("🛠️ - Trying to save with selected guild being \(selectedGuild)")
+                    saveEdits(hostEntity, selectedGuild)
+                    isShowingInfo.toggle()
+                } label: {
+                    Text("Save")
+                }
+            }
         }
     }
 }

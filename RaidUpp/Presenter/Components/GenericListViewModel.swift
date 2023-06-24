@@ -160,7 +160,9 @@ extension GenericListViewModel {
 extension GenericListViewModel {
 
     public func saveEditsTo(_ student: Student, _ chosenGuild: Guild?) {
-
+        print("🛠️ - Student's Chosen Guild: \(chosenGuild)")
+        chosenGuild?.addToStudent(student)
+        database.saveData()
     }
 
 }

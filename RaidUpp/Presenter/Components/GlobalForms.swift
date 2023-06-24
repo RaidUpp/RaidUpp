@@ -52,7 +52,6 @@ struct GlobalForms: View {
                             .foregroundColor(.red)
                     }
                 }
-
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
                         doneAction(whichChild, firstField, secondField)
