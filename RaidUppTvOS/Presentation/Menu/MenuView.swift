@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import CoreData
 
 struct MenuView: View {
 
@@ -27,15 +27,37 @@ struct MenuView: View {
                     .foregroundColor(.black)
                     .font(.title)
                     .bold()
-                ForEach(Array(viewModel.mainGuestEntities as Set), id: \.self) { entity in
-                    MenuButton(title: "\(getNameForObj(entity))") {
+                ForEach(Array(viewModel.guestEntities as Set), id: \.self) { entity in
+                    MenuButton(title: "\(generateName(entity))") {
                         GuildView()
+                    }.task {
+                        print("🛠️ - Entities iterated over on menu view -> \(entity)")
                     }
                 }
             }
 
         }.background(Image("background"))
     }
+}
+
+extension MenuView {
+
+    private func generateName(_ obj: NSObject) -> String {
+        if let validatedObj = obj as? NSManagedObject {
+            let name: String
+
+            if let academyName = validatedObj as? Academy {
+                return "\(academyName.title!): \(academyName.years!)"
+            } else if let studentName = validatedObj as? Student {
+                return "\(studentName.title!)"
+            } else {
+                return "🐛 - Could not find correct return type, returning default"
+            }
+        }
+
+        return "🐛 - Could not validate object, returning default"
+    }
+
 }
 
 
