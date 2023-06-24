@@ -29,6 +29,7 @@
         <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="guild" inverseEntity="Student"/>
     </entity>
     <entity name="Mentor" representedClassName="Mentor" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="academies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Academy" inverseName="mentors" inverseEntity="Academy"/>
     </entity>
     <entity name="Mission" representedClassName="Mission" syncable="YES" codeGenerationType="class">
