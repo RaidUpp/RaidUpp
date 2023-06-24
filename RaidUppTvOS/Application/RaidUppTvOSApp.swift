@@ -44,7 +44,7 @@ struct RaidUppTvOSApp: App {
                         case (.export, true):
                             print("🛠️ Finished uploading records")
                         default:
-                            print("🛠️ default")
+                            print("🛠️ Fetching somehow didn't even happen")
                         }
                     }
             }

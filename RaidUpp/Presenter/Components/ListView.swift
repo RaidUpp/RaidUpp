@@ -76,20 +76,6 @@ extension ListView {
         return "🐛 - Could not validate object, returning default"
     }
 
-    public func getNameForObj(_ obj: NSObject) -> String {
-        guard let validatedObj = obj as? NSManagedObject else { fatalError() }
-        switch type(of: validatedObj) {
-        case is Academy.Type:
-            guard let academyName: Academy = validatedObj as? Academy else { fatalError() }
-            return "\(academyName.title!): \(academyName.years!)"
-        case is Student.Type:
-            guard let studentName: Student = validatedObj as? Student else { fatalError() }
-            return "\(studentName.title!)"
-        default:
-            return "🐛 - Something went wrong, returning default string"
-        }
-    }
-
 }
 
 //

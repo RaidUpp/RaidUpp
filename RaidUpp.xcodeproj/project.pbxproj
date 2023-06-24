@@ -29,7 +29,7 @@
 		954F26CE2A39E0E0009FAD10 /* AcademyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26CD2A39E0E0009FAD10 /* AcademyView.swift */; };
 		954F26D62A39F2C3009FAD10 /* FormClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F26D52A39F2C3009FAD10 /* FormClass.swift */; };
 		95B49B062A3C6A8A0028D940 /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B052A3C6A8A0028D940 /* ClassView.swift */; };
-		95B49B082A3C6BB20028D940 /* GuildsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B072A3C6BB20028D940 /* GuildsView.swift */; };
+		95B49B082A3C6BB20028D940 /* GuildsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B072A3C6BB20028D940 /* GuildsListView.swift */; };
 		95B49B0A2A3C6BBC0028D940 /* StudentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B49B092A3C6BBC0028D940 /* StudentsView.swift */; };
 		D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889C2A2F5C7600A20667 /* RaidUppApp.swift */; };
 		D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623889E2A2F5C7600A20667 /* ContentView.swift */; };
@@ -47,6 +47,7 @@
 		D6707D3A2A465F9200BE06D8 /* MissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D392A465F9200BE06D8 /* MissionsView.swift */; };
 		D6707D3C2A466BED00BE06D8 /* StudentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D3B2A466BED00BE06D8 /* StudentSheet.swift */; };
 		D6707D3E2A468FF100BE06D8 /* StudentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D3D2A468FF100BE06D8 /* StudentListView.swift */; };
+		D6707D402A46A9FD00BE06D8 /* GuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D3F2A46A9FD00BE06D8 /* GuildView.swift */; };
 		D6924B232A39F910007CB0B0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62388A52A2F5C7700A20667 /* Persistence.swift */; };
 		D6924B242A39F910007CB0B0 /* DatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */; };
 		D6924B252A39F913007CB0B0 /* RaidUpp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D62388A72A2F5C7700A20667 /* RaidUpp.xcdatamodeld */; };
@@ -102,7 +103,7 @@
 		954F26CD2A39E0E0009FAD10 /* AcademyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyView.swift; sourceTree = "<group>"; };
 		954F26D52A39F2C3009FAD10 /* FormClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormClass.swift; sourceTree = "<group>"; };
 		95B49B052A3C6A8A0028D940 /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
-		95B49B072A3C6BB20028D940 /* GuildsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildsView.swift; sourceTree = "<group>"; };
+		95B49B072A3C6BB20028D940 /* GuildsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildsListView.swift; sourceTree = "<group>"; };
 		95B49B092A3C6BBC0028D940 /* StudentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsView.swift; sourceTree = "<group>"; };
 		D62388992A2F5C7600A20667 /* RaidUpp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaidUpp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D623889C2A2F5C7600A20667 /* RaidUppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidUppApp.swift; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		D6707D392A465F9200BE06D8 /* MissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsView.swift; sourceTree = "<group>"; };
 		D6707D3B2A466BED00BE06D8 /* StudentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSheet.swift; sourceTree = "<group>"; };
 		D6707D3D2A468FF100BE06D8 /* StudentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListView.swift; sourceTree = "<group>"; };
+		D6707D3F2A46A9FD00BE06D8 /* GuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildView.swift; sourceTree = "<group>"; };
 		D69ED1EC2A44775E00763EF5 /* RaidUppTvOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RaidUppTvOS.entitlements; sourceTree = "<group>"; };
 		D69ED1ED2A44776500763EF5 /* RaidUpp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RaidUpp.entitlements; sourceTree = "<group>"; };
 		D69ED1EE2A4478CC00763EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -172,18 +174,10 @@
 		351D80412A41CB6F00D3CC53 /* MissionDetails */ = {
 			isa = PBXGroup;
 			children = (
-				351D80422A41CB6F00D3CC53 /* View */,
+				351D80462A41CB6F00D3CC53 /* MissionDetailsView.swift */,
+				351D80432A41CB6F00D3CC53 /* Component */,
 			);
 			path = MissionDetails;
-			sourceTree = "<group>";
-		};
-		351D80422A41CB6F00D3CC53 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				351D80432A41CB6F00D3CC53 /* Component */,
-				351D80462A41CB6F00D3CC53 /* MissionDetailsView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		351D80432A41CB6F00D3CC53 /* Component */ = {
@@ -198,17 +192,9 @@
 		351D80472A41CB6F00D3CC53 /* MissionBoard */ = {
 			isa = PBXGroup;
 			children = (
-				351D80482A41CB6F00D3CC53 /* View */,
-			);
-			path = MissionBoard;
-			sourceTree = "<group>";
-		};
-		351D80482A41CB6F00D3CC53 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				351D80492A41CB6F00D3CC53 /* MissionBoardView.swift */,
 			);
-			path = View;
+			path = MissionBoard;
 			sourceTree = "<group>";
 		};
 		351D804A2A41CB6F00D3CC53 /* Guild */ = {
@@ -230,17 +216,9 @@
 		351D804D2A41CB6F00D3CC53 /* GuildMenu */ = {
 			isa = PBXGroup;
 			children = (
-				351D804E2A41CB6F00D3CC53 /* View */,
-			);
-			path = GuildMenu;
-			sourceTree = "<group>";
-		};
-		351D804E2A41CB6F00D3CC53 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */,
 			);
-			path = View;
+			path = GuildMenu;
 			sourceTree = "<group>";
 		};
 		351D80602A41CC1E00D3CC53 /* Data */ = {
@@ -254,33 +232,17 @@
 		3546DEAC2A446D77006BDC28 /* ClassMenu */ = {
 			isa = PBXGroup;
 			children = (
-				3546DEAD2A446D95006BDC28 /* View */,
-			);
-			path = ClassMenu;
-			sourceTree = "<group>";
-		};
-		3546DEAD2A446D95006BDC28 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				3546DEAE2A446DA5006BDC28 /* ClassMenuView.swift */,
 			);
-			path = View;
+			path = ClassMenu;
 			sourceTree = "<group>";
 		};
 		357159122A44926E0017963C /* Participants */ = {
 			isa = PBXGroup;
 			children = (
-				357159132A4492750017963C /* View */,
-			);
-			path = Participants;
-			sourceTree = "<group>";
-		};
-		357159132A4492750017963C /* View */ = {
-			isa = PBXGroup;
-			children = (
 				357159142A4492970017963C /* ParticipantsView.swift */,
 			);
-			path = View;
+			path = Participants;
 			sourceTree = "<group>";
 		};
 		35ED6C2D2A38B385005E5BDE /* RaidUppTvOS */ = {
@@ -349,7 +311,8 @@
 		954F26C82A39DB25009FAD10 /* Guilds */ = {
 			isa = PBXGroup;
 			children = (
-				95B49B072A3C6BB20028D940 /* GuildsView.swift */,
+				D6707D3F2A46A9FD00BE06D8 /* GuildView.swift */,
+				95B49B072A3C6BB20028D940 /* GuildsListView.swift */,
 			);
 			path = Guilds;
 			sourceTree = "<group>";
@@ -505,33 +468,17 @@
 		FE8A923B2A40933D00EB8A6C /* Badges */ = {
 			isa = PBXGroup;
 			children = (
-				FE8A923C2A40935D00EB8A6C /* View */,
-			);
-			path = Badges;
-			sourceTree = "<group>";
-		};
-		FE8A923C2A40935D00EB8A6C /* View */ = {
-			isa = PBXGroup;
-			children = (
 				FE8A923D2A40936F00EB8A6C /* BadgesView.swift */,
 			);
-			path = View;
+			path = Badges;
 			sourceTree = "<group>";
 		};
 		FE8A923F2A41D53E00EB8A6C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				FE8A92422A41D5A600EB8A6C /* View */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
-		FE8A92422A41D5A600EB8A6C /* View */ = {
-			isa = PBXGroup;
-			children = (
 				FE8A92402A41D57700EB8A6C /* MenuView.swift */,
 			);
-			path = View;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -764,10 +711,11 @@
 				D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */,
 				9543E4282A3B43ED005D2345 /* ListView.swift in Sources */,
 				D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */,
+				D6707D402A46A9FD00BE06D8 /* GuildView.swift in Sources */,
 				D6707D3A2A465F9200BE06D8 /* MissionsView.swift in Sources */,
 				D6707D3C2A466BED00BE06D8 /* StudentSheet.swift in Sources */,
 				95B49B062A3C6A8A0028D940 /* ClassView.swift in Sources */,
-				95B49B082A3C6BB20028D940 /* GuildsView.swift in Sources */,
+				95B49B082A3C6BB20028D940 /* GuildsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
