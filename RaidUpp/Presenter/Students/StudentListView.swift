@@ -34,8 +34,6 @@ extension StudentListView {
 
     private func generateName(_ obj: NSObject) -> String {
         if let validatedObj = obj as? NSManagedObject {
-            let name: String
-
             if let academyName = validatedObj as? Academy {
                 return "\(academyName.title!): \(academyName.years!)"
             } else if let studentName = validatedObj as? Student {

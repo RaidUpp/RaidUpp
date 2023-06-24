@@ -17,9 +17,6 @@ struct ClassView: View {
             List {
                 NavigationLink {
                     let viewModel = GenericListViewModel(viewModel.hostEntity)
-                    // swiftlint: disable force_cast
-                    let availableGuilds = viewModel.fetchGuilds(viewModel.hostEntity as! Academy)
-                    // swiftlint: enable force_cast
                     StudentsView(viewModel: viewModel, navigationTitle: "Students")
                 } label: {
                     Text("Students")

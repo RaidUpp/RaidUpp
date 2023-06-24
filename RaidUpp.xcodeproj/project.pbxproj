@@ -47,7 +47,7 @@
 		D6707D3A2A465F9200BE06D8 /* MissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D392A465F9200BE06D8 /* MissionsView.swift */; };
 		D6707D3C2A466BED00BE06D8 /* StudentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D3B2A466BED00BE06D8 /* StudentSheet.swift */; };
 		D6707D3E2A468FF100BE06D8 /* StudentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D3D2A468FF100BE06D8 /* StudentListView.swift */; };
-		D6707D402A46A9FD00BE06D8 /* GuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D3F2A46A9FD00BE06D8 /* GuildView.swift */; };
+		D6707D402A46A9FD00BE06D8 /* GuildSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6707D3F2A46A9FD00BE06D8 /* GuildSheet.swift */; };
 		D6924B232A39F910007CB0B0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62388A52A2F5C7700A20667 /* Persistence.swift */; };
 		D6924B242A39F910007CB0B0 /* DatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B47AC82A37927400F80F95 /* DatabaseInteractor.swift */; };
 		D6924B252A39F913007CB0B0 /* RaidUpp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D62388A72A2F5C7700A20667 /* RaidUpp.xcdatamodeld */; };
@@ -123,7 +123,7 @@
 		D6707D392A465F9200BE06D8 /* MissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsView.swift; sourceTree = "<group>"; };
 		D6707D3B2A466BED00BE06D8 /* StudentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSheet.swift; sourceTree = "<group>"; };
 		D6707D3D2A468FF100BE06D8 /* StudentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListView.swift; sourceTree = "<group>"; };
-		D6707D3F2A46A9FD00BE06D8 /* GuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildView.swift; sourceTree = "<group>"; };
+		D6707D3F2A46A9FD00BE06D8 /* GuildSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSheet.swift; sourceTree = "<group>"; };
 		D69ED1EC2A44775E00763EF5 /* RaidUppTvOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RaidUppTvOS.entitlements; sourceTree = "<group>"; };
 		D69ED1ED2A44776500763EF5 /* RaidUpp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RaidUpp.entitlements; sourceTree = "<group>"; };
 		D69ED1EE2A4478CC00763EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -311,8 +311,8 @@
 		954F26C82A39DB25009FAD10 /* Guilds */ = {
 			isa = PBXGroup;
 			children = (
-				D6707D3F2A46A9FD00BE06D8 /* GuildView.swift */,
 				95B49B072A3C6BB20028D940 /* GuildsListView.swift */,
+				D6707D3F2A46A9FD00BE06D8 /* GuildSheet.swift */,
 			);
 			path = Guilds;
 			sourceTree = "<group>";
@@ -711,7 +711,7 @@
 				D623889F2A2F5C7600A20667 /* ContentView.swift in Sources */,
 				9543E4282A3B43ED005D2345 /* ListView.swift in Sources */,
 				D623889D2A2F5C7600A20667 /* RaidUppApp.swift in Sources */,
-				D6707D402A46A9FD00BE06D8 /* GuildView.swift in Sources */,
+				D6707D402A46A9FD00BE06D8 /* GuildSheet.swift in Sources */,
 				D6707D3A2A465F9200BE06D8 /* MissionsView.swift in Sources */,
 				D6707D3C2A466BED00BE06D8 /* StudentSheet.swift in Sources */,
 				95B49B062A3C6A8A0028D940 /* ClassView.swift in Sources */,

@@ -24,7 +24,6 @@ struct ListView<Content: View, Banner: View>: View {
 
     @State var searchText: String = ""
 
-
     var body: some View {
         NavigationStack {
             List {
@@ -62,27 +61,29 @@ extension ListView {
 
     private func generateName(_ obj: NSObject) -> String {
         if let validatedObj = obj as? NSManagedObject {
-            let name: String
 
-            if let academyName = validatedObj as? Academy {
-                return "\(academyName.title!): \(academyName.years!)"
-            } else if let studentName = validatedObj as? Student {
-                return "\(studentName.title!)"
-            } else {
+            switch type(of: validatedObj) {
+            case is Academy.Type:
+                guard let academy = validatedObj as? Academy else { fatalError() }
+                return "\(academy.title!): \(academy.years!)"
+
+            case is Student.Type:
+                guard let student = validatedObj as? Student else { fatalError() }
+                return "\(student.title!)"
+
+            case is Guild.Type:
+                guard let guild = validatedObj as? Guild else { fatalError() }
+                return "\(guild.title!)"
+
+            case is Mission.Type:
+                guard let mission = validatedObj as? Mission else { fatalError() }
+                return "\(mission.title!)"
+
+            default:
                 return "🐛 - Could not find correct return type, returning default"
             }
         }
-
         return "🐛 - Could not validate object, returning default"
     }
 
 }
-
-//
-//struct ListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListView(title: "Global", addAction: {}, content: {value in
-//            Text(value)
-//        })
-//    }
-//}

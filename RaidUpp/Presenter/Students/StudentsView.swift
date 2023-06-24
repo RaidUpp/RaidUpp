@@ -20,12 +20,10 @@ struct StudentsView: View {
         List {
             ForEach(Array(viewModel.guestEntities as Set), id: \.self) { obj in
                 Button {
-                    // swiftlint: disable force_cast
                     print("🛠️ - Casting \(obj) as Student")
                     guard let validatedStudent: Student = obj as? Student else { fatalError() }
                     targetStudent = validatedStudent
                     isShowingInfo.toggle()
-                    // swiftlint: enable force_cast
                 } label: {
 //                    Label("uh", systemImage: "plus")
                     Text("\(generateName(obj))").foregroundColor(.black)
@@ -59,10 +57,7 @@ struct StudentsView: View {
 //            }
 //        }
         .sheet(isPresented: $isShowingInfo) {
-            StudentSheet(hostEntity: $targetStudent,
-                         doneAction: { _, _, _ in
-
-            })
+            StudentSheet(hostEntity: $targetStudent, availableGuilds: $viewModel.alternativeGuestEntities)
         }
     }
 }

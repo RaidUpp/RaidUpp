@@ -18,6 +18,9 @@ class GenericListViewModel: ObservableObject {
             self.hostEntity = self.database.mentor
             self.expectedGuest = Academy.self
             self.guestEntities = database.fetchEntitiesFor(hostEntity)
+            for guest in guestEntities {
+                print("🔧 Fetched \(guest)...")
+            }
             return
         }
 
@@ -36,7 +39,13 @@ class GenericListViewModel: ObservableObject {
             self.hostEntity = entity
             self.expectedGuest = Badge.self
             self.guestEntities = entity.soloBadges!
-            self.listTitle = entity.title ?? "Turma Debug"
+            self.listTitle = entity.title ?? "Estudante Debug"
+        case is Guild.Type:
+            guard let entity = entryPoint as? Guild else { fatalError() }
+            self.hostEntity = entity
+            self.expectedGuest = Badge.self
+            self.guestEntities = entity.guildBadges!
+            self.listTitle = entity.title ?? "Guild Debug"
         default:
             fatalError()
         }

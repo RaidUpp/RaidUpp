@@ -10,10 +10,9 @@ import SwiftUI
 struct StudentSheet: View {
 
     @Binding var hostEntity: Student
+    @Binding var availableGuilds: NSSet
     @State var isShowingInfo: Bool = false
-    @State private var selectedGuild = "None"
-
-    var doneAction: (_ child: Int, _ title: String, _ subtitle: String) -> Void
+    @State private var selectedGuild = Guild()
 
     var body: some View {
         NavigationStack {
@@ -25,12 +24,18 @@ struct StudentSheet: View {
                     Text("\(hostEntity.subtitle!)")
                 }
                 Section("Guild") {
-//                    Picker("", selection: selectedGuild) {
-//
-//                    }
+                    Picker("", selection: $selectedGuild) {
+                        ForEach(Array(availableGuilds as Set), id: \.self) { guild -> Text? in
+                            if let validGuild = guild as? Guild {
+                                return Text("\(validGuild.title!)")
+                            }
+                            return nil
+                        }
+                    }
                 }
-            }.onAppear {
-                print("🛠️ - Host Entity Name \(hostEntity.title!)")
+            }
+            .onDisappear {
+                print("🛠️ - Executed before closing Sheet")
             }
             .navigationTitle(hostEntity.title!)
             .navigationBarTitleDisplayMode(.inline)
