@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct StudentSheet: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-struct StudentSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        StudentSheet()
+    @Binding var hostEntity: Student
+    @State var isShowingInfo: Bool = false
+    @State private var selectedGuild = "None"
+
+    var doneAction: (_ child: Int, _ title: String, _ subtitle: String) -> Void
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section("Student Name") {
+                    Text("\(hostEntity.title!)")
+                }
+                Section("Student Notes") {
+                    Text("\(hostEntity.subtitle!)")
+                }
+                Section("Guild") {
+//                    Picker("", selection: selectedGuild) {
+//
+//                    }
+                }
+            }.onAppear {
+                print("🛠️ - Host Entity Name \(hostEntity.title!)")
+            }
+            .navigationTitle(hostEntity.title!)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible)
+        }
     }
 }

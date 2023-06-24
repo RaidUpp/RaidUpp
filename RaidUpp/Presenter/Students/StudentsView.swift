@@ -6,24 +6,81 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct StudentsView: View {
     @State var viewModel: GenericListViewModel
-    @State var isShowForms: Bool = false
+    @State var isShowingForms: Bool = false
+    @State var isShowingInfo: Bool = false
+    @State var targetStudent = Student()
+    @State var searchText: String = ""
+    var navigationTitle: String
 
     var body: some View {
-        ListView(title: "Students", guests: viewModel.mainGuestEntities, addAction: {
-            isShowForms.toggle()
-        }, content: { obj in
-            ClassView(viewModel: GenericListViewModel(obj))
-        })
-        .onChange(of: isShowForms, perform: { _ in
-            _ = refreshable {}
-        })
-        .sheet(isPresented: $isShowForms) {
-            GlobalForms(title: "Student", showingSheet: $isShowForms) { title, subtitle in
-                viewModel.createStudentEntity(title: title, subtitle: subtitle)
+        List {
+            ForEach(Array(viewModel.guestEntities as Set), id: \.self) { obj in
+                Button {
+                    // swiftlint: disable force_cast
+                    print("🛠️ - Casting \(obj) as Student")
+                    guard let validatedStudent: Student = obj as? Student else { fatalError() }
+                    targetStudent = validatedStudent
+                    isShowingInfo.toggle()
+                    // swiftlint: enable force_cast
+                } label: {
+//                    Label("uh", systemImage: "plus")
+                    Text("\(generateName(obj))").foregroundColor(.black)
+                }
+
             }
         }
+        .navigationTitle(navigationTitle)
+        .searchable(text: $searchText,
+                    placement: .navigationBarDrawer,
+                    prompt: navigationTitle)
+        .toolbar {
+            Button {
+                isShowingForms.toggle()
+            }label: {
+                Image(systemName: "plus")
+                    .font(.system(size: CGFloat(FontSizeEnum.small.rawValue)))
+            }
+        }
+        .onChange(of: isShowingForms, perform: { _ in
+            _ = refreshable {}
+        })
+//        .sheet(isPresented: $isShowingForms) {
+//            GlobalForms(navigationTitle: "Adding new Student to Academy",
+//                        firstFormTitle: "Student Name",
+//                        firstFormTextFieldTip: "Example: Ping Pongerson!",
+//                        secondFormTitle: "Active Years",
+//                        secondFormTextFieldTip: "Example: He's a goof ball",
+//                        showingSheet: $isShowingForms) { _, title, subtitle in
+//                viewModel.createStudentEntity(title: title, subtitle: subtitle)
+//            }
+//        }
+        .sheet(isPresented: $isShowingInfo) {
+            StudentSheet(hostEntity: $targetStudent,
+                         doneAction: { _, _, _ in
+
+            })
+        }
     }
+}
+
+extension StudentsView {
+
+    private func generateName(_ obj: NSObject) -> String {
+        if let validatedObj = obj as? NSManagedObject {
+            if let academyName = validatedObj as? Academy {
+                return "\(academyName.title!): \(academyName.years!)"
+            } else if let studentName = validatedObj as? Student {
+                return "\(studentName.title!)"
+            } else {
+                return "🐛 - Could not find correct return type, returning default"
+            }
+        }
+
+        return "🐛 - Could not validate object, returning default"
+    }
+
 }

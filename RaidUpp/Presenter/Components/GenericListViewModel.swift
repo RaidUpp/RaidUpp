@@ -17,7 +17,7 @@ class GenericListViewModel: ObservableObject {
             self.listTitle = "Academy"
             self.hostEntity = self.database.mentor
             self.expectedGuest = Academy.self
-            self.mainGuestEntities = database.fetchEntitiesFor(hostEntity)
+            self.guestEntities = database.fetchEntitiesFor(hostEntity)
             return
         }
 
@@ -28,14 +28,14 @@ class GenericListViewModel: ObservableObject {
             self.hostEntity = entity
             self.expectedGuest = Student.self
             self.secondExpectedGuest = Guild.self
-            self.mainGuestEntities = entity.students!
-            self.scndGuestEntities = entity.guilds!
+            self.guestEntities = entity.students!
+            self.alternativeGuestEntities = entity.guilds!
             self.listTitle = entity.title ?? "Turma Debug"
         case is Student.Type:
             guard let entity = entryPoint as? Student else { fatalError() }
             self.hostEntity = entity
             self.expectedGuest = Badge.self
-            self.mainGuestEntities = entity.soloBadges!
+            self.guestEntities = entity.soloBadges!
             self.listTitle = entity.title ?? "Turma Debug"
         default:
             fatalError()
@@ -48,8 +48,8 @@ class GenericListViewModel: ObservableObject {
     private var expectedGuest: NSManagedObject.Type
     private var secondExpectedGuest: NSManagedObject.Type?
 
-    @Published var mainGuestEntities = NSSet()
-    @Published var scndGuestEntities = NSSet()
+    @Published var guestEntities = NSSet()
+    @Published var alternativeGuestEntities = NSSet()
 
     @Published var listTitle: String
 
@@ -64,7 +64,7 @@ extension GenericListViewModel {
             newAcademy.title = title
             newAcademy.years = subtitle
             host.addToAcademies(newAcademy) // host: mentor, host tem um método que é para adicionar a suas relações
-            _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
+            _ = $guestEntities.append(database.fetchEntitiesFor(host))
         case is Academy.Type:
             guard let host: Academy = hostEntity as? Academy else { fatalError() }
             switch guest {
@@ -73,13 +73,13 @@ extension GenericListViewModel {
                 newStudent.title = title
                 newStudent.subtitle = subtitle
                 host.addToStudents(newStudent)
-                _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
+                _ = $guestEntities.append(database.fetchEntitiesFor(host))
             case 1:
                 let newGuild = Guild(context: database.managedObjectContext)
                 newGuild.title = title
                 newGuild.subtitle = subtitle
                 host.addToGuilds(newGuild)
-                _ = $scndGuestEntities.append(database.fetchEntitiesFor(host))
+                _ = $alternativeGuestEntities.append(database.fetchEntitiesFor(host))
             default:
                 fatalError()
             }
@@ -89,13 +89,13 @@ extension GenericListViewModel {
         database.saveData()
     }
 
-    public  func createAcademyEntity(title: String, subtitle: String) {
+    public func createAcademyEntity(title: String, subtitle: String) {
         guard let host: Mentor = self.hostEntity as? Mentor else { fatalError() }
         let newAcademy = Academy(context: database.managedObjectContext)
         newAcademy.title = title
         newAcademy.years = subtitle
         host.addToAcademies(newAcademy)
-        _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
+        _ = $guestEntities.append(database.fetchEntitiesFor(host))
         database.saveData()
     }
 
@@ -105,7 +105,7 @@ extension GenericListViewModel {
         newStudent.title = title
         newStudent.subtitle = subtitle
         host.addToStudents(newStudent)
-        _ = $mainGuestEntities.append(database.fetchEntitiesFor(host))
+        _ = $guestEntities.append(database.fetchEntitiesFor(host))
         database.saveData()
     }
 
@@ -115,31 +115,36 @@ extension GenericListViewModel {
         newGuild.title = title
         newGuild.subtitle = subtitle
         host.addToGuilds(newGuild)
-        _ = $scndGuestEntities.append(database.fetchEntitiesFor(host))
+        _ = $alternativeGuestEntities.append(database.fetchEntitiesFor(host))
         database.saveData()
     }
 
-    private func createGlobalBadgesEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
+    public func createGlobalBadgesEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
         guard let host: Academy = self.hostEntity as? Academy else { fatalError() }
         let newBadge = Badge(context: database.managedObjectContext)
         newBadge.title = title
         newBadge.subtitle = subtitle
         host.addToGlobalBadges(newBadge)
-        _ = $scndGuestEntities.append(database.fetchEntitiesFor(host))
+        _ = $alternativeGuestEntities.append(database.fetchEntitiesFor(host))
         database.saveData()
     }
 
-    private func creaateAcademyEntity(title: String, subtitle: String, hostEntity: Guild.Type) {
+    public func createGuildBadgesEntity(title: String, subtitle: String, hostEntity: Guild.Type) {
 
     }
 
-    private func creaateStudentEntity(title: String, subtitle: String, hostEntity: UUID) {
+    public func createMissionEntity(title: String, subtitle: String, hostEntity: UUID) {
 
     }
 
 }
 
-class HomeViewModel: GenericListViewModel {
+extension GenericListViewModel {
+
+    public func fetchGuilds(_ host: Academy) -> NSSet? {
+        guard let guilds = host.guilds else { return nil }
+        return guilds
+    }
 
 }
 

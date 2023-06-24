@@ -9,22 +9,25 @@ import SwiftUI
 import CoreData
 
 struct ClassView: View {
-
+    
     @State var viewModel: GenericListViewModel
-
+    
     var body: some View {
         NavigationStack {
             List {
                 NavigationLink {
                     let viewModel = GenericListViewModel(viewModel.hostEntity)
-                    StudentsView(viewModel: viewModel)
+                    // swiftlint: disable force_cast
+                    let availableGuilds = viewModel.fetchGuilds(viewModel.hostEntity as! Academy)
+                    // swiftlint: enable force_cast
+                    StudentsView(viewModel: viewModel, navigationTitle: "Students")
                 } label: {
                     Text("Students")
                 }
                 NavigationLink {
                     let viewModel = GenericListViewModel(viewModel.hostEntity)
                     GuildsView(viewModel: viewModel)
-
+                    
                 } label: {
                     Text("Guilds")
                 }
