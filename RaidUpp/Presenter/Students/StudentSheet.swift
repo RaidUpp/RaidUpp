@@ -18,7 +18,10 @@ struct StudentSheet: View {
     @State var selectedGuild = Guild()
 
     var saveEdits: (_ student: Student, _ chosenGuild: Guild) -> Void
-    var updateMissionStatus: (_ student: Student, _ mission: Mission) -> Void
+    var markMissionAsComplete: (_ student: Student, _ mission: Mission) -> Void
+    var markMissionAsUncomplete: (_ student: Student, _ mission: Mission) -> Void
+
+    @State var refresher: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -29,26 +32,41 @@ struct StudentSheet: View {
                 Section("Student Notes") {
                     Text("\(hostEntity.subtitle!)")
                 }
-                Section("Guild") {
-                    Picker("\(hostEntity.title!)'s Guild", selection: $selectedGuild) {
-                        ForEach(availableGuilds, id: \.self) { guild in
-                            Button {
-                                selectedGuild = guild
-                            } label: {
-                                Text("\(guild.title!)")
+                if availableGuilds.isEmpty == false {
+                    Section("Guild") {
+                        Picker("\(hostEntity.title!)'s Guild", selection: $selectedGuild) {
+                            ForEach(availableGuilds, id: \.self) { guild in
+                                Button {
+                                    selectedGuild = guild
+                                    refresher.toggle()
+                                } label: {
+                                    Text("\(guild.title!)")
+                                }
                             }
+                        }
+                    }
+                    .onAppear {
+                        if hostEntity.guild != nil {
+                            selectedGuild = hostEntity.guild!
                         }
                     }
                 }
                 Section("Achievements") {
-                    ForEach(getAchievements(), id: \.self) { achiev in
-                        Text(achiev.caption!)
+                    ForEach(getAchievements(), id: \.self) { mission in
+                        Button {
+                            markMissionAsUncomplete(hostEntity, mission)
+                            refresher.toggle()
+                        } label: {
+                            Text("\(generateNameForMission(mission))")
+                                .foregroundColor(generateColorForMission(mission))
+                        }
                     }
                 }
                 Section("Uncompleted Missions") {
                     ForEach(getLockedAchievements(), id: \.self) { mission in
                         Button {
-                            updateMissionStatus(hostEntity, mission)
+                            markMissionAsComplete(hostEntity, mission)
+                            refresher.toggle()
                         } label: {
                             Text("\(generateNameForMission(mission))")
                                 .foregroundColor(generateColorForMission(mission))
@@ -56,13 +74,16 @@ struct StudentSheet: View {
                     }
                 }
             }
+            .onChange(of: refresher, perform: { _ in
+                _ = refreshable {}
+            })
             .navigationTitle(hostEntity.title!)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible)
             .toolbar {
                 Button {
-                    print("🛠️ - Trying to save with selected guild being \(selectedGuild)")
-                    if !availableGuilds.isEmpty || !selectedGuild.isFault {
+                    print("🛠️ - Trying to save with selected guild being \(selectedGuild.title!)")
+                    if availableGuilds.isEmpty == false || hostEntity.guild != nil {
                         saveEdits(hostEntity, selectedGuild)
                     }
                     isShowingInfo.toggle()
@@ -76,27 +97,27 @@ struct StudentSheet: View {
 
 extension StudentSheet {
 
-    private func getAchievements() -> [Badge] {
-        if let achievements = hostEntity.achievement as? Set<Badge> {
-            let achievedBadges = Array(achievements)
-            return achievedBadges
+    private func getAchievements() -> [Mission] {
+        if let achievements = hostEntity.achievement as? Set<Mission> {
+            let achievedMissions = Array(achievements)
+            return achievedMissions.sorted { mission1, mission2 in
+                let typeOrder: [String] = ["platinum", "gold", "silver", "bronze"]
+                guard let index1 = typeOrder.firstIndex(of: mission1.type!),
+                      let index2 = typeOrder.firstIndex(of: mission2.type!) else {
+                    // Handle the case when either mission1 or mission2 has an unrecognized type
+                    return false // Or choose a custom sorting behavior
+                }
+                return index1 > index2
+            }
         }
         return []
-    }
-
-    private func getMissionsFromBadges() -> [Mission] {
-        var missions = [Mission]()
-        for achievs in getAchievements() {
-            missions.append(achievs.mission!)
-        }
-        return missions
     }
 
     private func getLockedAchievements() -> [Mission] {
         var availableMissions = [Mission]()
 
         // Get all missions associated with completed achievements
-        let completedMissions = getMissionsFromBadges()
+        let completedMissions = getAchievements()
 
         // Fetch all available missions from the guild
         if let hostGuild = hostEntity.guild,

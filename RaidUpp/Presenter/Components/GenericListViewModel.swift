@@ -165,18 +165,26 @@ extension GenericListViewModel {
 
 extension GenericListViewModel {
 
-    public func saveEditsTo(_ student: Student, _ chosenGuild: Guild?) {
-        print("🛠️ - Student's Chosen Guild: \(chosenGuild!)")
-        chosenGuild?.addToStudent(student)
+    public func saveEditsTo(_ student: Student, _ guild: Guild?) {
+        print("🛠️ - Cleaning student from original guild")
+        guild?.removeFromStudent(student)
+        print("🛠️ - Adding student to new guild")
+        guild?.addToStudent(student)
+        print("🛠️ - Casting student's guild to new guild")
+        student.guild = guild
         database.saveData()
     }
 
-    public func updateMission(_ student: Student, _ mission: Mission) {
-
+    public func addMissionToStudentsAsComplete(_ student: Student, _ mission: Mission) {
+        print("🛠️ - Updating \(mission) for student \(student)")
+        student.addToAchievement(mission)
+        database.saveData()
     }
 
-}
-
-extension NSSet: ObservableObject {
+    public func uncompleteStudentMission(_ student: Student, _ mission: Mission) {
+        print("🛠️ - Updating \(mission) for student \(student)")
+        student.removeFromAchievement(mission)
+        database.saveData()
+    }
 
 }

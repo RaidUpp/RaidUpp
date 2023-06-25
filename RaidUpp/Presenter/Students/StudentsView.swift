@@ -65,8 +65,10 @@ struct StudentsView: View {
                          isShowingInfo: $isShowingInfo,
                          availableGuilds: availableGuilds()) { student, guild in
                 viewModel.saveEditsTo(student, guild)
-            } updateMissionStatus: { student, mission in
-                viewModel.updateMission(student, mission)
+            } markMissionAsComplete: { student, mission in
+                viewModel.addMissionToStudentsAsComplete(student, mission)
+            } markMissionAsUncomplete: { student, mission in
+                viewModel.uncompleteStudentMission(student, mission)
             }
 
         }
