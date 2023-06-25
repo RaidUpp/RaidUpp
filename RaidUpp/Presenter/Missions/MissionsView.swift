@@ -10,35 +10,69 @@ import CoreData
 
 struct MissionView: View {
     @State var viewModel: GenericListViewModel
-    @State var isShowingForms: Bool = false
+    @State var isShowingInfo: Bool = false
+    @State var isShowingForm: Bool = false
+
+    @State var targetMission = Mission()
+    @State var searchText: String = ""
 
     var body: some View {
-        ListView(navigationTitle: "Missions",
-                 // swiftlint: disable force_cast
-                 guests: Array(viewModel.guestEntities as! Set<NSManagedObject>).sorted
-                 { ($0.value(forKey: "id") as? Int ?? 0) > ($1.value(forKey: "id") as? Int ?? 0) },
-                 // swiftlint: enable force_cast
-                 addAction: {
-            isShowingForms.toggle()
-        }, content: { obj in
-            ClassView(viewModel: GenericListViewModel(obj))
-        }, banner: {
-            Color.blue
-        })
-        .onChange(of: isShowingForms, perform: { _ in
+        List {
+            ForEach(Array(viewModel.guestEntities as Set).sorted
+            { ($0.value(forKey: "title") as? String ?? "debug") < ($1.value(forKey: "title") as? String ?? "debug") },
+            id: \.self) { obj in
+                Button {
+                    print("🛠️ - Casting \(obj) as Student")
+                    guard let validatedMission: Mission = obj as? Mission else { fatalError() }
+                    targetMission = validatedMission
+                    isShowingInfo.toggle()
+                } label: {
+                    Text("\(generateName(obj))").foregroundColor(.black)
+                }
+
+            }
+        }
+        .navigationTitle("Missions")
+        .searchable(text: $searchText,
+                    placement: .navigationBarDrawer,
+                    prompt: "Missions")
+        .toolbar {
+            Button {
+                isShowingForm.toggle()
+            }label: {
+                Image(systemName: "plus")
+                    .font(.system(size: CGFloat(FontSizeEnum.small.rawValue)))
+            }
+        }
+        .onChange(of: isShowingForm, perform: { _ in
             _ = refreshable {}
         })
-        .sheet(isPresented: $isShowingForms) {
-            GlobalForms(navigationTitle: "Adding new Mission to Guild",
-                        firstFormTitle: "Mission Title",
-                        firstFormTextFieldTip: "Example: 100% Code Coverage!!",
-                        secondFormTitle: "Mission Details",
-                        secondFormTextFieldTip: "Example: This is actually impossible!",
-                        showingSheet: $isShowingForms) { _, title, subtitle in
+        .sheet(isPresented: $isShowingForm) {
+            MissionForm(navigationTitle: "Adding new Mission to Guild",
+                        showingSheet: $isShowingForm) { title, subtitle, level in
                 // swiftlint: disable force_cast
-                viewModel.createMissionInsideGuild(title: title, subtitle: subtitle, hostEntity: viewModel.hostEntity as! Guild)
+                viewModel.createMissionInsideGuild(title: title, subtitle: subtitle, level: level, hostEntity: viewModel.hostEntity as! Guild)
                 // swiftlint: enable force_cast
             }
         }
+        .sheet(isPresented: $isShowingInfo) {
+            MissionInfo(showingSheet: $isShowingInfo, hostMission: $targetMission)
+        }
     }
+}
+
+extension MissionView {
+
+    private func generateName(_ obj: NSObject) -> String {
+        if let validatedObj = obj as? NSManagedObject {
+            if let mission = validatedObj as? Mission {
+                return "\(mission.title!): \(mission.caption!)"
+            } else {
+                return "🐛 - Could not find correct return type, returning default"
+            }
+        }
+
+        return "🐛 - Could not validate object, returning default"
+    }
+
 }

@@ -14,6 +14,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="subtitle" optional="YES" attributeType="String" defaultValueString="Default Subtitle"/>
         <attribute name="title" attributeType="String" defaultValueString="Default Title"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="mission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mission" inverseName="badge" inverseEntity="Mission"/>
     </entity>
     <entity name="Guild" representedClassName="Guild" syncable="YES" codeGenerationType="class">

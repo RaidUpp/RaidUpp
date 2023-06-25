@@ -12,6 +12,7 @@ struct StudentsView: View {
     @State var viewModel: GenericListViewModel
     @State var isShowingForms: Bool = false
     @State var isShowingInfo: Bool = false
+    
     @State var targetStudent = Student()
     @State var searchText: String = ""
     
@@ -20,15 +21,15 @@ struct StudentsView: View {
     var body: some View {
         List {
             ForEach(Array(viewModel.guestEntities as Set).sorted
-            { ($0.value(forKey: "title") as? String ?? "debug") < ($1.value(forKey: "title") as? String ?? "debug") },
-            id: \.self) { obj in
+                    { ($0.value(forKey: "title") as? String ?? "debug") < ($1.value(forKey: "title") as? String ?? "debug") },
+                    id: \.self) { obj in
                 Button {
                     print("🛠️ - Casting \(obj) as Student")
                     guard let validatedStudent: Student = obj as? Student else { fatalError() }
                     targetStudent = validatedStudent
                     isShowingInfo.toggle()
                 } label: {
-//                    Label("uh", systemImage: "plus")
+                    //                    Label("uh", systemImage: "plus")
                     Text("\(generateName(obj))").foregroundColor(.black)
                 }
 
@@ -62,11 +63,12 @@ struct StudentsView: View {
         .sheet(isPresented: $isShowingInfo) {
             StudentSheet(hostEntity: $targetStudent,
                          isShowingInfo: $isShowingInfo,
-                         // swiftlint: disable force_cast
-                         availableGuilds: Array(viewModel.alternativeGuestEntities as! Set<Guild>).sorted { $0.title! > $1.title! }) { student, guild in
-                         // swiftlint: enable force_cast
+                         availableGuilds: availableGuilds()) { student, guild in
                 viewModel.saveEditsTo(student, guild)
+            } updateMissionStatus: { student, mission in
+                viewModel.updateMission(student, mission)
             }
+
         }
     }
 }
@@ -85,6 +87,17 @@ extension StudentsView {
         }
 
         return "🐛 - Could not validate object, returning default"
+    }
+
+    private func availableGuilds() -> [Guild] {
+        let sortedGuilds = viewModel.alternativeGuestEntities.compactMap { $0 as? Guild }.sorted { guild1, guild2 in
+            guard let title1 = guild1.title, let title2 = guild2.title else {
+                // Handle the case when either guild1 or guild2 has a nil title
+                return false // Or choose a custom sorting behavior
+            }
+            return title1 > title2
+        }
+        return sortedGuilds
     }
 
 }

@@ -24,7 +24,6 @@ class GenericListViewModel: ObservableObject {
             return
         }
 
-        // TODO: - Mentor -> Academy, Academy -> Guilda, Academy -> Students
         switch type(of: entryPoint!) {
         case is Academy.Type:
             guard let entity = entryPoint as? Academy else { fatalError() }
@@ -132,11 +131,25 @@ extension GenericListViewModel {
 
     }
 
-    public func createMissionInsideGuild(title: String, subtitle: String, hostEntity: Guild) {
+    public func createMissionInsideGuild(title: String, subtitle: String, level: String, hostEntity: Guild) {
         guard let host: Guild = self.hostEntity as? Guild else { fatalError() }
-        let newMission = Mission(context: database.managedObjectContext)
+        let newMission: Mission = Mission(context: database.managedObjectContext)
         newMission.title = title
-        newMission.subtitle = subtitle
+        newMission.caption = subtitle
+        newMission.type = level
+
+        host.addToGuildMission(newMission)
+        createBadge(hostEntity: newMission)
+        _ = $guestEntities.append(database.fetchEntitiesFor(host))
+        database.saveData()
+    }
+
+    func createBadge(hostEntity: Mission) {
+        let newBadge: Badge = Badge(context: database.managedObjectContext)
+        newBadge.title = hostEntity.title
+        newBadge.caption = hostEntity.caption
+        newBadge.type = hostEntity.type
+        hostEntity.badge = newBadge
     }
 
 }
@@ -156,6 +169,10 @@ extension GenericListViewModel {
         print("🛠️ - Student's Chosen Guild: \(chosenGuild!)")
         chosenGuild?.addToStudent(student)
         database.saveData()
+    }
+
+    public func updateMission(_ student: Student, _ mission: Mission) {
+
     }
 
 }
