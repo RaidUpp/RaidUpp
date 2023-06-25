@@ -4,7 +4,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="title" attributeType="String" defaultValueString="Default Title"/>
         <attribute name="years" attributeType="String" defaultValueString="20XX-20XX" regularExpressionString="\b(\d{4})-(\d{4})\b"/>
-        <relationship name="globalBadges" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Badge" inverseName="academy" inverseEntity="Badge"/>
+        <relationship name="globalMission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mission" inverseName="global" inverseEntity="Mission"/>
         <relationship name="guilds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Guild" inverseName="academy" inverseEntity="Guild"/>
         <relationship name="mentors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Mentor" inverseName="academies" inverseEntity="Mentor"/>
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="academy" inverseEntity="Student"/>
@@ -14,10 +14,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="subtitle" optional="YES" attributeType="String" defaultValueString="Default Subtitle"/>
         <attribute name="title" attributeType="String" defaultValueString="Default Title"/>
-        <relationship name="academy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Academy" inverseName="globalBadges" inverseEntity="Academy"/>
-        <relationship name="guild" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Guild" inverseName="guildBadges" inverseEntity="Guild"/>
         <relationship name="mission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mission" inverseName="badge" inverseEntity="Mission"/>
-        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="soloBadges" inverseEntity="Student"/>
     </entity>
     <entity name="Guild" representedClassName="Guild" syncable="YES" codeGenerationType="class">
         <attribute name="icon" attributeType="String" defaultValueString="photo.artframe"/>
@@ -25,7 +22,7 @@
         <attribute name="subtitle" optional="YES" attributeType="String" defaultValueString="Default Subtitle"/>
         <attribute name="title" attributeType="String" defaultValueString="Default Title"/>
         <relationship name="academy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Academy" inverseName="guilds" inverseEntity="Academy"/>
-        <relationship name="guildBadges" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Badge" inverseName="guild" inverseEntity="Badge"/>
+        <relationship name="guildMission" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Mission" inverseName="guild" inverseEntity="Mission"/>
         <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="guild" inverseEntity="Student"/>
     </entity>
     <entity name="Mentor" representedClassName="Mentor" syncable="YES" codeGenerationType="class">
@@ -39,13 +36,16 @@
         <attribute name="title" attributeType="String" defaultValueString="Default Title"/>
         <attribute name="type" attributeType="String" defaultValueString="null"/>
         <relationship name="badge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Badge" inverseName="mission" inverseEntity="Badge"/>
+        <relationship name="global" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Academy" inverseName="globalMission" inverseEntity="Academy"/>
+        <relationship name="grantedAchievements" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="achievement" inverseEntity="Student"/>
+        <relationship name="guild" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Guild" inverseName="guildMission" inverseEntity="Guild"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="subtitle" optional="YES" attributeType="String" defaultValueString="Default Subtitle"/>
         <attribute name="title" attributeType="String" defaultValueString="Default Title"/>
         <relationship name="academy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Academy" inverseName="students" inverseEntity="Academy"/>
+        <relationship name="achievement" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Mission" inverseName="grantedAchievements" inverseEntity="Mission"/>
         <relationship name="guild" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Guild" inverseName="student" inverseEntity="Guild"/>
-        <relationship name="soloBadges" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Badge" inverseName="student" inverseEntity="Badge"/>
     </entity>
 </model>

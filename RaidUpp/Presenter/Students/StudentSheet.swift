@@ -30,13 +30,11 @@ struct StudentSheet: View {
                 Section("Guild") {
                     Picker("\(hostEntity.title!)'s Guild", selection: $selectedGuild) {
                         ForEach(availableGuilds, id: \.self) { guild in
-                            // swiftlint: disable force_cast
                             Button {
                                 selectedGuild = guild
                             } label: {
                                 Text("\(guild.title!)")
                             }
-                            // swiftlint: enable force_cast
                         }.task {
                             print("🛠️ - Currently Select Guild - \(selectedGuild)")
                         }

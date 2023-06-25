@@ -13,7 +13,7 @@ struct MissionView: View {
     @State var isShowingForms: Bool = false
 
     var body: some View {
-        ListView(navigationTitle: "Guilds",
+        ListView(navigationTitle: "Missions",
                  // swiftlint: disable force_cast
                  guests: Array(viewModel.guestEntities as! Set<NSManagedObject>).sorted
                  { ($0.value(forKey: "id") as? Int ?? 0) > ($1.value(forKey: "id") as? Int ?? 0) },
@@ -29,13 +29,15 @@ struct MissionView: View {
             _ = refreshable {}
         })
         .sheet(isPresented: $isShowingForms) {
-            GlobalForms(navigationTitle: "Creating new Guild",
-                        firstFormTitle: "Guild Title",
-                        firstFormTextFieldTip: "Example: Coding Guild!",
-                        secondFormTitle: "Guild Subtitle",
-                        secondFormTextFieldTip: "Example: Building Cool Stuff!",
+            GlobalForms(navigationTitle: "Adding new Mission to Guild",
+                        firstFormTitle: "Mission Title",
+                        firstFormTextFieldTip: "Example: 100% Code Coverage!!",
+                        secondFormTitle: "Mission Details",
+                        secondFormTextFieldTip: "Example: This is actually impossible!",
                         showingSheet: $isShowingForms) { _, title, subtitle in
-                viewModel.createGuildEntity(title: title, subtitle: subtitle)
+                // swiftlint: disable force_cast
+                viewModel.createMissionInsideGuild(title: title, subtitle: subtitle, hostEntity: viewModel.hostEntity as! Guild)
+                // swiftlint: enable force_cast
             }
         }
     }

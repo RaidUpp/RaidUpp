@@ -93,7 +93,7 @@ class DatabaseInteractor: ObservableObject {
             return host.students!
         case is Guild.Type:
             let host: Guild = host as! Guild
-            return host.guildBadges!
+            return host.guildMission!
         default:
             fatalError()
             // swiftlint:enable force_cast

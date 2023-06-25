@@ -38,13 +38,13 @@ class GenericListViewModel: ObservableObject {
             guard let entity = entryPoint as? Student else { fatalError() }
             self.hostEntity = entity
             self.expectedGuest = Badge.self
-            self.guestEntities = entity.soloBadges!
+            self.guestEntities = entity.achievement!
             self.listTitle = entity.title ?? "Estudante Debug"
         case is Guild.Type:
             guard let entity = entryPoint as? Guild else { fatalError() }
             self.hostEntity = entity
             self.expectedGuest = Badge.self
-            self.guestEntities = entity.guildBadges!
+            self.guestEntities = entity.guildMission!
             self.listTitle = entity.title ?? "Guild Debug"
         default:
             fatalError()
@@ -128,22 +128,15 @@ extension GenericListViewModel {
         database.saveData()
     }
 
-    public func createGlobalBadgesEntity(title: String, subtitle: String, hostEntity: Academy.Type) {
-        guard let host: Academy = self.hostEntity as? Academy else { fatalError() }
-        let newBadge = Badge(context: database.managedObjectContext)
-        newBadge.title = title
-        newBadge.subtitle = subtitle
-        host.addToGlobalBadges(newBadge)
-        _ = $alternativeGuestEntities.append(database.fetchEntitiesFor(host))
-        database.saveData()
-    }
-
-    public func createGuildBadgesEntity(title: String, subtitle: String, hostEntity: Guild.Type) {
+    public func createGuildBadgesEntity(title: String, subtitle: String, hostEntity: Guild) {
 
     }
 
-    public func createMissionEntity(title: String, subtitle: String, hostEntity: UUID) {
-
+    public func createMissionInsideGuild(title: String, subtitle: String, hostEntity: Guild) {
+        guard let host: Guild = self.hostEntity as? Guild else { fatalError() }
+        let newMission = Mission(context: database.managedObjectContext)
+        newMission.title = title
+        newMission.subtitle = subtitle
     }
 
 }
@@ -160,7 +153,7 @@ extension GenericListViewModel {
 extension GenericListViewModel {
 
     public func saveEditsTo(_ student: Student, _ chosenGuild: Guild?) {
-        print("🛠️ - Student's Chosen Guild: \(chosenGuild)")
+        print("🛠️ - Student's Chosen Guild: \(chosenGuild!)")
         chosenGuild?.addToStudent(student)
         database.saveData()
     }
