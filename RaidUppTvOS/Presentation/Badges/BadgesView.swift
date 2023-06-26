@@ -11,7 +11,7 @@ struct BadgesView: View {
     let guild: String
     let imagesNames: [String]
 
-    @EnvironmentObject var entityFetcher: EntityFetcher
+    @State var viewModel: GenericListViewModel
 
     var body: some View {
         VStack(spacing: 30) {
@@ -57,28 +57,5 @@ struct BadgesView: View {
                 }
             }
         }
-    }
-}
-
-struct BadgesView_Previews: PreviewProvider {
-    static var previews: some View {
-        BadgesView(
-            guild: "Design",
-            imagesNames: [
-                "bronze",
-                "gold",
-                "silver",
-                "silver",
-                "gold",
-                "bronze",
-                "bronze",
-                "gold",
-                "silver",
-                "silver",
-                "gold",
-                "bronze"
-            ]
-
-        ).environmentObject(EntityFetcher())
     }
 }

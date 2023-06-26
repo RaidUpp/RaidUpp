@@ -15,7 +15,7 @@ struct MissionDetailsView: View {
     let missionLeaders: [String]?
     var rating: Int
 
-    @EnvironmentObject var entityFetcher: EntityFetcher
+    @State var viewModel: GenericListViewModel
 
     var body: some View {
         VStack {
@@ -25,39 +25,30 @@ struct MissionDetailsView: View {
                 endDate: self.endDate,
                 missionDescription: self.missionDescription,
                 missionLeaders: nil,
-                rating: self.rating
-            ).environmentObject(entityFetcher)
+                rating: self.rating,
+                viewModel: viewModel
+            )
             Spacer()
-            BadgesList(imagesNames: [
-                "bronze",
-                "gold",
-                "silver",
-                "silver",
-                "gold",
-                "bronze",
-                "bronze",
-                "gold",
-                "silver",
-                "silver",
-                "gold",
-                "bronze"
-            ]).environmentObject(entityFetcher)
+            BadgesList(
+                imagesNames: [
+                    "bronze",
+                    "gold",
+                    "silver",
+                    "silver",
+                    "gold",
+                    "bronze",
+                    "bronze",
+                    "gold",
+                    "silver",
+                    "silver",
+                    "gold",
+                    "bronze"
+                ],
+                viewModel: viewModel
+            )
         }
         .background {
             Image("background")
         }
-    }
-}
-
-struct MissionDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MissionDetailsView(
-            missionTitle: "Mission title",
-            startDate: "DD/MM/YY",
-            endDate: "DD/MM/YY",
-            missionDescription: "Mission description here. Mission description here. Mission description here.",
-            missionLeaders: ["Teste1", "Teste2"],
-            rating: 4
-        ).environmentObject(EntityFetcher())
     }
 }

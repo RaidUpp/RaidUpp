@@ -9,32 +9,32 @@ import SwiftUI
 
 struct ClassMenuView: View {
     
-    @EnvironmentObject var entityFetcher: EntityFetcher
-    let title: String
-    
+    @State var viewModel: GenericListViewModel
+
     var body: some View {
         GenericMenu(
-            title: self.title,
+            title: getTitle(viewModel.hostEntity),
             imageName: "class-image",
-            imageTitle: self.title,
-            imageSubtitle: "Subtitle",
+            imageTitle: EntityName.generateName(viewModel.hostEntity),
             content: {
                 MenuButton(title: "Guilds") {
-                    GuildView().environmentObject(entityFetcher)
+                    GuildView(viewModel: GenericListViewModel(viewModel.hostEntity))
                 }
-                MenuButton(title: "Class missions") {
-                }
-                MenuButton(title: "Individual missions") {
-                }
+                MenuButton(title: "Class missions") {}
+                MenuButton(title: "Individual missions") {}
                 MenuButton(title: "Participants") {
-                    ParticipantsView().environmentObject(entityFetcher)
+                    ParticipantsView()
                 }
-            })
+            }
+        )
     }
 }
 
-struct ClassMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClassMenuView(title: "Class 01").environmentObject(EntityFetcher())
+extension ClassMenuView {
+    func getTitle(_ obj: NSObject) -> String {
+        guard let academy = obj as? Academy else {
+            return "🛠️ - Couldn't load entity as Academy: \(obj)"
+        }
+        return academy.title!
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct BadgesList: View {
     let imagesNames: [String]
 
-    @EnvironmentObject var entityFetcher: EntityFetcher
+    @State var viewModel: GenericListViewModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
@@ -47,24 +47,5 @@ struct BadgesList: View {
                 )
             }
         }
-    }
-}
-
-struct BadgesList_Previews: PreviewProvider {
-    static var previews: some View {
-        BadgesList(imagesNames: [
-            "bronze",
-            "gold",
-            "silver",
-            "silver",
-            "gold",
-            "bronze",
-            "bronze",
-            "gold",
-            "silver",
-            "silver",
-            "gold",
-            "bronze"
-        ]).environmentObject(EntityFetcher())
     }
 }
