@@ -8,49 +8,48 @@
 import SwiftUI
 
 struct GuildMenuView: View {
-    let guildType: String
 
-    @EnvironmentObject var entityFetcher: EntityFetcher
+    @State var viewModel: GenericListViewModel
 
     var body: some View {
         GenericMenu(
-            title: self.guildType.capitalized,
-            imageName: self.guildType,
-            imageTitle: self.guildType.capitalized,
-            imageSubtitle: "test"
+            title: getTitle(viewModel.hostEntity),
+            imageName: "guilds",
+            imageTitle: getTitle(viewModel.hostEntity),
+            imageSubtitle: getSubTitle(viewModel.hostEntity)
         ) {
             MenuButton(title: "Missions") {
-                MissionBoardView(guild: self.guildType)
-                    .environmentObject(entityFetcher)
+                MissionBoardView(viewModel: GenericListViewModel(viewModel.hostEntity))
             }
 
             MenuButton(title: "Badges") {
-                BadgesView(
-                    guild: self.guildType,
-                    imagesNames: [
-                        "bronze",
-                        "gold",
-                        "silver",
-                        "silver",
-                        "gold",
-                        "bronze",
-                        "bronze",
-                        "gold",
-                        "silver",
-                        "silver",
-                        "gold",
-                        "bronze",
-                        "silver",
-                        "silver",
-                        "gold",
-                        "bronze",
-                        "bronze",
-                        "gold",
-                        "silver",
-                        "silver",
-                        "gold"
-                    ]
-                ).environmentObject(entityFetcher)
+//                BadgesView(
+//                    guild: self.guildType,
+//                    imagesNames: [
+//                        "bronze",
+//                        "gold",
+//                        "silver",
+//                        "silver",
+//                        "gold",
+//                        "bronze",
+//                        "bronze",
+//                        "gold",
+//                        "silver",
+//                        "silver",
+//                        "gold",
+//                        "bronze",
+//                        "silver",
+//                        "silver",
+//                        "gold",
+//                        "bronze",
+//                        "bronze",
+//                        "gold",
+//                        "silver",
+//                        "silver",
+//                        "gold"
+//                    ],
+//                    viewModel: viewModel
+//                )
             }
 
             MenuButton(title: "Participants") {}
@@ -60,8 +59,18 @@ struct GuildMenuView: View {
     }
 }
 
-struct GuildMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        GuildMenuView(guildType: "design").environmentObject(EntityFetcher())
+extension GuildMenuView {
+    func getTitle(_ obj: NSObject) -> String {
+        guard let guild = obj as? Guild else {
+            return "🛠️ - Couldn't load entity as Academy: \(obj)"
+        }
+        return guild.title!
+    }
+
+    func getSubTitle(_ obj: NSObject) -> String {
+        guard let guild = obj as? Guild else {
+            return "🛠️ - Couldn't load entity as Academy: \(obj)"
+        }
+        return guild.subtitle!
     }
 }

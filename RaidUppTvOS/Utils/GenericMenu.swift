@@ -61,12 +61,14 @@ struct GenericMenu<Content: View>: View {
                 Text(self.title)
                     .font(.title2)
                     .foregroundColor(.black)
-                VStack(alignment: .leading, spacing: 36) {
+                ScrollView(showsIndicators: false){
+                    Spacer()
                     content()
-                        .padding(.horizontal)
+                        .padding(.horizontal, 20)
+                    Spacer()
                 }.frame(
-                    width: 600,
-                    height: 600,
+                    width: 650,
+                    height: 400,
                     alignment: .top
                 )
             }    }
@@ -81,6 +83,9 @@ struct GenericMenu_Previews: PreviewProvider {
             imageSubtitle: "Description of image",
             mentor: "Carolina Barbalho"
         ) {
+            MenuButton(title: "Test") {}
+            MenuButton(title: "Test") {}
+            MenuButton(title: "Test") {}
             MenuButton(title: "Test") {}
         }
     }

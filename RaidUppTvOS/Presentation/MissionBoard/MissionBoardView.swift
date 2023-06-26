@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct MissionBoardView: View {
-    let guild: String
     let missionTypes: [MissionTypeImage] = [.bronze, .silver, .gold]
     let missionCount = 4
 
-    @EnvironmentObject var entityFetcher: EntityFetcher
+    @State var viewModel: GenericListViewModel
 
     var body: some View {
         VStack {
             BoardHeader(
-                title: self.guild.capitalized,
-                firstSubheadline: "Lorem ipsum dorem",
+                title: getTitle(viewModel.hostEntity),
+                firstSubheadline: getSubTitle(viewModel.hostEntity),
                 secondSubheadline: "13 missões concluídas"
             )
             .focusSection()
             .padding(.bottom, 20)
 
             VStack(spacing: 50) {
+                // FIXME: This first ForEach should build the lines referring to the badges of the missions
                 ForEach(missionTypes, id: \.title) { missionType in
                     VStack {
                         Text("Missões \(missionType.title)")
@@ -32,6 +32,7 @@ struct MissionBoardView: View {
                             .foregroundColor(.gray)
                         ScrollView(.horizontal) {
                             HStack(spacing: 30) {
+                                // FIXME: This second ForEach must build the missions related to their badges
                                 ForEach(0..<missionCount) { _ in
                                     NavigationLink {
                                         MissionDetailsView(
@@ -40,8 +41,9 @@ struct MissionBoardView: View {
                                             endDate: "dd/mm/yyyy",
                                             missionDescription: "description",
                                             missionLeaders: ["alumni", "alumni"],
-                                            rating: 3
-                                        ).environmentObject(entityFetcher)
+                                            rating: 3,
+                                            viewModel: viewModel
+                                        )
                                     } label: {
                                         MissionCard(
                                             image: missionType.image,
@@ -65,8 +67,18 @@ struct MissionBoardView: View {
     }
 }
 
-struct MissionBoardView_Previews: PreviewProvider {
-    static var previews: some View {
-        MissionBoardView(guild: "Design").environmentObject(EntityFetcher())
+extension MissionBoardView {
+    func getTitle(_ obj: NSObject) -> String {
+        guard let guild = obj as? Guild else {
+            return "🛠️ - Couldn't load entity as Academy: \(obj)"
+        }
+        return guild.title!
+    }
+
+    func getSubTitle(_ obj: NSObject) -> String {
+        guard let guild = obj as? Guild else {
+            return "🛠️ - Couldn't load entity as Academy: \(obj)"
+        }
+        return guild.subtitle!
     }
 }

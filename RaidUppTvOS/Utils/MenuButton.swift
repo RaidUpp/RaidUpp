@@ -31,11 +31,3 @@ struct MenuButton<Destination: View> : View {
         .buttonStyle(.plain)
     }
 }
-
-struct ClassButton_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuButton(title: "Turma 2022", font: .headline) {
-            GuildView().environmentObject(EntityFetcher())
-        }
-    }
-}

@@ -15,7 +15,7 @@ struct MissionDetails: View {
     let missionLeaders: [String]?
     var rating: Int = 0
 
-    @EnvironmentObject var entityFetcher: EntityFetcher
+    @State var viewModel: GenericListViewModel
 
     var body: some View {
         HStack {
@@ -72,18 +72,5 @@ struct MissionDetails: View {
         }
         .frame(width: 1505, height: 521)
 //        .background(.white)
-    }
-}
-
-struct MissionDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        MissionDetails(
-            missionTitle: "Mission title",
-            startDate: "DD/MM/YYYY",
-            endDate: "DD/MM/YYYY",
-            missionDescription: "Mission description here.",
-            missionLeaders: ["Name 01", "Name 02", "Name 03"],
-            rating: 4
-        ).environmentObject(EntityFetcher())
     }
 }

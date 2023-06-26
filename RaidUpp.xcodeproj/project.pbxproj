@@ -59,8 +59,8 @@
 		FE8A92452A41D5C900EB8A6C /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92442A41D5C900EB8A6C /* MenuButton.swift */; };
 		FE8A92472A4319A400EB8A6C /* MissionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92462A4319A400EB8A6C /* MissionCard.swift */; };
 		FE8A924B2A4319C600EB8A6C /* BoardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A924A2A4319C600EB8A6C /* BoardHeader.swift */; };
-		FE8A924E2A431DC200EB8A6C /* EntityFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */; };
 		FE8A92542A43D7DB00EB8A6C /* GenericMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A92532A43D7DB00EB8A6C /* GenericMenu.swift */; };
+		FEAEA76E2A49C69B00F3F96A /* EntityName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAEA76D2A49C69B00F3F96A /* EntityName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,8 +135,8 @@
 		FE8A92442A41D5C900EB8A6C /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		FE8A92462A4319A400EB8A6C /* MissionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionCard.swift; sourceTree = "<group>"; };
 		FE8A924A2A4319C600EB8A6C /* BoardHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardHeader.swift; sourceTree = "<group>"; };
-		FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFetcher.swift; sourceTree = "<group>"; };
 		FE8A92532A43D7DB00EB8A6C /* GenericMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMenu.swift; sourceTree = "<group>"; };
+		FEAEA76D2A49C69B00F3F96A /* EntityName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,17 +200,9 @@
 		351D804A2A41CB6F00D3CC53 /* Guild */ = {
 			isa = PBXGroup;
 			children = (
-				351D804B2A41CB6F00D3CC53 /* View */,
-			);
-			path = Guild;
-			sourceTree = "<group>";
-		};
-		351D804B2A41CB6F00D3CC53 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				351D804C2A41CB6F00D3CC53 /* GuildView.swift */,
 			);
-			path = View;
+			path = Guild;
 			sourceTree = "<group>";
 		};
 		351D804D2A41CB6F00D3CC53 /* GuildMenu */ = {
@@ -219,14 +211,6 @@
 				351D804F2A41CB6F00D3CC53 /* GuildMenuView.swift */,
 			);
 			path = GuildMenu;
-			sourceTree = "<group>";
-		};
-		351D80602A41CC1E00D3CC53 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				FE8A924D2A431DC200EB8A6C /* EntityFetcher.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		3546DEAC2A446D77006BDC28 /* ClassMenu */ = {
@@ -251,9 +235,8 @@
 				D69ED1EE2A4478CC00763EF5 /* Info.plist */,
 				D69ED1EC2A44775E00763EF5 /* RaidUppTvOS.entitlements */,
 				FE8A92342A39E38B00EB8A6C /* Application */,
-				FE8A92352A39E3B200EB8A6C /* Resources */,
 				FE8A92362A39E3C400EB8A6C /* Presentation */,
-				351D80602A41CC1E00D3CC53 /* Data */,
+				FEAEA76F2A49C6DB00F3F96A /* Data */,
 				FE8A92372A39E3DF00EB8A6C /* Utils */,
 				35ED6C342A38B386005E5BDE /* Preview Content */,
 			);
@@ -428,13 +411,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		FE8A92352A39E3B200EB8A6C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		FE8A92362A39E3C400EB8A6C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +455,14 @@
 				FE8A92402A41D57700EB8A6C /* MenuView.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		FEAEA76F2A49C6DB00F3F96A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FEAEA76D2A49C69B00F3F96A /* EntityName.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -669,7 +653,6 @@
 				FE8A92472A4319A400EB8A6C /* MissionCard.swift in Sources */,
 				351D80632A41CC7100D3CC53 /* RaidUppTvOSApp.swift in Sources */,
 				351D80512A41CB6F00D3CC53 /* MissionDetails.swift in Sources */,
-				FE8A924E2A431DC200EB8A6C /* EntityFetcher.swift in Sources */,
 				357159152A4492970017963C /* ParticipantsView.swift in Sources */,
 				351D805B2A41CB9500D3CC53 /* MissionRating.swift in Sources */,
 				FE8A924B2A4319C600EB8A6C /* BoardHeader.swift in Sources */,
@@ -689,6 +672,7 @@
 				357159172A45B9A80017963C /* ParticipantButton.swift in Sources */,
 				351D80522A41CB6F00D3CC53 /* MissionDetailsView.swift in Sources */,
 				351D80532A41CB6F00D3CC53 /* MissionBoardView.swift in Sources */,
+				FEAEA76E2A49C69B00F3F96A /* EntityName.swift in Sources */,
 				D6924B242A39F910007CB0B0 /* DatabaseInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
